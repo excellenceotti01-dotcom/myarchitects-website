@@ -3,6 +3,7 @@
   inset: 0;
   z-index: var(--z-media);
   overflow: hidden;
+  background: var(--color-bg-primary);
 }
 
 .video {
@@ -14,4 +15,10 @@
   object-fit: cover;
   object-position: center;
   will-change: transform;
+  opacity: 0;
+  transition: opacity 280ms ease;
+}
+
+.videoReady {
+  opacity: 1;
 }
