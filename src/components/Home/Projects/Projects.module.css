@@ -1,0 +1,30 @@
+.projects {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-primary);
+}
+
+.stageProjects {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: transparent;
+  will-change: transform;
+}
+
+.stageProjects .viewport {
+  min-height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stageProjects {
+    position: relative;
+    inset: auto;
+    min-height: auto;
+    overflow: visible;
+    transform: none !important;
+  }
+
+}

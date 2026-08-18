@@ -1,0 +1,26 @@
+.stage {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: var(--color-bg-primary);
+}
+
+.stickyViewport {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.reducedMotion .stickyViewport {
+  min-height: auto;
+  overflow: visible;
+}
+
+@supports (min-height: 100dvh) {
+  .stage,
+  .stickyViewport {
+    min-height: 100dvh;
+  }
+}

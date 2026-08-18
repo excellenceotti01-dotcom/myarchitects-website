@@ -1,0 +1,8 @@
+.ui {
+  position: absolute;
+  inset: 0;
+
+  z-index: var(--z-ui);
+
+  pointer-events: none;
+}

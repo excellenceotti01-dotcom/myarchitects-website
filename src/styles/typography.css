@@ -1,0 +1,136 @@
+/* ========================================
+   HEADINGS
+======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-heading);
+  color: var(--color-heading);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+}
+
+h5 {
+  font-size: var(--fs-h5);
+}
+
+h6 {
+  font-size: var(--fs-h6);
+}
+
+/* Future-section type utilities: intentionally opt-in while the existing
+   sections await their individual dark-theme redesigns. */
+.type-display,
+.type-display-hero,
+.type-display-page,
+.type-display-section,
+.type-display-stage {
+  color: var(--type-display-color, var(--color-text-primary)) !important;
+  font-family: var(--font-display) !important;
+  font-weight: var(--fw-bold) !important;
+  letter-spacing: var(--type-display-tracking) !important;
+  line-height: var(--type-display-leading) !important;
+}
+
+.type-display,
+.type-display-section {
+  font-size: var(--type-display-section-size) !important;
+}
+
+.type-display-hero {
+  font-size: var(--type-display-hero-size) !important;
+}
+
+.type-display-page {
+  font-size: var(--type-display-page-size) !important;
+}
+
+.type-display-stage {
+  font-size: var(--type-display-stage-size) !important;
+}
+
+.type-editorial {
+  color: var(--color-text-primary);
+  font-family: var(--font-editorial);
+  font-size: var(--type-editorial-size);
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--type-editorial-tracking);
+  line-height: var(--type-editorial-leading);
+}
+
+.type-body {
+  max-width: 65ch;
+  color: var(--color-text-secondary);
+  font-family: var(--font-primary);
+  font-size: clamp(1rem, 1.15vw, 1.125rem);
+  font-weight: var(--fw-regular);
+  line-height: 1.6;
+}
+
+.type-ui {
+  font-family: var(--font-primary);
+  font-size: clamp(0.8125rem, 0.9vw, 0.9375rem);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.type-label {
+  color: var(--color-text-muted);
+  font-family: var(--font-primary);
+  font-size: clamp(0.625rem, 0.75vw, 0.75rem);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   BODY TEXT
+======================================== */
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  max-width: 65ch;
+}
+
+/* ========================================
+   SMALL TEXT
+======================================== */
+
+small {
+  font-size: var(--fs-caption);
+}
+
+/* ========================================
+   FORM ELEMENTS
+======================================== */
+
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}

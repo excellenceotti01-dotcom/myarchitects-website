@@ -1,0 +1,88 @@
+.background {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout paint;
+}
+
+.scene,
+.fallback {
+  position: absolute;
+  inset: 0;
+}
+
+.scene {
+  overflow: hidden;
+  filter: grayscale(1) brightness(1.7) contrast(1.12);
+  opacity: 0.8;
+}
+
+.scene :global(canvas) {
+  width: 100% !important;
+  height: 100% !important;
+  transform: translateY(16%) scale(1.52);
+  transform-origin: 50% 62%;
+}
+
+.fallback {
+  background:
+    radial-gradient(ellipse at 54% 42%, rgba(241, 240, 232, 0.1), transparent 28%),
+    linear-gradient(135deg, #141515 0%, var(--color-bg-primary) 58%, #101111 100%);
+  pointer-events: none;
+}
+
+.sceneTint {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 54% 42%, rgba(255, 255, 255, 0.14), transparent 30%),
+    linear-gradient(90deg, rgba(9, 10, 10, 0.3), transparent 55%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.vignette {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 42%, transparent 28%, rgba(0, 0, 0, 0.3) 66%, rgba(0, 0, 0, 0.82) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.44) 0%, transparent 36%, rgba(0, 0, 0, 0.82) 100%);
+  pointer-events: none;
+}
+
+/* Keep the interactive scene available on pointer-based devices without
+   allowing it to capture touch scrolling on phones and tablets. */
+@media (hover: hover) and (pointer: fine) {
+  .background,
+  .scene {
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .scene {
+    pointer-events: none;
+    filter: grayscale(1) brightness(1.45) contrast(1.08);
+  }
+
+  .scene :global(canvas) {
+    transform: translateY(18%) scale(1.42);
+    transform-origin: 50% 64%;
+  }
+}
+
+@media (max-width: 420px) {
+  .scene :global(canvas) {
+    transform: translateY(20%) scale(1.36);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene {
+    display: none;
+  }
+}

@@ -1,0 +1,17 @@
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-media);
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+}

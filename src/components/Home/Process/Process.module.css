@@ -1,0 +1,393 @@
+.process {
+  --type-display-color: var(--color-heading);
+  position: relative;
+  overflow: hidden;
+  background: var(--color-paper);
+  color: var(--color-text);
+}
+
+.introduction {
+  --type-display-color: var(--color-text-primary);
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.35fr) minmax(0, 1fr);
+  gap: clamp(2rem, 7vw, 8rem);
+  min-height: 100svh;
+  align-items: center;
+  padding: clamp(6rem, 12vw, 10rem) max(1.5rem, 8vw);
+  overflow: hidden;
+  background: var(--color-bg-primary);
+  border-top: 1px solid rgba(43, 43, 43, 0.1);
+}
+
+/* Match the approved Selected Work intro text geometry. */
+.introduction {
+  grid-template-columns: minmax(8rem, 0.35fr) minmax(0, 1fr);
+  gap: clamp(2rem, 7vw, 8rem);
+  padding: clamp(6rem, 12vw, 10rem) max(1.5rem, 8vw) calc(clamp(6rem, 12vw, 10rem) + 12vh);
+}
+
+.introContent {
+  grid-column: 2;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+}
+
+.directional {
+  margin-top: clamp(3.5rem, 6vw, 5.5rem) !important;
+  white-space: nowrap;
+}
+
+.introduction > .indicator,
+.introduction > .introContent {
+  position: relative;
+  z-index: 1;
+}
+
+.introduction .indicator,
+.introduction .directional {
+  color: var(--color-text-muted);
+}
+
+.introduction .introContent h2 {
+  color: var(--color-text-primary);
+}
+
+.introduction .introContent > p:not(.directional) {
+  color: var(--color-text-secondary);
+}
+
+.indicator,
+.directional,
+.stageCopy > p {
+  margin: 0;
+  color: rgba(43, 43, 43, 0.58);
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.13em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.introContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+}
+
+.introContent h2,
+.introContent > p {
+  margin: 0;
+}
+
+.introContent h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-weight: var(--fw-regular);
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  text-align: center;
+}
+
+.introContent > p:not(.directional) {
+  width: min(33rem, 100%);
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  color: rgba(43, 43, 43, 0.7);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.15vw, 1.25rem);
+  font-weight: var(--fw-medium);
+  line-height: 1.48;
+  text-align: center;
+}
+
+.directional {
+  margin-top: 2rem !important;
+  text-align: center;
+}
+
+.system {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  grid-template-columns: minmax(16rem, 0.5fr) minmax(26rem, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 7rem);
+  padding: clamp(8rem, 12vw, 10rem) max(1.5rem, 8vw) clamp(5rem, 8vw, 7rem);
+}
+
+.stageContent {
+  position: relative;
+  min-height: 15rem;
+  align-self: center;
+}
+
+.stageCopy {
+  position: absolute;
+  inset: 0;
+  max-width: 23rem;
+}
+
+.stageCopy h3,
+.stageCopy span {
+  display: block;
+}
+
+.stageCopy h3 {
+  margin: 1.1rem 0 0;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: var(--fw-regular);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.stageCopy span {
+  margin-top: 1.5rem;
+  color: rgba(43, 43, 43, 0.7);
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.ringWrap {
+  position: relative;
+  width: min(58vw, 48rem);
+  justify-self: end;
+  aspect-ratio: 1;
+  will-change: transform, opacity;
+}
+
+.diagram {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.diagram line,
+.outerRing,
+.innerRing,
+.pivotOuter,
+.pivotInner,
+.registration {
+  fill: none;
+  stroke: rgba(43, 43, 43, 0.42);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.innerRing,
+.diagram line {
+  opacity: 0.38;
+}
+
+.tick { stroke-width: 0.8 !important; opacity: 0.65 !important; }
+.majorTick { stroke-width: 1.2 !important; opacity: 0.8 !important; }
+.tickActive { stroke: rgba(43, 43, 43, 0.82) !important; opacity: 1 !important; }
+.pivotInner { fill: rgba(43, 43, 43, 0.62); }
+.progressMarker { fill: var(--color-heading); stroke: var(--color-paper); stroke-width: 3; vector-effect: non-scaling-stroke; }
+
+.node {
+  position: absolute;
+  top: var(--node-y);
+  left: var(--node-x);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.35s ease;
+}
+
+.nodeCore {
+  position: relative;
+  width: 0.65rem;
+  height: 0.65rem;
+  border: 1px solid rgba(43, 43, 43, 0.72);
+  border-radius: 50%;
+  background: var(--color-paper);
+  transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.nodeCore::after {
+  position: absolute;
+  inset: -0.38rem;
+  border: 1px solid rgba(43, 43, 43, 0.35);
+  border-radius: 50%;
+  content: "";
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.nodeLabel {
+  color: rgba(43, 43, 43, 0.54);
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.4s ease;
+}
+
+.nodeLabel b { margin-left: 0.25rem; font-weight: var(--fw-medium); }
+
+.active .nodeCore { background: var(--color-heading); transform: scale(1.25); }
+.active .nodeCore::after { opacity: 1; transform: scale(1); }
+.active .nodeLabel { color: var(--color-heading); }
+
+.transitionLine {
+  position: absolute;
+  bottom: 0;
+  left: max(1.5rem, 8vw);
+  width: 1px;
+  height: clamp(3rem, 10vh, 7rem);
+  background: rgba(43, 43, 43, 0.42);
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+@media (max-width: 768px) {
+  .introduction { grid-template-columns: 1fr; gap: 2rem; min-height: 100svh; padding: 7rem 1.5rem calc(5rem + 10vh); }
+  .introContent { grid-column: 1; width: 100%; }
+  .system { grid-template-columns: 1fr; align-content: center; min-height: 100svh; gap: 3rem; padding: 8rem 1.5rem 5rem; }
+  .stageContent { min-height: 12rem; }
+  .ringWrap { width: min(94vw, 34rem); justify-self: center; }
+  .stageCopy { max-width: 28rem; }
+  .stageCopy h3 { font-size: clamp(2.4rem, 11vw, 4rem); }
+  .nodeLabel { display: none; }
+}
+
+/* Shared dark process stage: the crossword remains the single environment. */
+.process {
+  --type-display-color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+.sharedStage {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+.introduction {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  min-height: 100svh;
+  background: transparent;
+}
+
+.system {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  min-height: 100svh;
+  background: transparent;
+  color: var(--color-text-primary);
+}
+
+.stageCopy > p,
+.stageCopy span,
+.nodeLabel { color: var(--color-text-secondary); }
+
+.stageCopy h3 {
+  color: var(--color-text-primary);
+  font-size: clamp(3.5rem, 6vw, 7rem);
+  line-height: 0.9;
+}
+
+.stageCopy span {
+  max-width: 31rem;
+  font-size: clamp(1rem, 1.25vw, 1.35rem);
+  line-height: 1.55;
+}
+
+.diagram line,
+.outerRing,
+.innerRing,
+.pivotOuter,
+.pivotInner,
+.registration {
+  stroke: rgba(241, 240, 232, 0.36);
+}
+
+.tick { stroke: rgba(241, 240, 232, 0.22); }
+.midTick { stroke: rgba(241, 240, 232, 0.34); stroke-width: 1.35px; }
+.majorTick { stroke: rgba(241, 240, 232, 0.45); }
+.tickActive { stroke: var(--color-text-primary) !important; filter: drop-shadow(0 0 5px rgba(241, 240, 232, 0.45)); }
+.tickCurrent { stroke-width: 2.2px !important; filter: drop-shadow(0 0 8px rgba(241, 240, 232, 0.72)); }
+.pivotInner { fill: var(--color-text-primary); }
+.progressMarker { fill: var(--color-text-primary); stroke: var(--color-bg-primary); }
+.nodeCore { border-color: rgba(241, 240, 232, 0.62); background: var(--color-bg-primary); }
+.active .nodeCore { background: var(--color-text-primary); box-shadow: 0 0 1rem rgba(241, 240, 232, 0.38); }
+.active .nodeLabel { color: var(--color-text-primary); }
+.completed .nodeCore { background: rgba(241, 240, 232, 0.64); }
+.completed .nodeLabel { color: rgba(241, 240, 232, 0.78); }
+.nodeCore { width: 1rem; height: 1rem; border-width: 1.4px; }
+.nodeLabel { font-size: 0.72rem; letter-spacing: 0.1em; }
+.nodeConnectors line { stroke: rgba(241, 240, 232, 0.42); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+
+.nodeLabel { position: absolute; white-space: nowrap; }
+.node:nth-of-type(1) .nodeLabel { top: -2.35rem; left: 50%; transform: translateX(-50%); text-align: center; }
+.node:nth-of-type(2) .nodeLabel { top: -1rem; left: 2rem; text-align: left; }
+.node:nth-of-type(3) .nodeLabel { top: 1.25rem; left: 1.45rem; text-align: left; }
+.node:nth-of-type(4) .nodeLabel { top: 1.25rem; right: 1.45rem; text-align: right; }
+.node:nth-of-type(5) .nodeLabel { top: -1rem; right: 2rem; text-align: right; }
+
+.watchNode { transition: opacity 0.24s ease; }
+.nodeConnector {
+  stroke: rgba(241, 240, 232, 0.26);
+  stroke-width: 1.25;
+  transition: stroke 0.24s ease, opacity 0.24s ease;
+  vector-effect: non-scaling-stroke;
+}
+.nodeAnchor {
+  fill: var(--color-bg-primary);
+  stroke: rgba(241, 240, 232, 0.3);
+  stroke-width: 1.5;
+  transition: fill 0.24s ease, stroke 0.24s ease;
+}
+.nodeExterior {
+  fill: rgba(9, 10, 10, 0.78);
+  stroke: rgba(241, 240, 232, 0.28);
+  stroke-width: 1.5;
+  transition: fill 0.24s ease, stroke 0.24s ease;
+}
+.nodeHalo {
+  fill: none;
+  stroke: rgba(241, 240, 232, 0);
+  stroke-width: 1;
+  transition: stroke 0.24s ease;
+}
+.nodeWatchLabel {
+  fill: rgba(241, 240, 232, 0.3);
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.08em;
+  transition: fill 0.24s ease;
+}
+.completed .nodeConnector { stroke: rgba(241, 240, 232, 0.54); }
+.completed .nodeAnchor { fill: rgba(241, 240, 232, 0.34); stroke: rgba(241, 240, 232, 0.64); }
+.completed .nodeExterior { fill: rgba(241, 240, 232, 0.14); stroke: rgba(241, 240, 232, 0.62); }
+.completed .nodeWatchLabel { fill: rgba(241, 240, 232, 0.66); }
+.active .nodeConnector { stroke: var(--color-text-primary); stroke-width: 2.15; }
+.active .nodeAnchor { fill: var(--color-text-primary); stroke: var(--color-text-primary); }
+.active .nodeExterior { fill: var(--color-text-primary); stroke: var(--color-text-primary); }
+.active .nodeHalo { stroke: rgba(241, 240, 232, 0.7); filter: drop-shadow(0 0 11px rgba(241, 240, 232, 0.7)); }
+.active .nodeWatchLabel { fill: var(--color-text-primary); font-weight: var(--fw-semibold); }
+.transitionLine { background: rgba(241, 240, 232, 0.42); }
+
+@media (max-width: 768px) {
+  .sharedStage { min-height: 100svh; }
+  .introduction,
+  .system { min-height: 100svh; }
+  .system { padding-top: 7rem; }
+}

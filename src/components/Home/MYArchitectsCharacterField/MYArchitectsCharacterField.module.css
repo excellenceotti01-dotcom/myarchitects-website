@@ -1,0 +1,76 @@
+.field {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout paint;
+}
+
+.field::after {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, transparent 18%, rgba(9, 10, 10, 0.3) 72%, rgba(9, 10, 10, 0.68) 100%),
+    linear-gradient(180deg, rgba(9, 10, 10, 0.22), transparent 30%, rgba(9, 10, 10, 0.34));
+  content: "";
+  pointer-events: none;
+}
+
+.field::before {
+  position: absolute;
+  z-index: 2;
+  inset: 0 0 auto;
+  height: clamp(7rem, 16vh, 11rem);
+  background: linear-gradient(180deg, rgba(9, 10, 10, 0.72), rgba(9, 10, 10, 0));
+  content: "";
+  pointer-events: none;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--rows), minmax(0, 1fr));
+  padding: clamp(1.5rem, 4vw, 4rem);
+}
+
+.character {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(241, 240, 232, var(--character-alpha, 0.08));
+  font-family: var(--font-primary, "Manrope", Arial, sans-serif);
+  font-size: clamp(0.76rem, 0.95vw, 1.05rem);
+  font-weight: 600;
+  letter-spacing: 0.045em;
+  line-height: 1;
+  text-shadow: 0 0 calc(1.25rem * var(--character-glow, 0)) rgba(241, 240, 232, calc(0.72 * var(--character-glow, 0)));
+  transform: translateZ(0);
+  transition: color 180ms ease, text-shadow 180ms ease;
+}
+
+.character:empty::after {
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: rgba(241, 240, 232, 0.11);
+  content: "";
+}
+
+.reducedMotion .character {
+  --character-alpha: 0.16;
+  --character-glow: 0;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    padding: clamp(1rem, 5vw, 2rem);
+  }
+
+  .character {
+    font-size: clamp(0.72rem, 2.05vw, 0.9rem);
+    letter-spacing: 0.035em;
+  }
+}

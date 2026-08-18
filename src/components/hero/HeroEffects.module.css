@@ -1,0 +1,6 @@
+.effects {
+  position: absolute;
+  inset: 0;
+  z-index: 25;
+  pointer-events: none;
+}
