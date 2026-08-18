@@ -9,7 +9,7 @@ import ArcPreloaderHero from "../ui/arc-preloader-hero";
 
 import styles from "./Hero.module.css";
 
-const Hero = ({ onRevealComplete }) => {
+const Hero = ({ navbarRef, onRevealComplete }) => {
   const heroRef = useRef(null);
   const [preloaderComplete, setPreloaderComplete] = useState(false);
 
@@ -22,6 +22,7 @@ const Hero = ({ onRevealComplete }) => {
         <HeroUI />
         <HeroEffects
           heroRef={heroRef}
+          navbarRef={navbarRef}
           introComplete={preloaderComplete}
           onRevealComplete={onRevealComplete}
         />

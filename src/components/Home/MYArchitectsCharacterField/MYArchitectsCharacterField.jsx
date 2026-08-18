@@ -202,6 +202,7 @@ const MYArchitectsCharacterField = ({ sectionRef, interactionExclusionRef = null
   const frameRef = useRef(null);
   const geometryRef = useRef({ columns: 1, rows: 1, width: 1, height: 1, offsetX: 0, offsetY: 0 });
   const [reducedMotion, setReducedMotion] = useState(() => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  const [isSectionActive, setIsSectionActive] = useState(false);
   const [grid, setGrid] = useState({ columns: 24, rows: 20 });
   const crossword = useMemo(() => createCrossword(grid.columns, grid.rows), [grid.columns, grid.rows]);
 
@@ -211,6 +212,19 @@ const MYArchitectsCharacterField = ({ sectionRef, interactionExclusionRef = null
     query.addEventListener("change", update);
     return () => query.removeEventListener("change", update);
   }, []);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsSectionActive(entry.isIntersecting),
+      { threshold: 0.01 },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [sectionRef]);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -226,10 +240,21 @@ const MYArchitectsCharacterField = ({ sectionRef, interactionExclusionRef = null
     observer.observe(section);
     const frame = requestAnimationFrame(measure);
     return () => { observer.disconnect(); cancelAnimationFrame(frame); };
-  }, [sectionRef, grid.columns, grid.rows]);
+  }, [sectionRef]);
 
   useEffect(() => {
-    if (reducedMotion) return undefined;
+    if (reducedMotion || !isSectionActive) {
+      pointerRef.current = null;
+      pulseRef.current = null;
+      if (frameRef.current) cancelAnimationFrame(frameRef.current);
+      frameRef.current = null;
+      characterRefs.current.forEach((character) => {
+        if (!character) return;
+        character.style.setProperty("--character-alpha", "0.09");
+        character.style.setProperty("--character-glow", "0");
+      });
+      return undefined;
+    }
     const updateCharacters = () => {
       frameRef.current = null;
       const geometry = geometryRef.current;
@@ -277,16 +302,18 @@ const MYArchitectsCharacterField = ({ sectionRef, interactionExclusionRef = null
     };
     const handlePointerMove = (event) => { pointerRef.current = getLocalPoint(event); requestUpdate(); };
     const handleClick = (event) => { const point = getLocalPoint(event); if (!point) return; pulseRef.current = { ...point, time: performance.now() }; requestUpdate(); };
-    window.addEventListener("pointermove", handlePointerMove, { passive: true });
-    window.addEventListener("click", handleClick, { passive: true });
+    const section = sectionRef.current;
+    if (!section) return undefined;
+    section.addEventListener("pointermove", handlePointerMove, { passive: true });
+    section.addEventListener("click", handleClick, { passive: true });
     requestUpdate();
     return () => {
-      window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("click", handleClick);
+      section.removeEventListener("pointermove", handlePointerMove);
+      section.removeEventListener("click", handleClick);
       if (frameRef.current) cancelAnimationFrame(frameRef.current);
       frameRef.current = null;
     };
-  }, [crossword, grid.columns, grid.rows, interactionExclusionRef, reducedMotion, sectionRef]);
+  }, [crossword, grid.columns, grid.rows, interactionExclusionRef, isSectionActive, reducedMotion, sectionRef]);
 
   return (
     <div className={`${styles.field} ${reducedMotion ? styles.reducedMotion : ""}`} data-process-crossword aria-hidden="true">

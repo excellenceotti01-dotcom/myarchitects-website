@@ -9,13 +9,32 @@ const HeroMedia = () => {
 
   useEffect(() => {
     const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const video = videoRef.current;
+    if (!video) return undefined;
+
     const respectMotionPreference = () => {
-      if (reducedMotionQuery.matches) videoRef.current?.pause();
+      if (reducedMotionQuery.matches) {
+        video.pause();
+      } else {
+        video.play().catch(() => {});
+      }
     };
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (reducedMotionQuery.matches) return;
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { rootMargin: "100% 0px", threshold: 0 },
+    );
 
     respectMotionPreference();
     reducedMotionQuery.addEventListener("change", respectMotionPreference);
-    return () => reducedMotionQuery.removeEventListener("change", respectMotionPreference);
+    visibilityObserver.observe(video);
+    return () => {
+      visibilityObserver.disconnect();
+      reducedMotionQuery.removeEventListener("change", respectMotionPreference);
+    };
   }, []);
 
   return (

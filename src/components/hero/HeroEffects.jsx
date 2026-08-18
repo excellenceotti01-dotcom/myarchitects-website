@@ -22,7 +22,7 @@ const REVEAL_TIMING = {
   projectCard: 0.55,
 };
 
-const HeroEffects = ({ heroRef, introComplete, onRevealComplete }) => {
+const HeroEffects = ({ heroRef, navbarRef, introComplete, onRevealComplete }) => {
   const hasCompletedReveal = useRef(false);
 
   useLayoutEffect(() => {
@@ -34,7 +34,7 @@ const HeroEffects = ({ heroRef, introComplete, onRevealComplete }) => {
 
     const context = gsap.context(() => {
       const image = hero.querySelector("[data-hero-image]");
-      const navbar = hero.querySelector("[data-hero-navbar]");
+      const navbar = navbarRef?.current ?? hero.querySelector("[data-hero-navbar]");
       const headline = hero.querySelector("[data-hero-headline]");
       const headlineWords = gsap.utils.toArray("[data-hero-word]", hero);
       const supportingCopy = hero.querySelector("[data-hero-supporting-copy]");
@@ -160,8 +160,8 @@ const HeroEffects = ({ heroRef, introComplete, onRevealComplete }) => {
         setProjectParallaxY(y * 0.8);
       };
 
-      window.addEventListener("pointermove", handlePointerMove);
-      removePointerMove = () => window.removeEventListener("pointermove", handlePointerMove);
+      hero.addEventListener("pointermove", handlePointerMove, { passive: true });
+      removePointerMove = () => hero.removeEventListener("pointermove", handlePointerMove);
 
       const exitTimeline = gsap.timeline({
         scrollTrigger: {
@@ -185,7 +185,7 @@ const HeroEffects = ({ heroRef, introComplete, onRevealComplete }) => {
       removePointerMove();
       context.revert();
     };
-  }, [heroRef, introComplete, onRevealComplete]);
+  }, [heroRef, navbarRef, introComplete, onRevealComplete]);
 
   return <div className={styles.effects} aria-hidden="true" />;
 };

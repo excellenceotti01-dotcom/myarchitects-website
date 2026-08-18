@@ -1,8 +1,10 @@
+import { forwardRef } from "react";
+
 import styles from "./HeroNavbar.module.css";
 
-const HeroNavbar = () => {
+const HeroNavbar = forwardRef(function HeroNavbar(_props, ref) {
   return (
-    <header className={styles.navbar} data-hero-navbar>
+    <header ref={ref} className={styles.navbar} data-hero-navbar>
       <a href="/" className={styles.logo}>
         MYA
       </a>
@@ -17,6 +19,6 @@ const HeroNavbar = () => {
       <a href="#contact" className={styles.projectCta}>Start a Project</a>
     </header>
   );
-};
+});
 
 export default HeroNavbar;

@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 
 import Hero from "../components/hero/Hero";
+import HeroNavbar from "../components/hero/HeroNavbar";
 import SelectedWorkStage from "../components/Home/SelectedWorkStage/SelectedWorkStage";
 import Process from "../components/Home/Process/Process";
 import StudioSections from "../components/Home/StudioSections/StudioSections";
@@ -12,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const lenisRef = useRef(null);
+  const navbarRef = useRef(null);
   const unlockPageRef = useRef(() => {});
   const [heroReady, setHeroReady] = useState(false);
   const handleHeroRevealComplete = useCallback(() => setHeroReady(true), []);
@@ -45,6 +47,26 @@ const Home = () => {
       touchAction: element.style.touchAction,
       overscrollBehavior: element.style.overscrollBehavior,
     }));
+    let scrollGuardsActive = false;
+    const preventScroll = (event) => event.preventDefault();
+    const preventKeys = (event) => {
+      if (["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End", " "].includes(event.key)) {
+        event.preventDefault();
+      }
+    };
+    const setScrollGuards = (active) => {
+      if (scrollGuardsActive === active) return;
+      scrollGuardsActive = active;
+      if (active) {
+        window.addEventListener("wheel", preventScroll, { passive: false });
+        window.addEventListener("touchmove", preventScroll, { passive: false });
+        window.addEventListener("keydown", preventKeys);
+        return;
+      }
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
+      window.removeEventListener("keydown", preventKeys);
+    };
     const restorePageStyles = () => {
       savedStyles.forEach(({ element, overflow, overflowX, overflowY, touchAction, overscrollBehavior }) => {
         element.style.overflow = overflow;
@@ -67,23 +89,18 @@ const Home = () => {
         element.style.touchAction = "none";
         element.style.overscrollBehavior = "none";
       });
+      setScrollGuards(true);
     };
-    const preventScroll = (event) => event.preventDefault();
-    const preventKeys = (event) => {
-      if (["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End", " "].includes(event.key)) {
-        event.preventDefault();
-      }
+    const unlockPage = () => {
+      setScrollGuards(false);
+      restorePageStyles();
     };
-    let frameId;
-
-    const animate = (time) => {
-      lenis.raf(time);
-      frameId = requestAnimationFrame(animate);
-    };
+    const updateLenis = (time) => lenis.raf(time * 1000);
 
     lenisRef.current = lenis;
     lenis.scrollTo(0, { immediate: true, force: true });
     lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(updateLenis);
     const handleCarouselGesture = ({ detail }) => {
       if (detail?.active) lenis.stop();
       else lenis.start();
@@ -91,23 +108,17 @@ const Home = () => {
     window.addEventListener("myarchitects:carousel-gesture", handleCarouselGesture);
     lenis.stop();
     lockPage();
-    unlockPageRef.current = restorePageStyles;
-    window.addEventListener("wheel", preventScroll, { passive: false });
-    window.addEventListener("touchmove", preventScroll, { passive: false });
-    window.addEventListener("keydown", preventKeys);
-    frameId = requestAnimationFrame(animate);
+    unlockPageRef.current = unlockPage;
 
-    requestAnimationFrame(() => ScrollTrigger.refresh());
+    const refreshFrameId = requestAnimationFrame(() => ScrollTrigger.refresh());
 
     return () => {
-      cancelAnimationFrame(frameId);
+      cancelAnimationFrame(refreshFrameId);
       lenis.off("scroll", ScrollTrigger.update);
+      gsap.ticker.remove(updateLenis);
       lenis.destroy();
       window.removeEventListener("myarchitects:carousel-gesture", handleCarouselGesture);
-      window.removeEventListener("wheel", preventScroll);
-      window.removeEventListener("touchmove", preventScroll);
-      window.removeEventListener("keydown", preventKeys);
-      restorePageStyles();
+      unlockPage();
       unlockPageRef.current = () => {};
     };
   }, []);
@@ -118,12 +129,14 @@ const Home = () => {
     lenisRef.current?.scrollTo(0, { immediate: true, force: true });
     unlockPageRef.current();
     lenisRef.current?.start();
-    requestAnimationFrame(() => ScrollTrigger.refresh());
+    const refreshFrameId = requestAnimationFrame(() => ScrollTrigger.refresh());
+    return () => cancelAnimationFrame(refreshFrameId);
   }, [heroReady]);
 
   return (
     <>
-      <Hero onRevealComplete={handleHeroRevealComplete} />
+      <Hero navbarRef={navbarRef} onRevealComplete={handleHeroRevealComplete} />
+      <HeroNavbar ref={navbarRef} />
       <SelectedWorkStage />
       <Process />
       <StudioSections />
