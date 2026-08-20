@@ -1,13 +1,15 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 
 import Hero from "../components/hero/Hero";
 import HeroNavbar from "../components/hero/HeroNavbar";
-import SelectedWorkStage from "../components/Home/SelectedWorkStage/SelectedWorkStage";
-import Process from "../components/Home/Process/Process";
-import StudioSections from "../components/Home/StudioSections/StudioSections";
+
+const SelectedWorkStage = lazy(() => import("../components/Home/SelectedWorkStage/SelectedWorkStage"));
+const Process = lazy(() => import("../components/Home/Process/Process"));
+const TeamSection = lazy(() => import("../components/Home/TeamSection/TeamSection"));
+const StudioSections = lazy(() => import("../components/Home/StudioSections/StudioSections"));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -137,9 +139,14 @@ const Home = () => {
     <>
       <Hero navbarRef={navbarRef} onRevealComplete={handleHeroRevealComplete} />
       <HeroNavbar ref={navbarRef} />
-      <SelectedWorkStage />
-      <Process />
-      <StudioSections />
+      {heroReady && (
+        <Suspense fallback={null}>
+          <TeamSection />
+          <Process />
+          <SelectedWorkStage />
+          <StudioSections />
+        </Suspense>
+      )}
     </>
   );
 };

@@ -38,16 +38,16 @@
 }
 
 .logo {
-  font-family: var(--hero-display-font);
-  font-size: 1.2rem;
-  font-weight: var(--hero-display-weight);
-
-  color: #ffffff;
-
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
+}
 
-  letter-spacing: var(--hero-display-tracking);
-  line-height: 1;
+.logoImage {
+  display: block;
+  width: auto;
+  height: 1.2rem;
+  object-fit: contain;
 }
 
 

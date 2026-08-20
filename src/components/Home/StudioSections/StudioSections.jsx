@@ -1,13 +1,11 @@
+import logo from "../../../assets/images/MYA white logo.png";
 import styles from "./StudioSections.module.css";
-import TeamSection from "../TeamSection/TeamSection";
 
 const StudioSections = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <>
-      <TeamSection />
-
       <footer id="contact" className={styles.footer} aria-labelledby="contact-heading">
         <div className={styles.footerGlow} aria-hidden="true" />
         <div className={styles.footerTop}>
@@ -22,7 +20,9 @@ const StudioSections = () => {
 
         <div className={styles.footerMeta}>
           <div className={styles.brandBlock}>
-            <a className={styles.brand} href="#top" aria-label="MYA — back to top">MYA</a>
+            <a className={styles.brand} href="#top" aria-label="MYA — back to top">
+              <img className={styles.brandImage} src={logo} alt="MYA" />
+            </a>
             <p>Architecture for lasting places.</p>
           </div>
           <nav className={styles.footerNav} aria-label="Footer navigation">

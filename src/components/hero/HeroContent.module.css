@@ -27,8 +27,12 @@
   line-height: var(--hero-display-line-height);
   letter-spacing: var(--hero-display-tracking);
   color: #f5f1e8;
-  white-space: nowrap;
   will-change: transform, opacity;
+}
+
+.line {
+  display: block;
+  white-space: nowrap;
 }
 
 .word {

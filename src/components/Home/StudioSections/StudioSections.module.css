@@ -19,7 +19,8 @@
 .email { display: inline-block; margin-top: clamp(1.25rem, 2.5vw, 2.25rem); color: var(--color-text-primary); font-family: var(--font-body); font-size: clamp(1rem, 1.2vw, 1.2rem); font-weight: var(--fw-semibold); text-underline-offset: 0.35rem; }
 .footerMeta { display: grid; grid-template-columns: minmax(12rem, 1.6fr) repeat(3, minmax(max-content, 1fr)); gap: clamp(1.5rem, 4vw, 5rem); align-items: end; max-width: 90rem; margin-top: clamp(6rem, 16vh, 13rem); }
 .brandBlock p, .footerBase, .footerNav a, .socialNav a, .backToTop { color: var(--color-text-secondary); font-family: var(--font-body); font-size: 0.73rem; font-weight: var(--fw-medium); letter-spacing: 0.07em; line-height: 1.45; text-transform: uppercase; }
-.brand { color: var(--color-text-primary); font-family: var(--font-display); font-size: clamp(1.65rem, 2.3vw, 2.3rem); font-weight: var(--fw-bold); letter-spacing: -0.07em; line-height: 0.85; text-decoration: none; }
+.brand { display: inline-flex; align-items: center; text-decoration: none; }
+.brandImage { display: block; width: auto; height: clamp(1.65rem, 2.3vw, 2.3rem); object-fit: contain; }
 .brandBlock p { margin: 1rem 0 0; letter-spacing: 0.02em; text-transform: none; }
 .footerNav, .socialNav { display: grid; gap: 0.72rem; }
 .footerNav a, .socialNav a { text-decoration: none; transition: color 180ms ease; }

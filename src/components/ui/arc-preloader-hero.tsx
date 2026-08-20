@@ -44,6 +44,8 @@ export interface ArcRevealHeroProps {
   children?: React.ReactNode;
   /** Called only after the curved reveal and the overlay exit have completed. */
   onRevealComplete?: () => void;
+  /** Called as the curtain starts so revealed media can prepare behind it. */
+  onRevealStart?: () => void;
 }
 
 /* ── defaults ────────────────────────────────────────────────── */
@@ -56,7 +58,7 @@ const DEFAULT_GREETINGS: ArcRevealGreeting[] = [
   { text: "Material." },
   { text: "Detail." },
   { text: "Crafted." },
-  { text: "MYArchitects." },
+  { text: "MYArchitect Design." },
 ];
 
 type Phase = "intro" | "reveal" | "done";
@@ -65,7 +67,7 @@ type Phase = "intro" | "reveal" | "done";
 
 export function ArcRevealHero({
   greetings = DEFAULT_GREETINGS,
-  greetingHold = 620,
+  greetingHold = 760,
   revealDuration = 1500,
   className,
   introClassName,
@@ -74,9 +76,11 @@ export function ArcRevealHero({
   storageKey,
   children,
   onRevealComplete,
+  onRevealStart,
 }: ArcRevealHeroProps) {
   const prefersReducedMotion = useReducedMotion();
   const hasReportedComplete = React.useRef(false);
+  const hasReportedRevealStart = React.useRef(false);
 
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [index, setIndex] = React.useState(0);
@@ -96,6 +100,10 @@ export function ArcRevealHero({
   // Honor reduced-motion + replay-suppression on mount.
   React.useEffect(() => {
     if (prefersReducedMotion) {
+      if (!hasReportedRevealStart.current) {
+        hasReportedRevealStart.current = true;
+        onRevealStart?.();
+      }
       setPhase("done");
       return;
     }
@@ -108,19 +116,25 @@ export function ArcRevealHero({
         /* sessionStorage can throw in private mode — fall through */
       }
     }
-  }, [prefersReducedMotion, storageKey]);
+  }, [onRevealStart, prefersReducedMotion, storageKey]);
 
   // Greeting cycle.
   React.useEffect(() => {
     if (phase !== "intro") return;
     const isLast = index >= greetings.length - 1;
     if (isLast) {
-      const t = window.setTimeout(() => setPhase("reveal"), greetingHold + 220);
+      const t = window.setTimeout(() => {
+        if (!hasReportedRevealStart.current) {
+          hasReportedRevealStart.current = true;
+          onRevealStart?.();
+        }
+        setPhase("reveal");
+      }, greetingHold + 220);
       return () => window.clearTimeout(t);
     }
     const t = window.setTimeout(() => setIndex((i) => i + 1), greetingHold);
     return () => window.clearTimeout(t);
-  }, [phase, index, greetingHold, greetings.length]);
+  }, [phase, index, greetingHold, greetings.length, onRevealStart]);
 
   // Drive the curtain reveal.
   React.useEffect(() => {

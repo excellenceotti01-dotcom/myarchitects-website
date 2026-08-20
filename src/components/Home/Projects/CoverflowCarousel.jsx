@@ -14,7 +14,7 @@ const nearestOffset = (index, position, length) => {
   return offset;
 };
 
-const CoverflowCarousel = ({ projects, interactive }) => {
+const CoverflowCarousel = ({ projects, interactive, shouldLoadMedia }) => {
   const carouselRef = useRef(null);
   const cardRefs = useRef([]);
   const rafRef = useRef(null);
@@ -97,12 +97,13 @@ const CoverflowCarousel = ({ projects, interactive }) => {
   }, [paint]);
 
   useEffect(() => {
+    if (!shouldLoadMedia) return undefined;
     const adjacent = [activeIndex, wrap(activeIndex - 1, projects.length), wrap(activeIndex + 1, projects.length)];
     adjacent.forEach((index) => {
       const image = new Image();
       image.src = projects[index].image;
     });
-  }, [activeIndex, projects]);
+  }, [activeIndex, projects, shouldLoadMedia]);
 
   useEffect(() => () => {
     if (rafRef.current) cancelAnimationFrame(rafRef.current);
@@ -213,13 +214,15 @@ const CoverflowCarousel = ({ projects, interactive }) => {
             aria-label={index === activeIndex ? `${project.title}, active project` : `View ${project.title}`}
             aria-current={index === activeIndex ? "true" : undefined}
           >
-            <img
-              src={project.image}
-              alt={project.title}
-              className={styles.image}
-              loading={Math.abs(index - activeIndex) <= 1 ? "eager" : "lazy"}
-              decoding="async"
-            />
+            {shouldLoadMedia && Math.abs(nearestOffset(index, activeIndex, projects.length)) <= 1 && (
+              <img
+                src={project.image}
+                alt={project.title}
+                className={styles.image}
+                loading="eager"
+                decoding="async"
+              />
+            )}
             <span className={styles.cardShade} aria-hidden="true" />
           </button>
         ))}

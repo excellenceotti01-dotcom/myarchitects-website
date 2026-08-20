@@ -66,10 +66,12 @@ const Process = () => {
       const transitionLine = system.querySelector("[data-process-transition-line]");
       const nodes = gsap.utils.toArray("[data-process-node]");
       const content = gsap.utils.toArray("[data-process-content]");
+      const atmosphericImages = gsap.utils.toArray("[data-process-atmosphere]");
       const tickMarks = gsap.utils.toArray("[data-process-tick]");
 
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         gsap.set([introIndicator, introHeading, introCopy, introDirectional, ...content], { autoAlpha: 1, y: 0, x: 0 });
+        gsap.set(atmosphericImages[0], { autoAlpha: 1, y: 0 });
         nodes[0]?.classList.add(styles.active);
         gsap.set(system, { autoAlpha: 0, yPercent: 100 });
         gsap.timeline({
@@ -90,6 +92,7 @@ const Process = () => {
       gsap.set([introIndicator, introHeading, introCopy, introDirectional], { autoAlpha: 1, x: 0, y: 0, pointerEvents: "auto" });
       gsap.set(system, { autoAlpha: 0, yPercent: 105, pointerEvents: "none" });
       gsap.set(content, { autoAlpha: 0, y: 16 });
+      gsap.set(atmosphericImages, { autoAlpha: 0, y: 28 });
       nodes.forEach((node) => node.classList.remove(styles.active, styles.completed));
 
       let activeIndex = -1;
@@ -105,6 +108,13 @@ const Process = () => {
         const halo = nodes[nextIndex]?.querySelector("[data-process-node-halo]");
         const connector = nodes[nextIndex]?.querySelector("[data-process-node-connector]");
         const anchor = nodes[nextIndex]?.querySelector("[data-process-node-anchor]");
+        atmosphericImages.forEach((image, index) => {
+          if (index === nextIndex) {
+            gsap.fromTo(image, { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.9, ease: "power2.out", overwrite: true });
+            return;
+          }
+          gsap.to(image, { autoAlpha: 0, y: -24, duration: 0.82, ease: "power2.out", overwrite: true });
+        });
 
         if (animateLock) {
           gsap.fromTo(exterior, { scale: 1.46, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.36, ease: "power3.out", overwrite: true });
@@ -212,6 +222,13 @@ const Process = () => {
       </div>
 
       <div ref={systemRef} className={styles.system}>
+        <div className={styles.atmosphericImages} aria-hidden="true">
+          {processStages.map((stage) => (
+            <div key={stage.id} className={styles.atmosphericImage} data-process-atmosphere>
+              <img src={stage.image} alt="" />
+            </div>
+          ))}
+        </div>
         <div className={styles.stageContent} aria-live="polite">
           {processStages.map((stage) => (
             <article key={stage.id} className={styles.stageCopy} data-process-content>

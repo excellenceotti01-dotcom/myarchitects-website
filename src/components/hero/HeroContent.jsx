@@ -1,14 +1,18 @@
 import styles from "./HeroContent.module.css";
 
 const HeroContent = () => {
-  const headline = "MYArchitects";
+  const headlineLines = ["MYArchitect", "Design"];
 
   return (
     <section className={styles.content}>
       <h1 className={styles.title} data-hero-headline>
-        {Array.from(headline).map((letter, index) => (
-          <span className={styles.word} data-hero-word key={`${letter}-${index}`}>
-            {letter}
+        {headlineLines.map((line, lineIndex) => (
+          <span className={styles.line} key={line}>
+            {Array.from(line).map((letter, letterIndex) => (
+              <span className={styles.word} data-hero-word key={`${lineIndex}-${letter}-${letterIndex}`}>
+                {letter}
+              </span>
+            ))}
           </span>
         ))}
       </h1>

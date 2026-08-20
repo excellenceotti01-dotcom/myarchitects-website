@@ -22,7 +22,7 @@ const REVEAL_TIMING = {
   projectCard: 0.55,
 };
 
-const HeroEffects = ({ heroRef, navbarRef, introComplete, onRevealComplete }) => {
+const HeroEffects = ({ heroRef, navbarRef, mediaRequested, introComplete, onRevealComplete }) => {
   const hasCompletedReveal = useRef(false);
 
   useLayoutEffect(() => {
@@ -185,7 +185,7 @@ const HeroEffects = ({ heroRef, navbarRef, introComplete, onRevealComplete }) =>
       removePointerMove();
       context.revert();
     };
-  }, [heroRef, navbarRef, introComplete, onRevealComplete]);
+  }, [heroRef, navbarRef, mediaRequested, introComplete, onRevealComplete]);
 
   return <div className={styles.effects} aria-hidden="true" />;
 };
