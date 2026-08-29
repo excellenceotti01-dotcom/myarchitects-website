@@ -1,23 +1,24 @@
 import { forwardRef } from "react";
+import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/MYA white logo.png";
 import styles from "./HeroNavbar.module.css";
 
-const HeroNavbar = forwardRef(function HeroNavbar(_props, ref) {
+const HeroNavbar = forwardRef(function HeroNavbar({ visible = false }, ref) {
   return (
-    <header ref={ref} className={styles.navbar} data-hero-navbar>
-      <a href="/" className={styles.logo}>
+    <header ref={ref} className={`${styles.navbar} ${visible ? styles.visible : ""}`} data-hero-navbar>
+      <Link to="/" className={styles.logo}>
         <img className={styles.logoImage} src={logo} alt="MYA" />
-      </a>
+      </Link>
 
       <nav className={styles.nav}>
-        <a href="#work">Work</a>
-        <a href="#process">Process</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <Link to="/about">About</Link>
+        <a href="/#work">Work</a>
+        <a href="/#process">Process</a>
+        <a href="/#contact">Contact</a>
       </nav>
 
-      <a href="#contact" className={styles.projectCta}>Start a Project</a>
+      <a href="/#contact" className={styles.projectCta}>Start a Project</a>
     </header>
   );
 });

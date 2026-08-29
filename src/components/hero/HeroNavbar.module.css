@@ -37,6 +37,11 @@
   will-change: transform, opacity;
 }
 
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
 .logo {
   display: inline-flex;
   align-items: center;
