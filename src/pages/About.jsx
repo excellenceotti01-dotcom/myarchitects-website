@@ -5,6 +5,7 @@ import AboutHero from "../components/About/AboutHero";
 import AboutManifesto from "../components/About/AboutManifesto";
 import StudioStory from "../components/About/StudioStory";
 import Principles from "../components/About/Principles";
+import StudioCulture from "../components/About/StudioCulture";
 
 const About = () => {
   useLayoutEffect(() => {
@@ -19,6 +20,7 @@ const About = () => {
         <AboutManifesto />
         <StudioStory />
         <Principles />
+        <StudioCulture />
       </main>
     </>
   );
