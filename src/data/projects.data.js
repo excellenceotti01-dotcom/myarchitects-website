@@ -2,6 +2,8 @@ import project1 from "../assets/images/project-1.png";
 import project2 from "../assets/images/project-2.png";
 import project3 from "../assets/images/project-3.png";
 import project4 from "../assets/images/project-4.png";
+import conceptExterior from "../assets/images/Work/Large exterior image.png";
+import conceptDetail from "../assets/images/Work/Small detail image.png";
 
 export const projects = [
   {
@@ -26,6 +28,21 @@ export const projects = [
     designResponse: "Living spaces unfold toward the water while shaded edges, screens and deep overhangs temper light and create a calm rhythm between interior and landscape.",
     status: "Completed",
     siteArea: "1,240 sqm",
+    concept: {
+      headline: "Privacy shaped through layers, not walls.",
+      headlineLines: ["Privacy shaped", "through layers,", "not walls."],
+      paragraph: "Planted courts, filtered views and shaded edges create a calm sense of retreat while keeping the home deeply connected to the water.",
+      mainImage: conceptExterior,
+      mainAlt: "Layered waterfront exterior with planted courts and shaded edges",
+      detailImage: conceptDetail,
+      detailAlt: "Architectural screen and planted threshold detail",
+      annotations: [
+        { id: "planted", label: ["PLANTED COURTS", "CREATE DEPTH"] },
+        { id: "views", label: ["FILTERED VIEWS", "TO THE LAGOON"] },
+        { id: "shaded", label: ["SHADED EDGES", "SOFTEN THE BUILT"] },
+        { id: "screens", label: ["SCREENS BALANCE", "PRIVACY AND LIGHT"] },
+      ],
+    },
   },
   {
     id: 2,

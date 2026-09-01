@@ -2,6 +2,7 @@ import { Navigate, useParams } from "react-router-dom";
 
 import HeroNavbar from "../components/hero/HeroNavbar";
 import ProjectDetailHero from "../components/Work/ProjectDetailHero";
+import ProjectConcept from "../components/Work/ProjectConcept";
 import { workIndexProjects } from "../data/projects.data";
 
 const ProjectDetail = () => {
@@ -15,6 +16,7 @@ const ProjectDetail = () => {
       <HeroNavbar visible />
       <main>
         <ProjectDetailHero project={project} />
+        <ProjectConcept project={project} />
       </main>
     </>
   );

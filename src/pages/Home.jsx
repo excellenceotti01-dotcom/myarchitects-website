@@ -8,7 +8,7 @@ import HeroNavbar from "../components/hero/HeroNavbar";
 
 const SelectedWorkStage = lazy(() => import("../components/Home/SelectedWorkStage/SelectedWorkStage"));
 const Process = lazy(() => import("../components/Home/Process/Process"));
-const TeamSection = lazy(() => import("../components/Home/TeamSection/TeamSection"));
+const AboutStudio = lazy(() => import("../components/Home/AboutStudio/AboutStudio"));
 const StudioSections = lazy(() => import("../components/Home/StudioSections/StudioSections"));
 
 gsap.registerPlugin(ScrollTrigger);
@@ -141,7 +141,7 @@ const Home = () => {
       <HeroNavbar ref={navbarRef} />
       {heroReady && (
         <Suspense fallback={null}>
-          <TeamSection />
+          <AboutStudio />
           <Process />
           <SelectedWorkStage />
           <StudioSections />

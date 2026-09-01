@@ -10,7 +10,7 @@ const HeroFloatingCards = () => {
             <p className={styles.philosophyStatement}>
               Architecture should
               <br />
-              outlive trends.
+              feel timeless.
             </p>
           </section>
         </div>

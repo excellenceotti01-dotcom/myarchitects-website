@@ -18,7 +18,7 @@ const HeroNavbar = forwardRef(function HeroNavbar({ visible = false }, ref) {
         <a href="/#contact">Contact</a>
       </nav>
 
-      <a href="/#contact" className={styles.projectCta}>Start a Project</a>
+      <a href="/#contact" className={styles.projectCta}>Begin a Project</a>
     </header>
   );
 });
