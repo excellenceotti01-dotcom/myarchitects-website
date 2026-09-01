@@ -13,7 +13,7 @@ const HeroNavbar = forwardRef(function HeroNavbar({ visible = false }, ref) {
 
       <nav className={styles.nav}>
         <Link to="/about">About</Link>
-        <a href="/#work">Work</a>
+        <Link to="/work">Work</Link>
         <a href="/#process">Process</a>
         <a href="/#contact">Contact</a>
       </nav>

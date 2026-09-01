@@ -1,0 +1,220 @@
+.hero {
+  position: relative;
+  background: #090a0a;
+  color: var(--color-text-primary);
+}
+
+.stage {
+  position: relative;
+  height: 100svh;
+  min-height: 42rem;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 16% 14%, rgba(255, 255, 255, 0.045), transparent 23rem),
+    #090a0a;
+}
+
+.stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.44;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(241, 240, 232, 0.28) 0.75px, transparent 0.85px);
+  background-size: 12px 12px;
+  mask-image: linear-gradient(90deg, #000 0 49%, transparent 78%);
+}
+
+.drafting,
+.drafting * {
+  pointer-events: none;
+}
+
+.drafting {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  color: rgba(241, 240, 232, 0.24);
+}
+
+.guide {
+  position: absolute;
+  display: block;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.guideVertical { left: clamp(2rem, 2.25vw, 2.75rem); top: 0; bottom: 0; width: 1px; }
+.guideHorizontal { left: 0; right: 0; bottom: clamp(2.5rem, 6vh, 4.5rem); height: 1px; }
+
+.cross {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  opacity: 0.7;
+}
+
+.cross::before,
+.cross::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+}
+
+.cross::before { left: 0; right: 0; top: 12px; height: 1px; }
+.cross::after { top: 0; bottom: 0; left: 12px; width: 1px; }
+.crossTopLeft { top: calc(clamp(2rem, 2.25vw, 2.75rem) + 5.5rem); left: calc(clamp(2rem, 2.25vw, 2.75rem) - 12px); }
+.crossLeftMid { top: 49%; left: calc(clamp(2rem, 2.25vw, 2.75rem) - 12px); }
+.crossBottomLeft { bottom: calc(clamp(2.5rem, 6vh, 4.5rem) - 12px); left: calc(clamp(2rem, 2.25vw, 2.75rem) - 12px); }
+.crossBottomRight { right: clamp(2rem, 2.25vw, 2.75rem); bottom: calc(clamp(2.5rem, 6vh, 4.5rem) - 12px); }
+
+.mediaFrame {
+  position: absolute;
+  z-index: 2;
+  top: clamp(7.4rem, 12.5vh, 9rem);
+  right: clamp(2rem, 4.2vw, 5rem);
+  bottom: clamp(2rem, 3.75vh, 3.5rem);
+  left: clamp(37%, 37vw, 40%);
+  overflow: hidden;
+  background: #151515;
+  will-change: clip-path, inset;
+}
+
+.mediaFrame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+}
+
+.mediaShade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.25), transparent 34%);
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  width: clamp(22rem, 37vw, 39rem);
+  padding: clamp(9.6rem, 18vh, 12.5rem) 0 clamp(2.5rem, 5vh, 4rem) clamp(4.5rem, 5.7vw, 6rem);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.back {
+  position: absolute;
+  top: clamp(8.8rem, 19vh, 12.5rem);
+  left: clamp(4.5rem, 5.7vw, 6rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: rgba(241, 240, 232, 0.86);
+  background: transparent;
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  font-weight: var(--fw-medium);
+  line-height: 1.2;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.back:hover { color: #fff; transform: translateX(-3px); }
+.back:focus-visible { outline: 1px solid rgba(241, 240, 232, 0.88); outline-offset: 8px; }
+
+.number {
+  position: absolute;
+  top: clamp(13rem, 25vh, 18rem);
+  left: clamp(4.25rem, 5vw, 5.5rem);
+  margin: 0;
+  color: rgba(241, 240, 232, 0.18);
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 13.5vw, 15rem);
+  font-weight: var(--fw-regular);
+  letter-spacing: -0.095em;
+  line-height: 0.75;
+}
+
+.title {
+  position: absolute;
+  top: clamp(25rem, 49vh, 32rem);
+  left: clamp(4.5rem, 5.7vw, 6rem);
+  width: min(46rem, 53vw);
+  margin: 0;
+  color: #f1f0e8;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 5.5vw, 6.75rem);
+  font-weight: var(--fw-medium);
+  letter-spacing: -0.075em;
+  line-height: 0.88;
+}
+
+.title span { display: block; }
+
+.metadata {
+  position: absolute;
+  top: clamp(35rem, 72vh, 45rem);
+  left: clamp(4.5rem, 5.7vw, 6rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 0;
+  color: rgba(241, 240, 232, 0.74);
+  font-size: clamp(0.875rem, 1.1vw, 1.05rem);
+  font-weight: var(--fw-medium);
+  line-height: 1.4;
+}
+
+.metadata i { color: rgba(241, 240, 232, 0.45); font-style: normal; }
+
+.scrollCue {
+  position: absolute;
+  bottom: clamp(2.6rem, 5vh, 4rem);
+  left: clamp(4.5rem, 5.7vw, 6rem);
+  display: grid;
+  grid-template-columns: 1.75rem auto;
+  align-items: center;
+  column-gap: 0.75rem;
+  color: rgba(241, 240, 232, 0.82);
+  font-size: 0.88rem;
+  font-weight: var(--fw-medium);
+  line-height: 1;
+}
+
+.cueLine { grid-column: 1; align-self: end; width: 1px; height: 3.25rem; margin-left: 0.85rem; background: rgba(241, 240, 232, 0.43); }
+.cueDot { grid-column: 1; grid-row: 2; width: 1.75rem; height: 1.75rem; display: grid; place-items: center; border: 1px solid rgba(241, 240, 232, 0.45); border-radius: 50%; color: rgba(241, 240, 232, 0.78); font-size: 0.76rem; }
+.scrollCue > span:last-child { grid-column: 2; grid-row: 2; }
+
+.boundary { height: 1px; background: #090a0a; }
+
+@media (max-width: 960px) {
+  .stage { height: auto; min-height: 100svh; padding: 9rem 1.5rem 3.5rem; overflow: hidden; }
+  .stage::before { mask-image: none; }
+  .mediaFrame { position: relative; top: auto; right: auto; bottom: auto; left: auto; width: min(100%, 52rem); height: min(58vw, 34rem); min-height: 19rem; margin: 0 0 2.5rem auto; }
+  .content { position: relative; width: 100%; height: auto; padding: 0; }
+  .back, .number, .title, .metadata, .scrollCue { position: relative; top: auto; left: auto; bottom: auto; }
+  .back { margin-bottom: 3rem; }
+  .number { margin: 0 0 1.5rem; font-size: clamp(6rem, 18vw, 10rem); }
+  .title { width: min(100%, 42rem); margin-bottom: 1.5rem; font-size: clamp(3.25rem, 9vw, 5.25rem); }
+  .metadata { margin-bottom: 3rem; }
+  .scrollCue { display: none; }
+}
+
+@media (max-width: 640px) {
+  .stage { min-height: auto; padding: 8.75rem 1.25rem 3rem; }
+  .mediaFrame { height: 65vw; min-height: 15rem; margin: 0 0 2rem; }
+  .drafting { opacity: 0.6; }
+  .guideHorizontal, .crossBottomRight { display: none; }
+  .back { margin-bottom: 2.5rem; }
+  .title { font-size: clamp(2.75rem, 13vw, 4.25rem); line-height: 0.9; }
+  .metadata { gap: 0.55rem; font-size: 0.85rem; }
+}

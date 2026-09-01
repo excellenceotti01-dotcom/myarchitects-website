@@ -6,6 +6,9 @@ import AboutManifesto from "../components/About/AboutManifesto";
 import StudioStory from "../components/About/StudioStory";
 import Principles from "../components/About/Principles";
 import StudioCulture from "../components/About/StudioCulture";
+import StudioCapabilities from "../components/About/StudioCapabilities";
+import ClosingStatement from "../components/About/ClosingStatement";
+import StudioSections from "../components/Home/StudioSections/StudioSections";
 
 const About = () => {
   useLayoutEffect(() => {
@@ -21,7 +24,10 @@ const About = () => {
         <StudioStory />
         <Principles />
         <StudioCulture />
+        <StudioCapabilities />
+        <ClosingStatement />
       </main>
+      <StudioSections />
     </>
   );
 };
