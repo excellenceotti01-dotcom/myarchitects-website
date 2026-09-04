@@ -171,12 +171,12 @@
 
 @media (max-width: 768px) {
   .cards {
-    top: 10rem;
+    top: 8.75rem;
     right: auto;
     left: 50%;
     width: min(88vw, 21rem);
     align-items: stretch;
-    gap: 0.5rem;
+    gap: 0.6rem;
     transform: translateX(-50%);
   }
 
@@ -187,22 +187,59 @@
 
   .philosophy {
     width: min(84vw, 19rem);
-    min-height: 7.25rem;
-    padding: 1rem 1.2rem;
+    min-height: 6.9rem;
+    padding: 0.95rem 1.15rem;
+  }
+
+  .philosophyStatement {
+    font-size: 1.6rem;
   }
 
   .project {
     width: min(76vw, 16rem);
-    padding: 0.95rem 1.2rem;
+    padding: 0.9rem 1.15rem;
   }
 
   .projectName {
-    margin-top: 0.65rem;
+    margin-top: 0.55rem;
+    font-size: 1.25rem;
   }
 
   .metadata {
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
+    margin-top: 0.7rem;
+    padding-top: 0.65rem;
+  }
+}
+
+/* Short handsets (iPhone SE and similar) have no spare vertical room between
+   the navigation and the headline block, so the cards compact further. */
+@media (max-width: 768px) and (max-height: 720px) {
+  .cards {
+    top: 7.75rem;
+    gap: 0.5rem;
+  }
+
+  .philosophy {
+    min-height: 0;
+    padding: 0.85rem 1.1rem;
+  }
+
+  .philosophyStatement {
+    font-size: 1.4rem;
+  }
+
+  .project {
+    padding: 0.8rem 1.1rem;
+  }
+
+  .projectName {
+    margin-top: 0.45rem;
+    font-size: 1.15rem;
+  }
+
+  .metadata {
+    margin-top: 0.55rem;
+    padding-top: 0.55rem;
   }
 }
 

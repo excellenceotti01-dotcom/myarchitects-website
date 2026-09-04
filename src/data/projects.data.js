@@ -4,6 +4,41 @@ import project3 from "../assets/images/project-3.png";
 import project4 from "../assets/images/project-4.png";
 import conceptExterior from "../assets/images/Work/Large exterior image.png";
 import conceptDetail from "../assets/images/Work/Small detail image.png";
+import spatialImage01 from "../assets/images/Work/Image 01.png";
+import spatialImage02 from "../assets/images/Work/Image 02.png";
+import spatialImage03 from "../assets/images/Work/Image 03.png";
+import spatialImage04 from "../assets/images/Work/Image 04.png";
+
+// Temporary detail content for the Work archive. Replace with client-approved
+// narratives and photography when the final portfolio is supplied.
+const placeholderDetail = ({ image, detailImage, statementLines, conceptLines, conceptParagraph, spatialHeadline, spatialParagraph, annotations }) => ({
+  placeholderContent: true,
+  credits: {
+    architect: "MYArchitects",
+    photography: "Studio Archive",
+  },
+  statementLines,
+  concept: {
+    headlineLines: conceptLines,
+    paragraph: conceptParagraph,
+    mainImage: image,
+    mainAlt: "Architectural project exterior",
+    detailImage,
+    detailAlt: "Architectural threshold and material detail",
+    annotations,
+  },
+  spatialExperience: {
+    label: "Spatial Experience",
+    headline: spatialHeadline,
+    paragraph: spatialParagraph,
+    images: [
+      { image: spatialImage01, alt: "Interior view and framed landscape" },
+      { image: spatialImage02, alt: "Filtered daylight through architectural elements" },
+      { image: spatialImage03, alt: "Planted threshold detail" },
+      { image: spatialImage04, alt: "Exterior relationship to the waterfront" },
+    ],
+  },
+});
 
 export const projects = [
   {
@@ -43,6 +78,17 @@ export const projects = [
         { id: "screens", label: ["SCREENS BALANCE", "PRIVACY AND LIGHT"] },
       ],
     },
+    spatialExperience: {
+      label: "Spatial Experience",
+      headline: ["Moving", "through light,", "shade and", "landscape."],
+      paragraph: "A sequence of framed views, shaded thresholds and open living spaces draws the waterfront deep into the home.",
+      images: [
+        { image: spatialImage01, alt: "Living space framing the Lagos lagoon" },
+        { image: spatialImage02, alt: "Filtered daylight through architectural screens" },
+        { image: spatialImage03, alt: "Planted courtyard threshold" },
+        { image: spatialImage04, alt: "Waterfront exterior at the lagoon" },
+      ],
+    },
   },
   {
     id: 2,
@@ -59,6 +105,21 @@ export const projects = [
     designResponse: "Deep shade, clear circulation and a robust material palette give the pavilion a calm, welcoming presence through the day and into the evening.",
     status: "Completed",
     siteArea: "2,180 sqm",
+    ...placeholderDetail({
+      image: project2,
+      detailImage: conceptDetail,
+      statementLines: ["A civic pavilion", "shaped as a generous", "threshold between", "city, water and", "shared cultural life."],
+      conceptLines: ["A public room", "at the water's", "edge."],
+      conceptParagraph: "Open edges, deep overhangs and shaded courts create a flexible civic threshold that connects gathering spaces to the changing waterfront.",
+      spatialHeadline: ["Gathering", "through shade,", "light and", "the city."],
+      spatialParagraph: "A sequence of sheltered thresholds and framed views supports informal exchange from arrival to the water's edge.",
+      annotations: [
+        { id: "planted", label: ["PLANTED COURTS", "FRAME ARRIVAL"] },
+        { id: "views", label: ["OPEN EDGES", "FACE THE WATER"] },
+        { id: "shaded", label: ["DEEP OVERHANGS", "TEMPER LIGHT"] },
+        { id: "screens", label: ["SCREENS FILTER", "LIGHT AND ACTIVITY"] },
+      ],
+    }),
   },
   {
     id: 3,
@@ -75,6 +136,21 @@ export const projects = [
     designResponse: "Courtyards, shaded verandas and carefully framed openings organise the plan into a sequence of quiet, light-filled spaces.",
     status: "Completed",
     siteArea: "980 sqm",
+    ...placeholderDetail({
+      image: project3,
+      detailImage: conceptExterior,
+      statementLines: ["A family house", "organised around", "a planted courtyard", "and a calm rhythm", "of shelter and sky."],
+      conceptLines: ["Daily life", "orbits a planted", "court."],
+      conceptParagraph: "Courtyards, shaded verandas and framed openings turn privacy into a sequence of connected, light-filled rooms.",
+      spatialHeadline: ["Moving", "between court,", "shade and", "home."],
+      spatialParagraph: "Openings and thresholds guide daily movement between planted space, shared rooms and private retreat.",
+      annotations: [
+        { id: "planted", label: ["COURTYARD PLANTING", "BRINGS DEPTH"] },
+        { id: "views", label: ["FRAMED VIEWS", "CONNECT ROOMS"] },
+        { id: "shaded", label: ["SHADED VERANDAS", "SOFTEN TRANSITIONS"] },
+        { id: "screens", label: ["SCREENS BALANCE", "LIGHT AND PRIVACY"] },
+      ],
+    }),
   },
   {
     id: 4,
@@ -91,6 +167,21 @@ export const projects = [
     designResponse: "Light, material consistency and a layered plan create an interior that feels connected, legible and comfortable over time.",
     status: "Completed",
     siteArea: "1,860 sqm",
+    ...placeholderDetail({
+      image: project4,
+      detailImage: conceptDetail,
+      statementLines: ["A workplace", "designed for focus,", "exchange and a", "more generous", "daily rhythm."],
+      conceptLines: ["Workspaces", "shaped for", "exchange."],
+      conceptParagraph: "Layered work settings, soft daylight and clear circulation create an adaptable workplace that supports both concentration and connection.",
+      spatialHeadline: ["Working", "through focus,", "light and", "exchange."],
+      spatialParagraph: "A range of shared and quiet settings gives teams a clear, comfortable rhythm throughout the day.",
+      annotations: [
+        { id: "planted", label: ["PLANTED EDGES", "SOFTEN ARRIVAL"] },
+        { id: "views", label: ["FRAMED OUTLOOKS", "EXTEND FOCUS"] },
+        { id: "shaded", label: ["SHADED THRESHOLDS", "PACE MOVEMENT"] },
+        { id: "screens", label: ["SCREENS CREATE", "QUIET FOCUS"] },
+      ],
+    }),
   },
 ];
 
@@ -114,11 +205,26 @@ export const workIndexProjects = [
     status: "Completed",
     siteArea: "3,120 sqm",
     temporary: true,
+    ...placeholderDetail({
+      image: project1,
+      detailImage: conceptDetail,
+      statementLines: ["A coastal retreat", "formed through", "shade, breeze and", "framed horizons", "at the shoreline."],
+      conceptLines: ["Retreat", "shaped by shade", "and breeze."],
+      conceptParagraph: "Low profiles, layered outdoor rooms and deep shade make the shoreline part of an unhurried sequence of arrival, gathering and rest.",
+      spatialHeadline: ["Resting", "between breeze,", "shade and", "horizon."],
+      spatialParagraph: "Deep edges and framed outdoor rooms bring changing light, water and landscape into daily rituals of retreat.",
+      annotations: [
+        { id: "planted", label: ["COASTAL PLANTING", "BRINGS SHELTER"] },
+        { id: "views", label: ["FRAMED HORIZONS", "MEET THE WATER"] },
+        { id: "shaded", label: ["DEEP EDGES", "TEMPER THE SUN"] },
+        { id: "screens", label: ["SCREENS FILTER", "BREEZE AND LIGHT"] },
+      ],
+    }),
   },
   {
     id: 6,
     number: "06",
-    image: project2,
+    image: project3,
     title: "The Commons",
     category: "Mixed-use",
     location: "Lagos, Nigeria",
@@ -131,5 +237,20 @@ export const workIndexProjects = [
     status: "Completed",
     siteArea: "2,640 sqm",
     temporary: true,
+    ...placeholderDetail({
+      image: project3,
+      detailImage: conceptExterior,
+      statementLines: ["A shared place", "for work, gathering", "and everyday civic", "life across a", "flexible framework."],
+      conceptLines: ["Shared life", "through generous", "thresholds."],
+      conceptParagraph: "A durable framework of planted thresholds, clear circulation and adaptable rooms gives everyday social life a calm, open setting.",
+      spatialHeadline: ["Meeting", "through light,", "thresholds and", "shared space."],
+      spatialParagraph: "Connected rooms and generous edges support a changing rhythm of work, gathering and informal exchange.",
+      annotations: [
+        { id: "planted", label: ["PLANTED COURTS", "WELCOME GATHERING"] },
+        { id: "views", label: ["OPEN VIEWS", "CONNECT ACTIVITY"] },
+        { id: "shaded", label: ["SHADED EDGES", "PACE ARRIVAL"] },
+        { id: "screens", label: ["SCREENS FRAME", "SHARED ROOMS"] },
+      ],
+    }),
   },
 ];

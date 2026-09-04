@@ -1,10 +1,8 @@
-import { useEffect, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
 import ProjectDetailHeroEffects from "./ProjectDetailHeroEffects";
 import ProjectOverview from "./ProjectOverview";
 import styles from "./ProjectDetailHero.module.css";
-import { readWorkReturnContext, saveWorkReturnContext } from "../../utils/workReturnContext";
 
 const titleLines = (title) => {
   const words = title.trim().split(/\s+/);
@@ -14,27 +12,7 @@ const titleLines = (title) => {
 const ProjectDetailHero = ({ project }) => {
   const sectionRef = useRef(null);
   const stageRef = useRef(null);
-  const navigate = useNavigate();
-  const location = useLocation();
   const lines = titleLines(project.title);
-  const returnContextRef = useRef(readWorkReturnContext(project.id)?.context ?? location.state?.returnContext ?? null);
-
-  useEffect(() => {
-    const preserveNativeBackContext = () => {
-      if (returnContextRef.current) saveWorkReturnContext(returnContextRef.current, true);
-    };
-    window.addEventListener("popstate", preserveNativeBackContext);
-    return () => window.removeEventListener("popstate", preserveNativeBackContext);
-  }, []);
-
-  const returnToWork = () => {
-    // A route reached from the index should restore the browser's own Work
-    // history entry (including its scroll position). Direct visits retain a
-    // dependable route fallback.
-    const context = returnContextRef.current;
-    if (context) saveWorkReturnContext(context, true);
-    navigate("/work", { replace: true, state: context ? { workReturnContext: context } : undefined });
-  };
 
   return (
     <section ref={sectionRef} className={styles.hero} aria-labelledby="project-detail-title" data-project-detail>
@@ -49,9 +27,6 @@ const ProjectDetailHero = ({ project }) => {
         </div>
 
         <div className={styles.content} data-detail-content>
-          <button type="button" className={styles.back} onClick={returnToWork} data-detail-back>
-            <span aria-hidden="true">←</span> Back to projects
-          </button>
           <p className={styles.number} data-detail-number>{project.number}</p>
           <h1 id="project-detail-title" className={styles.title}>
             {lines.map((line) => <span key={line} data-detail-title-line>{line}</span>)}

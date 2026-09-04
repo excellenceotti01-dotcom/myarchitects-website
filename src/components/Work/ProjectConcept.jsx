@@ -15,7 +15,8 @@ const ProjectConcept = ({ project }) => {
     return (
       <div className={`${styles.annotation} ${styles[id]}`} data-concept-annotation>
         <span className={styles.annotationLine} aria-hidden="true" />
-        <span className={styles.annotationPoint} aria-hidden="true" />
+        <span className={`${styles.annotationPoint} ${styles.annotationStart}`} aria-hidden="true" />
+        <span className={`${styles.annotationPoint} ${styles.annotationEnd}`} aria-hidden="true" />
         <span className={styles.annotationLabel}>{item.label.map((line) => <span key={line}>{line}</span>)}</span>
       </div>
     );

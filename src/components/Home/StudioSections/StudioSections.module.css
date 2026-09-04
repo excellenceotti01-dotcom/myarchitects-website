@@ -12,7 +12,7 @@
 .footerGlow { position: absolute; z-index: -1; inset: auto -18vw -28rem auto; width: min(68rem, 85vw); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(241, 240, 232, 0.11), rgba(241, 240, 232, 0.025) 37%, transparent 69%); filter: blur(2px); pointer-events: none; }
 .footerTop { max-width: 76rem; }
 .eyebrow { margin: 0; color: var(--color-text-muted); font-family: var(--font-body); font-size: 0.68rem; font-weight: var(--fw-semibold); letter-spacing: 0.13em; line-height: 1.2; text-transform: uppercase; }
-.projectAction { display: inline-flex; align-items: flex-start; gap: clamp(1rem, 2.5vw, 2.5rem); max-width: 14ch; margin-top: clamp(1.5rem, 3.5vw, 3.5rem); color: var(--color-text-primary); font-family: var(--font-display); font-size: clamp(4rem, 9.2vw, 10rem); font-weight: var(--fw-bold); letter-spacing: -0.07em; line-height: 0.85; text-decoration: none; }
+.projectAction { display: inline-flex; align-items: flex-start; gap: clamp(1rem, 2.5vw, 2.5rem); max-width: 14ch; margin-top: clamp(1.5rem, 3.5vw, 3.5rem); padding: 0; border: 0; background: transparent; color: var(--color-text-primary); font-family: var(--font-display); font-size: clamp(4rem, 9.2vw, 10rem); font-weight: var(--fw-bold); letter-spacing: -0.07em; line-height: 0.85; text-align: left; text-decoration: none; cursor: pointer; }
 .projectAction > span:last-child { margin-top: 0.05em; font-family: var(--font-body); font-size: 0.28em; font-weight: var(--fw-medium); letter-spacing: 0; transition: transform 260ms ease; }
 .projectAction:hover > span:last-child, .projectAction:focus-visible > span:last-child { transform: translate(0.15em, -0.15em); }
 .contactCopy { max-width: 36rem; margin: clamp(2rem, 4vw, 4rem) 0 0; color: var(--color-text-secondary); font-family: var(--font-body); font-size: clamp(1rem, 1.25vw, 1.25rem); font-weight: var(--fw-medium); line-height: 1.5; }
@@ -22,6 +22,10 @@
 .brand { display: inline-flex; align-items: center; text-decoration: none; }
 .brandImage { display: block; width: auto; height: clamp(1.65rem, 2.3vw, 2.3rem); object-fit: contain; }
 .brandBlock p { margin: 1rem 0 0; letter-spacing: 0.02em; text-transform: none; }
+.footerCta { display: inline-flex; align-items: center; gap: 0.55rem; margin-top: clamp(1.35rem, 2.4vw, 2rem); padding: 0.85rem 1.55rem; border: 1px solid rgba(241, 240, 232, 0.28); border-radius: 999px; background: transparent; color: var(--color-text-primary); font-family: var(--font-body); font-size: 0.74rem; font-weight: var(--fw-medium); letter-spacing: 0.07em; line-height: 1; text-transform: uppercase; cursor: pointer; transition: background 260ms ease, border-color 260ms ease; }
+.footerCta span { font-size: 1.05em; transition: transform 260ms ease; }
+.footerCta:hover, .footerCta:focus-visible { border-color: rgba(241, 240, 232, 0.55); background: rgba(241, 240, 232, 0.08); }
+.footerCta:hover span, .footerCta:focus-visible span { transform: translate(0.15em, -0.15em); }
 .footerNav, .socialNav { display: grid; gap: 0.72rem; }
 .footerNav a, .socialNav a { text-decoration: none; transition: color 180ms ease; }
 .footerNav a:hover, .socialNav a:hover, .footerNav a:focus-visible, .socialNav a:focus-visible { color: var(--color-text-primary); }

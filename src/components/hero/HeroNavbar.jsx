@@ -2,9 +2,12 @@ import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/MYA white logo.png";
+import { useInquiry } from "../../context/inquiryContext";
 import styles from "./HeroNavbar.module.css";
 
 const HeroNavbar = forwardRef(function HeroNavbar({ visible = false }, ref) {
+  const { openInquiry } = useInquiry();
+
   return (
     <header ref={ref} className={`${styles.navbar} ${visible ? styles.visible : ""}`} data-hero-navbar>
       <Link to="/" className={styles.logo}>
@@ -14,11 +17,10 @@ const HeroNavbar = forwardRef(function HeroNavbar({ visible = false }, ref) {
       <nav className={styles.nav}>
         <Link to="/about">About</Link>
         <Link to="/work">Work</Link>
-        <a href="/#process">Process</a>
-        <a href="/#contact">Contact</a>
+        <Link to="/process">Process</Link>
       </nav>
 
-      <a href="/#contact" className={styles.projectCta}>Begin a Project</a>
+      <button type="button" className={styles.projectCta} onClick={openInquiry}>Begin a Project</button>
     </header>
   );
 });

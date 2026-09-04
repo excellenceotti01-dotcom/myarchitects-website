@@ -1,7 +1,9 @@
+import { useInquiry } from "../../context/inquiryContext";
 import styles from "./HeroContent.module.css";
 
 const HeroContent = () => {
   const headlineLines = ["MYArchitect", "Design"];
+  const { openInquiry } = useInquiry();
 
   return (
     <section className={styles.content}>
@@ -22,10 +24,10 @@ const HeroContent = () => {
           We create thoughtful, enduring spaces where architecture, purpose, and human experience come together.
         </p>
 
-        <a href="#contact" className={styles.cta} data-hero-cta>
+        <button type="button" className={styles.cta} data-hero-cta onClick={openInquiry}>
           <span className={styles.ctaText}>Begin a Project</span>
           <span className={styles.ctaArrow} aria-hidden="true">&rarr;</span>
-        </a>
+        </button>
       </div>
     </section>
   );

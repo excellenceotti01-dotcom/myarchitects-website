@@ -28,7 +28,6 @@ const ProjectDetailHeroEffects = ({ sectionRef, stageRef }) => {
 
       context = gsap.context(() => {
         const media = section.querySelector("[data-detail-media]");
-        const back = section.querySelector("[data-detail-back]");
         const number = section.querySelector("[data-detail-number]");
         const lines = section.querySelectorAll("[data-detail-title-line]");
         const metadata = section.querySelector("[data-detail-meta]");
@@ -39,7 +38,7 @@ const ProjectDetailHeroEffects = ({ sectionRef, stageRef }) => {
         const overviewFacts = section.querySelectorAll("[data-overview-fact]");
         const overviewDrafting = section.querySelector("[data-overview-drafting]");
         const image = media?.querySelector("img");
-        const entranceTargets = [back, number, metadata, cue, ...lines];
+        const entranceTargets = [number, metadata, cue, ...lines];
 
         const createScrollTimeline = () => {
           const timeline = gsap.timeline({
@@ -78,7 +77,6 @@ const ProjectDetailHeroEffects = ({ sectionRef, stageRef }) => {
         } else {
           gsap.set(media, { autoAlpha: 1, clipPath: "inset(0 100% 0 0)" });
           gsap.set(image, { scale: 1.035 });
-          gsap.set(back, { autoAlpha: 0, y: 14 });
           gsap.set(number, { autoAlpha: 0, y: 22 });
           gsap.set(lines, { autoAlpha: 0, y: 34 });
           gsap.set(metadata, { autoAlpha: 0, y: 18 });
@@ -95,7 +93,7 @@ const ProjectDetailHeroEffects = ({ sectionRef, stageRef }) => {
             .to(number, { autoAlpha: 1, y: 0, duration: 0.42, ease: "power2.out" }, 0.24)
             .to(lines, { autoAlpha: 1, y: 0, duration: 0.42, stagger: 0.1, ease: "power3.out" }, 0.4)
             .to(metadata, { autoAlpha: 1, y: 0, duration: 0.3, ease: "power2.out" }, 0.76)
-            .to([back, cue], { autoAlpha: 1, y: 0, duration: 0.24, stagger: 0.06, ease: "power3.out" }, 1.02);
+            .to(cue, { autoAlpha: 1, y: 0, duration: 0.24, ease: "power3.out" }, 1.02);
         }
 
       }, section);

@@ -34,19 +34,25 @@
   .copy { max-width: 19rem; }
 }
 
-@media (max-width: 700px) {
+/* Below 820px the two-column split squeezes the display lines past the column
+   edge, so the section stacks and the statement takes the full measure. */
+@media (max-width: 820px) {
   .section, .stage { height: auto; min-height: 100svh; overflow: visible; }
-  .stage { padding: 7.5rem 1.5rem 4rem; }
+  .stage { padding: 7.5rem clamp(1.5rem, 4vw, 3rem) 4rem; }
   .grid { background-size: 25% 100%, 100% 18rem; }
-  .bounds { inset: 0 1.5rem; }
+  .bounds { inset: 0 clamp(1.5rem, 4vw, 3rem); }
   .upperLine { top: 7.5rem; left: 8.9rem; }
   .lowerLine { top: auto; bottom: 2rem; }
-  .topBoundary { top: 7.5rem; left: 1.5rem; }
+  .topBoundary { top: 7.5rem; left: clamp(1.5rem, 4vw, 3rem); }
   .content { position: relative; inset: auto; display: block; padding-top: 6.5rem; }
   .statement { left: 0; }
-  .statementMask > span { font-size: clamp(3rem, 13vw, 4.6rem) !important; white-space: nowrap; }
+  /* The masked lines stay on one line for the clip reveal, so the type is sized
+     to the longest line ("Thoughtful spaces.") rather than clipping at the edge. */
+  .statementMask > span { font-size: clamp(2rem, 10.2vw, 4.6rem) !important; white-space: nowrap; }
   .copy { max-width: 32rem; margin-top: 2.25rem; }
   .copy p + p { margin-top: 1.25rem; }
   .link { margin-top: 2rem; }
-  .compass { top: auto; bottom: 1.45rem; left: 1.5rem; width: 4.8rem; }
+  /* The compass sits bottom-right on mobile so it never collides with the
+     studio link, which shares the lower-left corner once the copy stacks. */
+  .compass { top: auto; bottom: 1.45rem; left: auto; right: clamp(1.5rem, 4vw, 3rem); width: 4.8rem; }
 }
