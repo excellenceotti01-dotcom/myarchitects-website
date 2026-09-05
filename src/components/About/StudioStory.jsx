@@ -37,7 +37,13 @@ const StudioStory = () => {
               <span className={styles.headingClip}><span data-story-heading-line>from paying closer attention.</span></span>
             </h2>
             <p className={styles.copy} data-story-copy>
-              MYArchitects is an independent architectural studio shaped by curiosity, collaboration and a commitment to thoughtful design. Our work begins by observing how people live, move and connect—then translating those insights into spaces with clarity, purpose and lasting relevance.
+              My Architects Design is an independent architectural studio shaped by curiosity, collaboration, and commitment to thoughtful design.
+
+              We believe that meaningful architecture begins with understanding not only the physical context of a site, but the people, stories, and everyday experiences that give a place its identity.
+
+              Our approach is rooted in observation and exploration, allowing us to understand how people live, move, work and connect before translating those insights into considered architectural responses.
+
+              Each project is an opportunity to create something that feels purposeful, authentic and connected to its surroundings.
             </p>
           </div>
         </div>

@@ -44,10 +44,10 @@ const AboutStudio = () => {
 
           <div className={styles.copy}>
             <p data-about-copy>
-              MYArchitects is an architecture and design studio creating thoughtful, enduring spaces shaped by purpose, context and human experience.
+              My Architects is an architecture, design and construction studio creating thoughtful, enduring spaces shaped by purpose, context, and human experience, and bringing these concepts to life through design and construction.
             </p>
             <p data-about-copy>
-              Our work brings clarity, character and lasting value to the way people live, work and experience space.
+              Our work brings clarity, character, and lasting value to the way people live, work, and experience space.
             </p>
             <a className={styles.link} href="/about" data-about-link>Discover our studio <span aria-hidden="true">→</span></a>
           </div>

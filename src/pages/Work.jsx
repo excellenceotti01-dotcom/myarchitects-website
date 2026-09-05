@@ -8,10 +8,13 @@ import { consumePendingWorkReturnContext } from "../utils/workReturnContext";
 
 const Work = () => {
   const location = useLocation();
+  const isInitialEntry = location.key === "default";
   // A native Back operation creates a fresh pending context from the detail
   // route. It must take precedence over state retained by an older Work
   // history entry from a previous return.
-  const [restorationContext] = useState(() => consumePendingWorkReturnContext() ?? location.state?.workReturnContext);
+  const [restorationContext] = useState(() => (
+    isInitialEntry ? null : consumePendingWorkReturnContext() ?? location.state?.workReturnContext
+  ));
   const [isRestoring, setIsRestoring] = useState(Boolean(restorationContext));
 
   useLayoutEffect(() => {

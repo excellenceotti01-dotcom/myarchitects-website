@@ -13,6 +13,7 @@ import "./styles/animations.css";
 // runs before React, Lenis, or any ScrollTriggers are created.
 if (typeof window !== "undefined") {
   window.history.scrollRestoration = "manual";
+  document.documentElement.style.scrollBehavior = "auto";
   window.scrollTo(0, 0);
 }
 

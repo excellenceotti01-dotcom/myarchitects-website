@@ -1,6 +1,4 @@
-import { useLayoutEffect } from "react";
 import { Navigate, useParams } from "react-router-dom";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import HeroNavbar from "../components/hero/HeroNavbar";
 import ProjectDetailHero from "../components/Work/ProjectDetailHero";
@@ -11,19 +9,6 @@ import ProjectCredits from "../components/Work/ProjectCredits";
 import { workIndexProjects } from "../data/projects.data";
 
 const ProjectDetailContent = ({ project }) => {
-  useLayoutEffect(() => {
-    // Detail routes always begin from their own hero. Work-page restoration is
-    // intentionally handled only by the persistent Back to Projects control.
-    window.history.scrollRestoration = "manual";
-    ScrollTrigger.clearScrollMemory?.();
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-
-    const settleFrame = requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    });
-    return () => cancelAnimationFrame(settleFrame);
-  }, []);
-
   return (
     <main>
       <ProjectDetailHero project={project} />

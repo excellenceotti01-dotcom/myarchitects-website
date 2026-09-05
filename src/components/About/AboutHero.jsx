@@ -49,7 +49,7 @@ const AboutHero = () => {
           </svg>
           <div className={styles.videoVignette} data-about-vignette aria-hidden="true" />
           <p className={styles.copy} data-about-copy>
-            MYArchitects is a design-led architectural studio creating thoughtful spaces shaped by context, collaboration and enduring purpose.
+            My Architects is a design-led architecture and construction studio shaping thoughtful, enduring spaces through context, collaboration, and purpose, bringing each vision seamlessly from concept to completion.
           </p>
           <div className={styles.scrollIndicator} data-about-scroll aria-hidden="true"><span /></div>
         </div>

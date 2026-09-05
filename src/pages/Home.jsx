@@ -1,4 +1,5 @@
-import { lazy, Suspense, useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from "react";
+import { useNavigationType } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
@@ -19,18 +20,8 @@ const Home = () => {
   const unlockPageRef = useRef(() => {});
   const [heroReady, setHeroReady] = useState(false);
   const handleHeroRevealComplete = useCallback(() => setHeroReady(true), []);
-
-  useLayoutEffect(() => {
-    const resetInitialScroll = () => {
-      window.history.scrollRestoration = "manual";
-      window.scrollTo(0, 0);
-      ScrollTrigger.clearScrollMemory?.();
-    };
-
-    resetInitialScroll();
-    const frameId = requestAnimationFrame(resetInitialScroll);
-    return () => cancelAnimationFrame(frameId);
-  }, []);
+  const navigationType = useNavigationType();
+  const shouldResetScroll = navigationType !== "POP";
 
   useEffect(() => {
     // Keep native restoration and Lenis in the same known initial state before
@@ -81,8 +72,7 @@ const Home = () => {
       body.classList.remove("is-intro-locked");
     };
     const lockPage = () => {
-      window.history.scrollRestoration = "manual";
-      window.scrollTo(0, 0);
+      if (shouldResetScroll) window.scrollTo(0, 0);
       [html, body].forEach((element) => {
         element.classList.add("is-intro-locked");
         element.style.overflow = "hidden";
@@ -100,7 +90,7 @@ const Home = () => {
     const updateLenis = (time) => lenis.raf(time * 1000);
 
     lenisRef.current = lenis;
-    lenis.scrollTo(0, { immediate: true, force: true });
+  if (shouldResetScroll) lenis.scrollTo(0, { immediate: true, force: true });
     lenis.on("scroll", ScrollTrigger.update);
     gsap.ticker.add(updateLenis);
     const handleCarouselGesture = ({ detail }) => {
@@ -123,17 +113,17 @@ const Home = () => {
       unlockPage();
       unlockPageRef.current = () => {};
     };
-  }, []);
+  }, [shouldResetScroll]);
 
   useEffect(() => {
     if (!heroReady) return;
 
-    lenisRef.current?.scrollTo(0, { immediate: true, force: true });
+    if (shouldResetScroll) lenisRef.current?.scrollTo(0, { immediate: true, force: true });
     unlockPageRef.current();
     lenisRef.current?.start();
     const refreshFrameId = requestAnimationFrame(() => ScrollTrigger.refresh());
     return () => cancelAnimationFrame(refreshFrameId);
-  }, [heroReady]);
+  }, [heroReady, shouldResetScroll]);
 
   return (
     <>

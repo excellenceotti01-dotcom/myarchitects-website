@@ -20,7 +20,7 @@ const HeroFloatingCards = () => {
         <div className={styles.parallaxCard} data-hero-card-parallax="project">
           <section className={`${styles.card} ${styles.project}`} data-hero-card="project">
             <p className={styles.eyebrow}>Featured Project</p>
-            <p className={styles.projectName}>Lagos Waterfront Residence</p>
+            <p className={styles.projectName}>Aeris City Project</p>
             <dl className={styles.metadata}>
               <div>
                 <dt>Status</dt>

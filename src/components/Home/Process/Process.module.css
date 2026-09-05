@@ -305,14 +305,76 @@
   .introduction { grid-template-columns: 1fr; gap: 2rem; min-height: 100svh; padding: 7rem 1.5rem calc(5rem + 10vh); }
   .introduction > .indicator { grid-column: 1; grid-row: 1; }
   .introContent { grid-column: 1; grid-row: 2; width: 100%; }
-  .system { grid-template-columns: 1fr; align-content: center; min-height: 100svh; gap: 3rem; padding: 8rem 1.5rem 5rem; }
-  .atmosphericImages { width: 100%; opacity: 0.58; }
-  .atmosphericImage { inset: -5% -22%; }
-  .stageContent { min-height: 12rem; }
-  .ringWrap { width: min(94vw, 34rem); justify-self: center; }
-  .stageCopy { max-width: 28rem; }
-  .stageCopy h3 { font-size: clamp(2.4rem, 11vw, 4rem); }
-  .nodeLabel { display: none; }
+  .system {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    gap: clamp(1.75rem, 5vw, 2.5rem);
+    padding: clamp(5.5rem, 14vw, 7rem) 1.25rem clamp(3rem, 8vw, 4.5rem);
+  }
+  .atmosphericImages {
+    inset: 0;
+    width: 100%;
+    opacity: 0.42;
+  }
+  .atmosphericImage {
+    inset: -8% -18%;
+  }
+  .atmosphericImage::after {
+    background:
+      linear-gradient(180deg, var(--color-bg-primary) 0%, rgba(9, 10, 10, 0.72) 18%, rgba(9, 10, 10, 0.52) 48%, var(--color-bg-primary) 100%);
+  }
+  .ringWrap {
+    order: 1;
+    flex: 0 0 auto;
+    width: clamp(300px, 84vw, 340px);
+    max-width: 340px;
+    margin-inline: auto;
+    justify-self: center;
+  }
+  .stageContent {
+    order: 2;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 28rem;
+    min-height: 14rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+  .stageCopy {
+    position: absolute;
+    inset: 0;
+    max-width: none;
+    width: 100%;
+  }
+  .stageCopy h3 {
+    font-size: clamp(2rem, 9.5vw, 2.75rem);
+  }
+  .stageCopy span {
+    max-width: none;
+    font-size: clamp(0.92rem, 3.8vw, 1rem);
+    line-height: 1.6;
+  }
+  .nodeLabel,
+  .nodeWatchLabel {
+    display: none;
+  }
+  .nodeExterior {
+    fill: transparent;
+  }
+  .completed .nodeExterior {
+    fill: rgba(241, 240, 232, 0.14);
+    transform: scale(0.72);
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  .active .nodeExterior {
+    transform: scale(1);
+    transform-origin: center;
+    transform-box: fill-box;
+  }
 }
 
 /* Shared dark process stage: the crossword remains the single environment. */
@@ -441,5 +503,23 @@
   .sharedStage { min-height: 100svh; }
   .introduction,
   .system { min-height: 100svh; }
-  .system { padding-top: 7rem; }
+  .nodeExterior { fill: transparent; }
+  .completed .nodeExterior { fill: rgba(241, 240, 232, 0.14); }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .system {
+    grid-template-columns: minmax(14rem, 0.46fr) minmax(18rem, 1fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    padding-inline: clamp(1.5rem, 5vw, 3rem);
+  }
+  .ringWrap {
+    width: min(46vw, 28rem);
+  }
+  .stageCopy h3 {
+    font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+  }
+  .nodeWatchLabel {
+    font-size: 16px;
+  }
 }

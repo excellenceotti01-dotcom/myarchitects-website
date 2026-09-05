@@ -1,5 +1,3 @@
-import { useLayoutEffect } from "react";
-
 import HeroNavbar from "../components/hero/HeroNavbar";
 import AboutHero from "../components/About/AboutHero";
 import AboutManifesto from "../components/About/AboutManifesto";
@@ -11,10 +9,6 @@ import ClosingStatement from "../components/About/ClosingStatement";
 import StudioSections from "../components/Home/StudioSections/StudioSections";
 
 const About = () => {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <>
       <HeroNavbar visible />

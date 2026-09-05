@@ -143,6 +143,7 @@ const Process = () => {
       const processProgressStart = 0.82;
       const processProgressEnd = 3.82;
       const processExitStart = 4.16;
+      const isMobileLayout = window.matchMedia("(max-width: 768px)").matches;
       let previousTimelineTime = 0;
       const renderProcessState = (timelineTime) => {
         if (timelineTime < processProgressStart) {
@@ -198,7 +199,7 @@ const Process = () => {
         .addLabel("process-lock", 0.82)
         .addLabel("process-progress", processProgressStart)
         .addLabel("process-hold", processProgressEnd)
-        .to(ring, { autoAlpha: 0.38, x: 80, scale: 0.96, duration: 0.2, ease: "none" }, processExitStart)
+        .to(ring, { autoAlpha: 0.38, x: isMobileLayout ? 0 : 80, scale: isMobileLayout ? 0.94 : 0.96, duration: 0.2, ease: "none" }, processExitStart)
         .to(construction, { autoAlpha: 0.28, duration: 0.16, ease: "none" }, processExitStart)
         .to(content, { autoAlpha: 0, y: -20, duration: 0.16, ease: "none" }, processExitStart)
         .to(transitionLine, { autoAlpha: 1, scaleY: 1, duration: 0.2, ease: "none" }, processExitStart)
