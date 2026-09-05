@@ -7,7 +7,7 @@ const AboutManifesto = () => {
   const sectionRef = useRef(null);
 
   return (
-    <section ref={sectionRef} className={styles.manifesto} aria-labelledby="manifesto-heading">
+    <section ref={sectionRef} className={styles.manifesto} aria-labelledby="manifesto-heading" data-navbar-theme="dark">
       <div className={styles.stage} data-manifesto-stage>
         <svg className={styles.linework} viewBox="0 0 1600 1200" preserveAspectRatio="none" aria-hidden="true">
           <g className={styles.drawing} data-manifesto-linework>

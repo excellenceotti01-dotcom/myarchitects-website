@@ -11,7 +11,7 @@ const StudioCulture = () => {
   const stageRef = useRef(null);
 
   return (
-    <section ref={sectionRef} className={styles.culture} aria-labelledby="studio-culture-heading">
+    <section ref={sectionRef} className={styles.culture} aria-labelledby="studio-culture-heading" data-navbar-theme="light">
       <div ref={stageRef} className={styles.stage} data-culture-stage>
         <div className={styles.canvas}>
           <div className={styles.marks} data-culture-marks aria-hidden="true">

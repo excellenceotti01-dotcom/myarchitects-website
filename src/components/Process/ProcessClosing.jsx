@@ -20,7 +20,7 @@ const ProcessClosing = () => {
   useProcessClosingEffects(sectionRef);
 
   return (
-    <section ref={sectionRef} className={styles.closing} aria-labelledby="process-closing-heading">
+    <section ref={sectionRef} className={styles.closing} aria-labelledby="process-closing-heading" data-navbar-theme="dark">
       <div className={styles.stage} data-closing-stage>
         <div className={styles.upper}>
           <div className={styles.media} data-closing-media>

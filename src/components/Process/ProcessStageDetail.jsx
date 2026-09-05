@@ -15,7 +15,7 @@ const ProcessStageDetail = () => {
   const sectionRef = useRef(null);
   useProcessStageDetailEffects(sectionRef);
 
-  return <section ref={sectionRef} className={styles.section} aria-label="Process stage detail">
+  return <section ref={sectionRef} className={styles.section} aria-label="Process stage detail" data-navbar-theme="dark">
     <div className={styles.stage} data-process-detail-stage>
       <div className={styles.grid} aria-hidden="true" />
       <div className={styles.content}>

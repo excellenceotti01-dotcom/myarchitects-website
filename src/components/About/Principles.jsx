@@ -41,7 +41,7 @@ const Principles = () => {
   }, [activeIndex]);
 
   return (
-    <section ref={sectionRef} className={`${styles.principles} ${styles.motionReady}`} aria-labelledby="principles-heading">
+    <section ref={sectionRef} className={`${styles.principles} ${styles.motionReady}`} aria-labelledby="principles-heading" data-navbar-theme="dark">
       <div ref={stageRef} className={styles.stage} data-principles-stage>
       <div className={styles.container}>
         <aside className={styles.sidebar} data-principles-sidebar>

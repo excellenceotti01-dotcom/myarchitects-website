@@ -35,6 +35,16 @@
   opacity: 0;
   visibility: hidden;
   will-change: transform, opacity;
+  --navbar-text: var(--color-text-primary);
+  --navbar-border: rgba(255, 255, 255, 0.34);
+  --navbar-underline: #ffffff;
+  transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+.navbar[data-navbar-mode="light"] {
+  --navbar-text: var(--color-text);
+  --navbar-border: rgba(43, 43, 43, 0.34);
+  --navbar-underline: var(--color-text);
 }
 
 .visible {
@@ -53,6 +63,11 @@
   width: auto;
   height: 1.2rem;
   object-fit: contain;
+  transition: filter 0.4s ease;
+}
+
+.navbar[data-navbar-mode="light"] .logoImage {
+  filter: brightness(0) saturate(100%) invert(16%) sepia(8%) saturate(8%) hue-rotate(349deg) brightness(92%) contrast(92%);
 }
 
 
@@ -69,20 +84,20 @@
   padding: 0.6rem 1rem;
   background: transparent;
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.34);
+  border: 1px solid var(--navbar-border);
   border-radius: 999px;
-  color: #ffffff;
+  color: var(--navbar-text);
   font-family: var(--font-body);
   font-size: 0.74rem;
   font-weight: var(--fw-medium);
   letter-spacing: 0.035em;
   line-height: 1;
-  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
 }
 
 .projectCta:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.52);
+  background: color-mix(in srgb, var(--navbar-text) 16%, transparent);
+  border-color: color-mix(in srgb, var(--navbar-text) 52%, transparent);
 }
 
 .nav a {
@@ -92,11 +107,11 @@
   font-size: 0.95rem;
   font-weight: 400;
 
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--navbar-text);
 
   text-decoration: none;
 
-  transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  transition: color 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
 
@@ -110,14 +125,14 @@
   width: 0%;
   height: 1px;
 
-  background: #ffffff;
+  background: var(--navbar-underline);
 
   transition: width 0.3s ease;
 }
 
 
 .nav a:hover {
-  color: #ffffff;
+  color: var(--navbar-text);
   opacity: 0.78;
   transform: translateY(-1px);
 }

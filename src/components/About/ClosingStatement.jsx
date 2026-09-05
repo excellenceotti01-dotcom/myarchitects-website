@@ -9,7 +9,7 @@ const ClosingStatement = () => {
   const stageRef = useRef(null);
 
   return (
-    <section ref={sectionRef} className={styles.closing} aria-labelledby="about-closing-heading">
+    <section ref={sectionRef} className={styles.closing} aria-labelledby="about-closing-heading" data-navbar-theme="dark">
       <div ref={stageRef} className={styles.stage} data-closing-stage>
         <div className={styles.background} data-closing-background>
           <img src={closingBackground} alt="Contemporary residence at dusk" />

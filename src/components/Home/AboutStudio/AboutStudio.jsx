@@ -11,7 +11,7 @@ const AboutStudio = () => {
   useAboutStudioEffects(sectionRef, stageRef);
 
   return (
-    <section id="about" ref={sectionRef} className={styles.section} aria-labelledby="about-studio-heading">
+    <section id="about" ref={sectionRef} className={styles.section} aria-labelledby="about-studio-heading" data-navbar-theme="dark">
       <div ref={stageRef} className={styles.stage}>
         <div className={styles.grid} data-about-grid aria-hidden="true" />
         <div className={styles.bounds} aria-hidden="true">

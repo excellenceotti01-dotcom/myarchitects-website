@@ -19,7 +19,7 @@ const Hero = ({ navbarRef, onRevealComplete }) => {
       onRevealStart={() => setShouldLoadVideo(true)}
       onRevealComplete={() => setPreloaderComplete(true)}
     >
-      <section id="top" ref={heroRef} className={styles.hero}>
+      <section id="top" ref={heroRef} className={styles.hero} data-navbar-theme="dark">
         <HeroBackground />
         <HeroMedia shouldLoad={shouldLoadVideo} />
         <HeroOverlay />

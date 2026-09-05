@@ -210,7 +210,7 @@ const Process = () => {
   }, []);
 
   return (
-    <section id="process" ref={sectionRef} className={styles.process} aria-labelledby="process-heading">
+    <section id="process" ref={sectionRef} className={styles.process} aria-labelledby="process-heading" data-navbar-theme="dark">
       <div ref={stageRef} className={styles.sharedStage}>
       <div ref={introductionRef} className={styles.introduction}>
         <MYArchitectsCharacterField sectionRef={introductionRef} />

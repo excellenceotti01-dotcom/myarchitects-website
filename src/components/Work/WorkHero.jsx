@@ -48,7 +48,7 @@ const WorkHero = ({ restorationContext }) => {
   };
 
   return (
-    <section ref={sectionRef} className={styles.hero} aria-labelledby="work-hero-heading" data-work-hero onFocusCapture={handleFocus} onBlurCapture={handleBlur}>
+    <section ref={sectionRef} className={styles.hero} aria-labelledby="work-hero-heading" data-work-hero data-navbar-theme="dark" onFocusCapture={handleFocus} onBlurCapture={handleBlur}>
       <div className={styles.marks} aria-hidden="true">
         <span className={`${styles.verticalGuide} ${styles.guideLeft}`} />
         <span className={`${styles.verticalGuide} ${styles.guideRight}`} />

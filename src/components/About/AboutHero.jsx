@@ -18,7 +18,7 @@ const AboutHero = () => {
   }, [videoReady]);
 
   return (
-    <section ref={heroRef} className={styles.hero} aria-labelledby="about-heading">
+    <section ref={heroRef} className={styles.hero} aria-labelledby="about-heading" data-navbar-theme="dark">
       <div className={styles.stage}>
         <div className={styles.content}>
           <h1 id="about-heading" className={`${styles.heading} ${videoFailed && !videoReady ? styles.headingFailure : ""}`} data-about-heading>

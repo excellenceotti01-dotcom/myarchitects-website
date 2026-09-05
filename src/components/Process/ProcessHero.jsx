@@ -17,7 +17,7 @@ const ProcessHero = () => {
   useProcessHeroEffects(sectionRef);
 
   return (
-    <section ref={sectionRef} className={styles.hero} aria-labelledby="process-hero-title">
+    <section ref={sectionRef} className={styles.hero} aria-labelledby="process-hero-title" data-navbar-theme="dark">
       <div className={styles.stage} data-process-stage>
         <div className={styles.dotGrid} aria-hidden="true" />
         <div className={styles.grain} aria-hidden="true" />

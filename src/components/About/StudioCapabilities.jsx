@@ -14,7 +14,7 @@ const StudioCapabilities = () => {
   const sectionRef = useRef(null);
 
   return (
-    <section ref={sectionRef} className={styles.capabilities} aria-labelledby="capabilities-heading">
+    <section ref={sectionRef} className={styles.capabilities} aria-labelledby="capabilities-heading" data-navbar-theme="dark">
       <div className={styles.stage} data-capabilities-stage>
         <div className={styles.canvas}>
           <div className={styles.marks} data-capabilities-marks aria-hidden="true">

@@ -10,7 +10,7 @@ const StudioStory = () => {
   const sectionRef = useRef(null);
 
   return (
-    <section ref={sectionRef} className={styles.story} aria-labelledby="studio-story-heading">
+    <section ref={sectionRef} className={styles.story} aria-labelledby="studio-story-heading" data-navbar-theme="light">
       <div className={styles.stage} data-story-stage>
         <div className={styles.canvas}>
           <div className={styles.draftingMarks} data-story-marks aria-hidden="true">

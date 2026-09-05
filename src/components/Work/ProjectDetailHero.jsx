@@ -15,7 +15,7 @@ const ProjectDetailHero = ({ project }) => {
   const lines = titleLines(project.title);
 
   return (
-    <section ref={sectionRef} className={styles.hero} aria-labelledby="project-detail-title" data-project-detail>
+    <section ref={sectionRef} className={styles.hero} aria-labelledby="project-detail-title" data-project-detail data-navbar-theme="dark">
       <div ref={stageRef} className={styles.stage} data-project-detail-stage>
         <div className={styles.drafting} aria-hidden="true">
           <span className={`${styles.guide} ${styles.guideVertical}`} />

@@ -56,7 +56,7 @@ const ProjectIndex = ({ restorationContext }) => {
   }, []);
 
   return (
-    <section className={styles.indexSection} aria-labelledby="project-index-heading" data-project-index>
+    <section className={styles.indexSection} aria-labelledby="project-index-heading" data-project-index data-navbar-theme="light">
       <div className={styles.stage} data-index-stage>
       <div className={styles.marks} aria-hidden="true">
         <span className={`${styles.guide} ${styles.guideVerticalLeft}`} />

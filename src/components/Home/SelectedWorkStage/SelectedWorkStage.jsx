@@ -74,7 +74,7 @@ const SelectedWorkStage = () => {
   }, [reducedMotion]);
 
   return (
-    <section ref={stageRef} className={`${styles.stage} ${reducedMotion ? styles.reducedMotion : ""}`} aria-label="Selected work">
+    <section ref={stageRef} className={`${styles.stage} ${reducedMotion ? styles.reducedMotion : ""}`} aria-label="Selected work" data-navbar-theme="dark">
       <div className={styles.stickyViewport}>
         <Intro stageMode splineSuspended={reducedMotion} />
         <Projects stageMode interactive={carouselReady || reducedMotion} />
