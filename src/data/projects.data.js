@@ -45,6 +45,16 @@ import cityRender02 from "../assets/images/City Project/render 2.png";
 import cityRender03 from "../assets/images/City Project/render 3.png";
 import cityRender04 from "../assets/images/City Project/render 4.png";
 import cityRender05 from "../assets/images/City Project/render 5.png";
+import landscapeGarden01 from "../assets/images/Landscape Garden/IMG_0354.png";
+import landscapeGarden02 from "../assets/images/Landscape Garden/IMG_0355.png";
+import landscapeGarden03 from "../assets/images/Landscape Garden/IMG_0357.png";
+import landscapeGarden04 from "../assets/images/Landscape Garden/IMG_0358.png";
+import landscapeGarden05 from "../assets/images/Landscape Garden/IMG_0359.png";
+import proposedGarden01 from "../assets/images/Garden 1/05.png";
+import proposedGarden02 from "../assets/images/Garden 1/06.png";
+import proposedGarden03 from "../assets/images/Garden 1/07.png";
+import proposedGarden04 from "../assets/images/Garden 1/08.png";
+import proposedGarden05 from "../assets/images/Garden 1/09.png";
 
 export const projects = [
   {
@@ -101,7 +111,7 @@ export const projects = [
     id: 2,
     number: "02",
     image: westCliffEatery01,
-    title: "West Cliff",
+    title: "Westcliffe",
     category: "Hospitality",
     heroLocation: "United Kingdom",
     location: "United Kingdom",
@@ -109,7 +119,7 @@ export const projects = [
     year: "2026",
     siteArea: "620 sqm",
     displayProjectNameInCredits: true,
-    slug: "/work/west-cliff",
+    slug: "/work/westcliffe",
     alt: "West Cliff evening dining room",
     statement: "A hospitality interior shaped around intimate dining settings, warm timber and a glazed roof that brings the canopy above into view.",
     statementLines: [
@@ -152,12 +162,12 @@ export const projects = [
     id: 3,
     number: "03",
     image: fiveBedroomFrontView,
-    title: "Five Bedroom Apartment",
+    title: "Proposed Five-Bedroom Apartment",
     category: "Residential",
     heroLocation: "Lagos",
     location: "Lagos State",
     year: "2026",
-    slug: "/work/five-bedroom-apartments",
+    slug: "/work/proposed-five-bedroom-apartment",
     alt: "Five Bedroom Apartment front elevation",
     statement: "A five-bedroom apartment residence composed through glazed living edges, planted balconies and generous outdoor rooms.",
     statementLines: [
@@ -203,12 +213,12 @@ export const projects = [
     id: 4,
     number: "04",
     image: renovationExt01,
-    title: "Residential Renovation",
+    title: "Proposed Residential Renovation",
     category: "Residential",
     heroLocation: "Lagos",
     location: "Lagos State",
     year: "2026",
-    slug: "/work/residential-renovation",
+    slug: "/work/proposed-residential-renovation",
     alt: "Residential Renovation exterior at dusk",
     statement: "A residential renovation shaped through warm timber, framed light and rooms that open naturally into one another.",
     statementLines: ["A residential", "renovation shaped through", "warm timber, framed", "light and rooms that", "open into one another."],
@@ -300,7 +310,7 @@ export const projects = [
     id: 6,
     number: "06",
     image: apartment3Living01,
-    title: "Three Bedroom Apartments",
+    title: "Proposed Three-Bedroom Apartments",
     category: "Residential",
     heroLocation: "Lagos",
     location: "Lagos State",
@@ -309,7 +319,7 @@ export const projects = [
     year: "2026",
     siteArea: "460 sqm",
     displayProjectNameInCredits: true,
-    slug: "/work/three-bedroom-apartments",
+    slug: "/work/proposed-three-bedroom-apartments",
     alt: "Three Bedroom Apartments living and dining interior",
     statement: "Three-bedroom apartment living composed through warm surfaces, framed light and connected rooms.",
     statementLines: ["Three-bedroom", "apartment living", "composed through warm", "surfaces, framed light", "and connected rooms."],
@@ -393,6 +403,102 @@ export const projects = [
       storySlides: [
         { headline: ["A courtyard", "held between", "solid edges."], paragraph: "The overhead view makes the landscape structure legible, with planted rooms and clear paths organising the shared ground." },
         { headline: ["A frontage", "that meets", "the city."], paragraph: "Layered balconies, framed glazing and a planted threshold give the final street view a clear public presence." },
+      ],
+    },
+  },
+  {
+    id: 8,
+    number: "08",
+    image: landscapeGarden01,
+    title: "Proposed Landscape Garden",
+    category: "Residential",
+    heroLocation: "Lagos",
+    location: "Lagos, Nigeria",
+    projectType: "Landscape Design",
+    status: "Proposed",
+    year: "2026",
+    siteArea: "1,000 sqm",
+    displayProjectNameInCredits: true,
+    slug: "/work/proposed-landscape-garden",
+    alt: "Proposed Landscape Garden planting and outdoor path",
+    statement: "A proposed landscape garden shaped through planting, movement and outdoor rooms.",
+    statementLines: ["A proposed", "landscape garden", "shaped through", "planting, movement", "and outdoor rooms."],
+    brief: "The proposal layers planting, open lawns and defined paths into a garden sequence that moves between arrival, gathering and quieter edges.",
+    designResponse: "Planting beds, clipped forms and changes in ground cover give the landscape a clear rhythm while keeping the outdoor rooms connected.",
+    concept: {
+      headline: "A garden proposal built from planting, shade and movement.",
+      headlineLines: ["A garden proposal", "built from planting,", "shade and movement."],
+      paragraph: "The landscape is organised as a sequence of planted thresholds and open clearings, using texture and canopy to shape the experience across the site.",
+      mainImage: landscapeGarden02,
+      mainAlt: "Proposed Landscape Garden planted outdoor room",
+      detailImage: landscapeGarden03,
+      detailAlt: "Proposed Landscape Garden planting detail and path edge",
+      annotations: [
+        { id: "planted", label: ["LAYERED PLANTING", "BUILDS DEPTH"] },
+        { id: "views", label: ["GARDEN PATH", "GUIDES MOVEMENT"] },
+        { id: "shaded", label: ["OPEN LAWN", "CREATES A CLEARING"] },
+        { id: "screens", label: ["PLANTED EDGE", "FRAMES THE VIEW"] },
+      ],
+    },
+    spatialExperience: {
+      label: "Spatial Experience",
+      headline: ["Moving", "through planting,", "shade and", "open ground."],
+      paragraph: "The garden sequence shifts between planted edges, paths and open clearings, allowing each view to carry a different degree of enclosure and release.",
+      images: [
+        { image: landscapeGarden04, alt: "Proposed Landscape Garden open planted clearing" },
+        { image: landscapeGarden05, alt: "Proposed Landscape Garden layered planting and outdoor path" },
+      ],
+      storySlides: [
+        { headline: ["A planted edge", "that frames", "the arrival."], paragraph: "Dense planting establishes the first threshold, giving the garden a defined edge and a measured approach." },
+        { headline: ["An open room", "held in", "green layers."], paragraph: "A wider clearing opens between planted beds, creating room for pause and a longer view across the landscape." },
+      ],
+    },
+  },
+  {
+    id: 9,
+    number: "09",
+    image: proposedGarden01,
+    title: "Proposed Garden 1",
+    category: "Residential",
+    heroLocation: "Lagos",
+    location: "Lagos, Nigeria",
+    projectType: "Garden Design",
+    status: "Proposed",
+    year: "2026",
+    siteArea: "680 sqm",
+    displayProjectNameInCredits: true,
+    slug: "/work/proposed-garden-1",
+    alt: "Proposed Garden 1 landscape view",
+    statement: "A proposed garden shaped through planted thresholds, framed views and a calm outdoor rhythm.",
+    statementLines: ["A proposed garden", "shaped through planted", "thresholds, framed views", "and a calm outdoor", "rhythm."],
+    brief: "The proposal brings together planting, paths and open garden rooms to create a sequence of outdoor spaces around the residence.",
+    designResponse: "Contrasting planting heights, clear edges and carefully framed views give the garden structure without making the landscape feel rigid.",
+    concept: {
+      headline: "A garden study for clear edges, planting and pause.",
+      headlineLines: ["A garden study", "for clear edges,", "planting and pause."],
+      paragraph: "The landscape combines layered planting with simple paths and framed openings, creating a composed outdoor setting that remains easy to move through.",
+      mainImage: proposedGarden02,
+      mainAlt: "Proposed Garden 1 layered planting and walkway",
+      detailImage: proposedGarden03,
+      detailAlt: "Proposed Garden 1 planting and garden edge detail",
+      annotations: [
+        { id: "planted", label: ["LAYERED BEDS", "CREATE ENCLOSURE"] },
+        { id: "views", label: ["PATH ALIGNMENT", "SETS THE ROUTE"] },
+        { id: "shaded", label: ["CANOPY PLANTING", "FILTERS THE VIEW"] },
+        { id: "screens", label: ["OPEN CLEARING", "MAKES ROOM TO PAUSE"] },
+      ],
+    },
+    spatialExperience: {
+      label: "Spatial Experience",
+      headline: ["A garden", "revealed through", "layers of", "green and light."],
+      paragraph: "Two views follow the proposed garden from its planted approach into a more open landscape room, keeping the sequence simple and legible.",
+      images: [
+        { image: proposedGarden04, alt: "Proposed Garden 1 planted approach" },
+        { image: proposedGarden05, alt: "Proposed Garden 1 open landscape room" },
+      ],
+      storySlides: [
+        { headline: ["A planted approach", "held in", "quiet layers."], paragraph: "The first view uses varied planting and a clear path to establish a gentle transition into the garden." },
+        { headline: ["A clearing", "that opens", "the landscape."], paragraph: "The final view releases into a wider garden room where planting frames a calm, open centre." },
       ],
     },
   },
