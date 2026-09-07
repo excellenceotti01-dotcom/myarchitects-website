@@ -54,8 +54,8 @@ const ProjectImageStoryEffects = ({ sectionRef, stageRef }) => {
             .to(counters[index], { autoAlpha: 1, duration: 0.14, ease: "none" }, at + 0.18);
           if (copies[index]) {
             timeline
-              .to(copies[index - 1], { autoAlpha: 0, y: -10, duration: 0.2, ease: "none" }, at)
-              .to(copies[index], { autoAlpha: 1, y: 0, duration: 0.28, ease: "power2.out" }, at + 0.08);
+              .to(copies[index - 1], { autoAlpha: 0, y: -8, duration: 0.08, ease: "none" }, at)
+              .to(copies[index], { autoAlpha: 1, y: 0, duration: 0.12, ease: "power2.out" }, at + 0.04);
           }
           if (images[index + 1]) timeline.to(images[index + 1], { autoAlpha: 1, ...preview, duration: 0.28, ease: "power2.out" }, at + 0.18);
           timeline.to({}, { duration: 0.18 }, at + 0.43);
