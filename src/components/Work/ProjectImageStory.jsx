@@ -21,7 +21,7 @@ const ProjectImageStory = ({ project }) => {
             </div>
           ))}
           <div className={styles.counter} aria-label="Image sequence progress">
-            {experience.images.map((_, index) => <span key={index} data-story-counter>{String(index + 1).padStart(2, "0")} <i>/ 04</i></span>)}
+            {experience.images.map((_, index) => <span key={index} data-story-counter>{String(index + 1).padStart(2, "0")} <i>/ {String(experience.images.length).padStart(2, "0")}</i></span>)}
           </div>
         </div>
         <div className={styles.images} aria-live="off">

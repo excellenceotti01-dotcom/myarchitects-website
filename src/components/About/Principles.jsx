@@ -3,7 +3,7 @@ import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import PrinciplesEffects from "./PrinciplesEffects";
 import styles from "./Principles.module.css";
 import landscapeImage from "../../assets/images/5 Bedroom Apartment/swimming pool 1.png";
-import detailImage from "../../assets/images/Aerial City/06.png";
+import detailImage from "../../assets/images/Aeris/06.png";
 import featureImage from "../../assets/images/Residential Renovation/living room 01.png";
 import hospitalityImage from "../../assets/images/Westcliff/conservatory 02.png";
 

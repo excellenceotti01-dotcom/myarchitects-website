@@ -1,10 +1,10 @@
-import aerialCity01 from "../assets/images/Aerial City/01.png";
-import aerialCity02 from "../assets/images/Aerial City/02.png";
-import aerialCity03 from "../assets/images/Aerial City/03.png";
-import aerialCity04 from "../assets/images/Aerial City/04.png";
-import aerialCity05 from "../assets/images/Aerial City/05.png";
-import aerialCity06 from "../assets/images/Aerial City/06.png";
-import aerialCity07 from "../assets/images/Aerial City/07.png";
+import aerialCity01 from "../assets/images/Aeris/01.png";
+import aerialCity02 from "../assets/images/Aeris/02.png";
+import aerialCity03 from "../assets/images/Aeris/03.png";
+import aerialCity04 from "../assets/images/Aeris/04.png";
+import aerialCity05 from "../assets/images/Aeris/05.png";
+import aerialCity06 from "../assets/images/Aeris/06.png";
+import aerialCity07 from "../assets/images/Aeris/07.png";
 import westCliffConservatory01 from "../assets/images/Westcliff/conservatory 01.png";
 import westCliffConservatory02 from "../assets/images/Westcliff/conservatory 02.png";
 import westCliffEatery01 from "../assets/images/Westcliff/eatery 01.png";
@@ -26,21 +26,40 @@ import renovationLiving01 from "../assets/images/Residential Renovation/living r
 import renovationLiving02 from "../assets/images/Residential Renovation/living room 02.png";
 import renovationBedroom01 from "../assets/images/Residential Renovation/bedroom 01.png";
 import renovationBathroom01 from "../assets/images/Residential Renovation/bathroom01.png";
+import eventCenter01 from "../assets/images/Event Center/001.png";
+import eventCenter02 from "../assets/images/Event Center/002.png";
+import eventCenter03 from "../assets/images/Event Center/003.png";
+import eventCenter04 from "../assets/images/Event Center/004.png";
+import eventCenter05 from "../assets/images/Event Center/005.png";
+import eventCenter06 from "../assets/images/Event Center/006.png";
+import eventCenter07 from "../assets/images/Event Center/007.png";
+import apartment3Living01 from "../assets/images/3 Bedroom Apartment/living room 01.png";
+import apartment3Living02 from "../assets/images/3 Bedroom Apartment/living room 02.png";
+import apartment3Dining01 from "../assets/images/3 Bedroom Apartment/dining room 01.png";
+import apartment3Dining02 from "../assets/images/3 Bedroom Apartment/dining rm 02.png";
+import apartment3Kitchen01 from "../assets/images/3 Bedroom Apartment/kitchen 01.png";
+import apartment3Bedroom01 from "../assets/images/3 Bedroom Apartment/bedroom 01.png";
+import apartment3Bathroom01 from "../assets/images/3 Bedroom Apartment/bathroom 01.png";
+import cityRender01 from "../assets/images/City Project/render.png";
+import cityRender02 from "../assets/images/City Project/render 2.png";
+import cityRender03 from "../assets/images/City Project/render 3.png";
+import cityRender04 from "../assets/images/City Project/render 4.png";
+import cityRender05 from "../assets/images/City Project/render 5.png";
 
 export const projects = [
   {
     id: 1,
     number: "01",
     image: aerialCity05,
-    title: "Aerial City",
-    category: "Commercial",
+    title: "Aeris",
+    category: "Hospitality",
     projectType: "Restroom / Toilet Design",
     location: "Lagos, Nigeria",
     status: "Completed",
     year: "2026",
     siteArea: "420 sqm",
-    slug: "/work/aerial-city",
-    alt: "Aerial City wash basin area",
+    slug: "/work/aeris",
+    alt: "Aeris wash basin area",
     statement: "Restroom interiors shaped through warm stone, curved joinery and calm planted light.",
     statementLines: [
       "Restroom interiors",
@@ -49,16 +68,16 @@ export const projects = [
       "joinery and calm",
       "planted light.",
     ],
-    brief: "Aerial City arranges the washroom experience as a sequence of rounded stone surfaces, wash areas and sheltered sightlines, with planting drawing daylight into the interior.",
+    brief: "Aeris arranges the washroom experience as a sequence of rounded stone surfaces, wash areas and sheltered sightlines, with planting drawing daylight into the interior.",
     designResponse: "A dark basin, curved vanity joinery and timber slats bring contrast and warmth to the wash spaces, while continuous wall and floor finishes keep the rooms clear and composed.",
     concept: {
       headline: "Restroom spaces shaped for calm, clarity and comfort.",
       headlineLines: ["Restroom spaces", "shaped for calm,", "clarity and comfort."],
       paragraph: "A curved ceiling line, stone-clad walls and a continuous vanity organise the wash area into a clear, comfortable sequence, while mirrors and recessed light extend the room's depth.",
       mainImage: aerialCity06,
-      mainAlt: "Aerial City curved wash basin vanity",
+      mainAlt: "Aeris curved wash basin vanity",
       detailImage: aerialCity07,
-      detailAlt: "Aerial City restroom privacy threshold and stone finish",
+      detailAlt: "Aeris restroom privacy threshold and stone finish",
       annotations: [
         { id: "planted", label: ["TIMBER SLAT SCREEN", "DEFINES WASH AREAS"] },
         { id: "views", label: ["CURVED STONE WALL", "FRAMES THE BASINS"] },
@@ -71,10 +90,10 @@ export const projects = [
       headline: ["Moving", "through finish,", "light and", "privacy."],
       paragraph: "From the planted threshold to the basin wall, each view focuses on material continuity, controlled light and clear movement through the washroom interior.",
       images: [
-        { image: aerialCity04, alt: "Aerial City planted interior threshold" },
-        { image: aerialCity01, alt: "Aerial City exterior approach" },
-        { image: aerialCity02, alt: "Aerial City shaded entry canopy" },
-        { image: aerialCity03, alt: "Aerial City entrance frontage" },
+        { image: aerialCity04, alt: "Aeris planted interior threshold" },
+        { image: aerialCity01, alt: "Aeris exterior approach" },
+        { image: aerialCity02, alt: "Aeris shaded entry canopy" },
+        { image: aerialCity03, alt: "Aeris entrance frontage" },
       ],
     },
   },
@@ -84,8 +103,8 @@ export const projects = [
     image: westCliffEatery01,
     title: "West Cliff",
     category: "Hospitality",
-    heroLocation: "Lagos",
-    location: "Lagos State",
+    heroLocation: "United Kingdom",
+    location: "United Kingdom",
     status: "Completed",
     year: "2026",
     siteArea: "620 sqm",
@@ -228,6 +247,152 @@ export const projects = [
         { headline: ["A living room", "anchored by", "texture and outlook."], paragraph: "A textured stone wall, low built-in media joinery and generous glazing give the living room a grounded centre while keeping the landscape present at the edge." },
         { headline: ["A bedroom", "held in quieter", "layers of light."], paragraph: "The bedroom shifts the palette toward softer surfaces and filtered daylight, creating a more private room within the wider renovation." },
         { headline: ["A bathroom", "finished for", "clarity and ease."], paragraph: "Stone, reflective surfaces and integrated lighting keep the bathroom precise and uncluttered, with each fixture given a clear place in the room." },
+      ],
+    },
+  },
+  {
+    id: 5,
+    number: "05",
+    image: eventCenter01,
+    title: "Event Center",
+    category: "Commercial",
+    heroLocation: "United Kingdom",
+    location: "United Kingdom",
+    projectType: "Event Center",
+    status: "Completed",
+    year: "2026",
+    siteArea: "1,200 sqm",
+    displayProjectNameInCredits: true,
+    slug: "/work/event-center",
+    alt: "Event Center event hall with arched windows and banquet tables",
+    statement: "A civic event interior shaped around daylight, gathering and a clear ceremonial rhythm.",
+    statementLines: ["A civic event", "interior shaped around", "daylight, gathering", "and a clear", "ceremonial rhythm."],
+    brief: "The event center brings tall arched windows, layered curtains and long banquet tables into one bright room designed for shared occasions.",
+    designResponse: "Columns, chandeliers and carefully arranged tables give the hall a strong central order while keeping circulation legible around each gathering zone.",
+    concept: {
+      headline: "A generous hall for gathering, ceremony and shared light.",
+      headlineLines: ["A generous hall", "for gathering,", "ceremony and light."],
+      paragraph: "Tall openings and soft window treatments give the event room an open, welcoming character, while repeated lighting and furniture alignments keep the large volume composed.",
+      mainImage: eventCenter02,
+      mainAlt: "Event Center hall framed by arched windows and curtains",
+      detailImage: eventCenter03,
+      detailAlt: "Event Center banquet tables beneath chandeliers",
+      annotations: [
+        { id: "planted", label: ["ARCHED WINDOWS", "FRAME DAYLIGHT"] },
+        { id: "views", label: ["LAYERED CURTAINS", "SOFTEN THE HALL"] },
+        { id: "shaded", label: ["CHANDELIER LIGHTING", "SETS THE RHYTHM"] },
+        { id: "screens", label: ["BANQUET TABLES", "ORGANISE GATHERING"] },
+      ],
+    },
+    spatialExperience: {
+      label: "Spatial Experience",
+      headline: ["Moving", "through light,", "gathering and", "occasion."],
+      paragraph: "The sequence moves from the bright arrival edge into the central hall, where curtains, chandeliers and table settings shape a welcoming event atmosphere.",
+      images: [
+        { image: eventCenter04, alt: "Event Center interior with framed openings and event seating" },
+        { image: eventCenter05, alt: "Event Center gathering hall with chandeliers" },
+        { image: eventCenter06 ?? eventCenter03, alt: "Event Center banquet setting" },
+        { image: eventCenter07 ?? eventCenter02, alt: "Event Center architectural interior" },
+      ],
+    },
+  },
+  {
+    id: 6,
+    number: "06",
+    image: apartment3Living01,
+    title: "Three Bedroom Apartments",
+    category: "Residential",
+    heroLocation: "Lagos",
+    location: "Lagos State",
+    projectType: "Three Bedroom Apartment",
+    status: "Completed",
+    year: "2026",
+    siteArea: "460 sqm",
+    displayProjectNameInCredits: true,
+    slug: "/work/three-bedroom-apartments",
+    alt: "Three Bedroom Apartments living and dining interior",
+    statement: "Three-bedroom apartment living composed through warm surfaces, framed light and connected rooms.",
+    statementLines: ["Three-bedroom", "apartment living", "composed through warm", "surfaces, framed light", "and connected rooms."],
+    brief: "The apartment brings living, dining and kitchen spaces into a connected interior, using layered finishes and carefully placed openings to support everyday movement.",
+    designResponse: "Textured wall surfaces, built-in storage, soft furnishings and a detailed ceiling create a calm shared setting while keeping each zone distinct.",
+    concept: {
+      headline: "A connected apartment shaped for daily life and retreat.",
+      headlineLines: ["A connected apartment", "shaped for daily life", "and retreat."],
+      paragraph: "The shared rooms are organised as a sequence of living, dining and kitchen moments, held together by warm materials, clear sightlines and controlled daylight.",
+      mainImage: apartment3Living02,
+      mainAlt: "Three Bedroom Apartments living room with textured feature wall",
+      detailImage: apartment3Dining01,
+      detailAlt: "Three Bedroom Apartments dining room and layered ceiling",
+      annotations: [
+        { id: "planted", label: ["TEXTURED FEATURE WALL", "ANCHORS THE LIVING ROOM"] },
+        { id: "views", label: ["BUILT-IN MEDIA", "KEEPS THE WALL COMPOSED"] },
+        { id: "shaded", label: ["LAYERED CEILING", "DEFINES THE SHARED ZONE"] },
+        { id: "screens", label: ["DINING ARRANGEMENT", "EXTENDS THE ROOM"] },
+      ],
+    },
+    spatialExperience: {
+      label: "Spatial Experience",
+      headline: ["Rooms shift", "from gathering", "to quieter", "daily rituals."],
+      paragraph: "The apartment story moves between shared living, kitchen preparation, bedrooms and bathrooms, allowing each room to carry a distinct level of light, texture and privacy.",
+      images: [
+        { image: apartment3Kitchen01, alt: "Three Bedroom Apartments kitchen interior" },
+        { image: apartment3Bedroom01, alt: "Three Bedroom Apartments bedroom interior" },
+        { image: apartment3Bathroom01, alt: "Three Bedroom Apartments bathroom interior" },
+        { image: apartment3Dining02, alt: "Three Bedroom Apartments secondary dining interior" },
+      ],
+      storySlides: [
+        { headline: ["A kitchen", "organised for", "daily rhythm."], paragraph: "The kitchen keeps preparation close to the living spaces, with a clear arrangement of work surfaces, storage and light." },
+        { headline: ["A bedroom", "held in", "quiet layers."], paragraph: "Softer finishes and filtered daylight give the bedroom a more private character within the connected apartment." },
+        { headline: ["A bathroom", "finished for", "clarity and ease."], paragraph: "Fixtures, reflective surfaces and controlled light give the bathroom a precise, uncluttered atmosphere." },
+        { headline: ["A dining room", "that keeps", "gathering close."], paragraph: "The dining setting extends the shared living sequence, with furniture and ceiling detail giving the room a clear centre." },
+      ],
+    },
+  },
+  {
+    id: 7,
+    number: "07",
+    image: cityRender01,
+    title: "City Project",
+    category: "Commercial",
+    heroLocation: "Lagos",
+    location: "Lagos, Nigeria",
+    projectType: "Mixed-use Development",
+    status: "Completed",
+    year: "2026",
+    siteArea: "2,400 sqm",
+    displayProjectNameInCredits: true,
+    slug: "/work/city-project",
+    alt: "City Project brick and glass street elevation",
+    statement: "A city project shaped through clear edges, durable façades and a measured relationship to the street.",
+    statementLines: ["A city project", "shaped through clear", "edges, durable façades", "and a measured", "street relationship."],
+    brief: "Brick, glazing and planted edges give the project a legible public face, balancing solid wall planes with generous openings and a clear entrance sequence.",
+    designResponse: "The architecture shifts between textured masonry, dark frames and landscaped thresholds, creating a robust urban composition with moments of softness.",
+    concept: {
+      headline: "An urban frontage built from texture, rhythm and arrival.",
+      headlineLines: ["An urban frontage", "built from texture,", "rhythm and arrival."],
+      paragraph: "The elevations use brick, glazing and framed entrances to give the development a strong street presence while keeping movement and access easy to read.",
+      mainImage: cityRender02,
+      mainAlt: "City Project contemporary commercial elevation",
+      detailImage: cityRender03,
+      detailAlt: "City Project apartment entrance and street frontage",
+      annotations: [
+        { id: "planted", label: ["BRICK FACADE", "BUILDS MATERIAL DEPTH"] },
+        { id: "views", label: ["VERTICAL GLAZING", "BRINGS LIGHT IN"] },
+        { id: "shaded", label: ["FRAMED ENTRANCE", "MARKS ARRIVAL"] },
+        { id: "screens", label: ["LANDSCAPED EDGE", "SOFTENS THE STREET"] },
+      ],
+    },
+    spatialExperience: {
+      label: "Spatial Experience",
+      headline: ["Moving", "between street", "edge and", "shared ground."],
+      paragraph: "Two final views follow the project from its layered frontage to the planted courtyard and roof geometry that organise movement through the wider development.",
+      images: [
+        { image: cityRender04, alt: "City Project aerial courtyard and roof geometry" },
+        { image: cityRender05, alt: "City Project entrance frontage with balconies and planting" },
+      ],
+      storySlides: [
+        { headline: ["A courtyard", "held between", "solid edges."], paragraph: "The overhead view makes the landscape structure legible, with planted rooms and clear paths organising the shared ground." },
+        { headline: ["A frontage", "that meets", "the city."], paragraph: "Layered balconies, framed glazing and a planted threshold give the final street view a clear public presence." },
       ],
     },
   },

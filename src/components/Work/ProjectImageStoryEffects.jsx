@@ -25,7 +25,7 @@ const ProjectImageStoryEffects = ({ sectionRef, stageRef }) => {
 
         gsap.set(images, { autoAlpha: 0, ...preview });
         gsap.set(images[0], { autoAlpha: 1, ...main });
-        gsap.set(images[1], { autoAlpha: 1, ...preview });
+        if (images[1]) gsap.set(images[1], { autoAlpha: 1, ...preview });
         gsap.set(counters, { autoAlpha: 0 });
         gsap.set(counters[0], { autoAlpha: 1 });
         gsap.set(copies, { autoAlpha: 0, y: 18 });
@@ -44,7 +44,8 @@ const ProjectImageStoryEffects = ({ sectionRef, stageRef }) => {
           },
         });
 
-        [1, 2, 3].forEach((index, scene) => {
+        const sceneCount = Math.max(0, Math.min(images.length, counters.length, copies.length) - 1);
+        Array.from({ length: sceneCount }, (_, scene) => scene + 1).forEach((index, scene) => {
           const at = 0.5 + scene * 0.62;
           timeline
             .to(images[index - 1], { autoAlpha: 0, duration: 0.24, ease: "none" }, at)
