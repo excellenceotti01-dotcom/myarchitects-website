@@ -162,7 +162,7 @@
 
 .metadata {
   position: absolute;
-  top: clamp(35rem, 72vh, 45rem);
+  top: clamp(37rem, 78vh, 48rem);
   left: clamp(4.5rem, 5.7vw, 6rem);
   display: flex;
   flex-wrap: wrap;
@@ -207,6 +207,11 @@
   .title { width: min(100%, 42rem); margin-bottom: 1.5rem; font-size: clamp(3.25rem, 9vw, 5.25rem); }
   .metadata { margin-bottom: 3rem; }
   .scrollCue { display: none; }
+}
+
+@media (min-width: 961px) and (max-height: 850px) {
+  .title { top: 47vh; font-size: clamp(3rem, 4.8vw, 5.4rem); line-height: .9; }
+  .metadata { top: 78vh; }
 }
 
 @media (max-width: 640px) {
