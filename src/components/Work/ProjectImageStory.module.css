@@ -1,14 +1,14 @@
 .section { position:relative; min-height:100svh; background:#090a0a; color:#f1f0e8; }
 .stage { position:relative; height:100svh; min-height:42rem; overflow:hidden; isolation:isolate; background:#090a0a; }
 .stage::before { position:absolute; inset:0; z-index:0; background:radial-gradient(rgba(241,240,232,.18) .6px,transparent .75px); background-size:12px 12px; content:""; opacity:.22; pointer-events:none; }
-.copy { position:absolute; z-index:3; top:clamp(12rem,19vh,14.5rem); left:max(2.5rem,6vw); width:min(23rem,22vw); min-height:clamp(30rem,65vh,38rem); padding-bottom:2.5rem; box-sizing:border-box; }
+.copy { position:absolute; z-index:3; top:clamp(9.5rem,15vh,12rem); left:max(2.5rem,6vw); width:min(23rem,22vw); min-height:clamp(30rem,65vh,38rem); padding-bottom:2.5rem; box-sizing:border-box; }
 .storyCopy { position:absolute; top:0; left:0; width:100%; }
 .label { display:none; margin:0; font-family:var(--font-body); font-size:.72rem; font-weight:var(--fw-semibold); letter-spacing:.18em; text-transform:uppercase; }
 .copy h2 { margin:0; color:#f1f0e8; font-family:var(--font-display); font-size:clamp(3rem,3.65vw,4.9rem); font-weight:var(--fw-medium); letter-spacing:-.055em; line-height:1.03; }
 .copy h2 span { display:block; }
 .description { margin:clamp(1.9rem,3.5vh,3rem) 0 0; color:rgba(241,240,232,.76); font-size:clamp(.95rem,1.08vw,1.1rem); line-height:1.5; }
-.counter { position:absolute; left:0; bottom:0; height:1.6rem; margin:0; font-family:var(--font-body); font-size:1rem; line-height:1.6; }
-.counter span { position:absolute; inset:0; }.counter i { color:rgba(241,240,232,.58); font-style:normal; }
+.counter { position:absolute; left:0; bottom:0; width:max-content; min-width:4.6rem; height:1.6rem; margin:0; font-family:var(--font-body); font-size:1rem; line-height:1.6; }
+.counter span { position:absolute; inset:0; display:block; width:max-content; white-space:nowrap; }.counter i { color:rgba(241,240,232,.58); font-style:normal; }
 .images { position:absolute; z-index:1; inset:0; }.imageFrame { position:absolute; margin:0; overflow:hidden; background:#131414; will-change:left,top,width,height,opacity; }.imageFrame img { display:block; width:100%; height:100%; object-fit:cover; }.imageFrame:first-child img { object-position:center; }
 .measure { position:absolute; z-index:2; top:clamp(12.5rem,16vh,15rem); bottom:clamp(13rem,22vh,17rem); left:33.1%; width:1px; background:rgba(241,240,232,.8); }.measure::before,.measure::after { position:absolute; left:50%; width:7px; height:7px; background:#efeee6; content:""; transform:translateX(-50%); }.measure::before { top:0; }.measure::after { bottom:0; }
   @media (max-width:960px) { .section,.stage { height:auto; min-height:0; }.stage { padding:7rem 1.5rem 4rem; overflow:visible; }.copy { position:relative; top:auto; left:auto; width:min(100%,35rem); min-height:30rem; }.copy h2 { margin-top:0; }.counter { position:relative; left:auto; bottom:auto; margin-top:2rem; }.images { position:relative; display:grid; gap:1.25rem; margin-top:3rem; }.imageFrame { position:relative !important; inset:auto !important; width:100% !important; height:auto !important; aspect-ratio:16/10; opacity:1 !important; transform:none !important; }.imageFrame img { position:absolute; inset:0; }.measure { display:none; } }
