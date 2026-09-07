@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useMemo, useRef } from "react";
+import { Fragment, useEffect, useMemo, useRef } from "react";
 
 import { workIndexProjects } from "../../data/projects.data";
 import WorkHeroEffects from "./WorkHeroEffects";
@@ -23,6 +23,7 @@ const WorkHero = ({ restorationContext }) => {
 
   const activeProject = workIndexProjects[activeIndex];
   const previousProject = previousIndex === null ? null : workIndexProjects[previousIndex];
+  const activeProjectMetadata = [activeProject.location, activeProject.category, activeProject.year].filter(Boolean);
   const handleFocus = (event) => {
     if (event.target.closest("[data-pause-carousel]")) pause("focus");
   };
@@ -81,7 +82,7 @@ const WorkHero = ({ restorationContext }) => {
           </div>
           <div className={styles.caption} data-work-caption key={`caption-${activeProject.id}`}>
             <Link to={activeProject.slug} state={{ returnContext: { source: "work-hero", activeProjectId: activeProject.id } }} onClick={() => rememberHeroReturn(activeProject)} data-pause-carousel onPointerEnter={() => pause("pointer")} onPointerLeave={() => resume("pointer")}>{activeProject.title}</Link>
-            <p>{activeProject.location} <span aria-hidden="true">—</span> {activeProject.category}</p>
+            <p>{activeProjectMetadata.map((item, index) => <Fragment key={`${item}-${index}`}>{item}{index < activeProjectMetadata.length - 1 && <span aria-hidden="true">—</span>}</Fragment>)}</p>
           </div>
         </div>
 

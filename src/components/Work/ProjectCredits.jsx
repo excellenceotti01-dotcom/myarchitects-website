@@ -9,13 +9,15 @@ const ProjectCredits = ({ project, projects }) => {
   const previous = projects[(index - 1 + projects.length) % projects.length];
   const next = projects[(index + 1) % projects.length];
   const credits = [
+    project.displayProjectNameInCredits && ["Project", project.title],
     ["Architect", project.credits?.architect],
     ["Location", project.location],
     ["Typology", project.category],
+    ["Project type", project.projectType],
     ["Status", project.status],
-    ["Year", project.year],
+    ["Year completed", project.year],
     ["Photography", project.credits?.photography],
-  ].filter(([, value]) => value);
+  ].filter((entry) => entry?.[1]);
   ProjectCreditsEffects(sectionRef);
 
   const preview = (item, direction) => (

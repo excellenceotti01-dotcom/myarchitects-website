@@ -2,7 +2,7 @@ import { useRef } from "react";
 
 import ClosingStatementEffects from "./ClosingStatementEffects";
 import styles from "./ClosingStatement.module.css";
-import closingBackground from "../../assets/images/about/about-closing-background.png";
+import closingBackground from "../../assets/images/5 Bedroom Apartment/fire place .png";
 
 const ClosingStatement = () => {
   const sectionRef = useRef(null);
@@ -12,7 +12,7 @@ const ClosingStatement = () => {
     <section ref={sectionRef} className={styles.closing} aria-labelledby="about-closing-heading" data-navbar-theme="dark">
       <div ref={stageRef} className={styles.stage} data-closing-stage>
         <div className={styles.background} data-closing-background>
-          <img src={closingBackground} alt="Contemporary residence at dusk" />
+          <img src={closingBackground} alt="Residential apartment fire lounge at dusk" />
         </div>
         <div className={styles.vignette} data-closing-vignette aria-hidden="true" />
 

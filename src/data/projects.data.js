@@ -1,256 +1,236 @@
-import project1 from "../assets/images/project-1.png";
-import project2 from "../assets/images/project-2.png";
-import project3 from "../assets/images/project-3.png";
-import project4 from "../assets/images/project-4.png";
-import conceptExterior from "../assets/images/Work/Large exterior image.png";
-import conceptDetail from "../assets/images/Work/Small detail image.png";
-import spatialImage01 from "../assets/images/Work/Image 01.png";
-import spatialImage02 from "../assets/images/Work/Image 02.png";
-import spatialImage03 from "../assets/images/Work/Image 03.png";
-import spatialImage04 from "../assets/images/Work/Image 04.png";
-
-// Temporary detail content for the Work archive. Replace with client-approved
-// narratives and photography when the final portfolio is supplied.
-const placeholderDetail = ({ image, detailImage, statementLines, conceptLines, conceptParagraph, spatialHeadline, spatialParagraph, annotations }) => ({
-  placeholderContent: true,
-  credits: {
-    architect: "MYArchitects",
-    photography: "Studio Archive",
-  },
-  statementLines,
-  concept: {
-    headlineLines: conceptLines,
-    paragraph: conceptParagraph,
-    mainImage: image,
-    mainAlt: "Architectural project exterior",
-    detailImage,
-    detailAlt: "Architectural threshold and material detail",
-    annotations,
-  },
-  spatialExperience: {
-    label: "Spatial Experience",
-    headline: spatialHeadline,
-    paragraph: spatialParagraph,
-    images: [
-      { image: spatialImage01, alt: "Interior view and framed landscape" },
-      { image: spatialImage02, alt: "Filtered daylight through architectural elements" },
-      { image: spatialImage03, alt: "Planted threshold detail" },
-      { image: spatialImage04, alt: "Exterior relationship to the waterfront" },
-    ],
-  },
-});
+import aerialCity01 from "../assets/images/Aerial City/01.png";
+import aerialCity02 from "../assets/images/Aerial City/02.png";
+import aerialCity03 from "../assets/images/Aerial City/03.png";
+import aerialCity04 from "../assets/images/Aerial City/04.png";
+import aerialCity05 from "../assets/images/Aerial City/05.png";
+import aerialCity06 from "../assets/images/Aerial City/06.png";
+import aerialCity07 from "../assets/images/Aerial City/07.png";
+import westCliffConservatory01 from "../assets/images/Westcliff/conservatory 01.png";
+import westCliffConservatory02 from "../assets/images/Westcliff/conservatory 02.png";
+import westCliffEatery01 from "../assets/images/Westcliff/eatery 01.png";
+import westCliffEatery02 from "../assets/images/Westcliff/eatery 02.png";
+import westCliffEatery03 from "../assets/images/Westcliff/eatery 03.png";
+import westCliffLounge01 from "../assets/images/Westcliff/lounge 001.png";
+import westCliffReception01 from "../assets/images/Westcliff/reception 01.png";
+import fiveBedroom3dView from "../assets/images/5 Bedroom Apartment/3d veiw.png";
+import fiveBedroomFireLounge from "../assets/images/5 Bedroom Apartment/fire place .png";
+import fiveBedroomFrontView from "../assets/images/5 Bedroom Apartment/frnt veiw.png";
+import fiveBedroomPool01 from "../assets/images/5 Bedroom Apartment/swimming pool 1.png";
+import fiveBedroomPool02 from "../assets/images/5 Bedroom Apartment/swimming pool 2.png";
+import fiveBedroomTopView01 from "../assets/images/5 Bedroom Apartment/top veiw 1.png";
+import fiveBedroomTopView02 from "../assets/images/5 Bedroom Apartment/top veiw 2.png";
+import renovationExt01 from "../assets/images/Residential Renovation/ext1.png";
+import renovationExt02 from "../assets/images/Residential Renovation/ext2.png";
+import renovationKitchen01 from "../assets/images/Residential Renovation/kitchen 01.png";
+import renovationLiving01 from "../assets/images/Residential Renovation/living room 01.png";
+import renovationLiving02 from "../assets/images/Residential Renovation/living room 02.png";
+import renovationBedroom01 from "../assets/images/Residential Renovation/bedroom 01.png";
+import renovationBathroom01 from "../assets/images/Residential Renovation/bathroom01.png";
 
 export const projects = [
   {
     id: 1,
     number: "01",
-    image: project1,
-    title: "Lagos Waterfront Residence",
-    category: "Residential",
+    image: aerialCity05,
+    title: "Aerial City",
+    category: "Commercial",
+    projectType: "Restroom / Toilet Design",
     location: "Lagos, Nigeria",
-    year: "2026",
-    slug: "/work/lagos-waterfront-residence",
-    alt: "Lagos Waterfront Residence exterior",
-    statement: "A waterfront residence shaped around privacy, light and an uninterrupted relationship with the landscape.",
-    statementLines: [
-      "A waterfront residence",
-      "shaped around privacy,",
-      "light and an uninterrupted",
-      "relationship with",
-      "the landscape.",
-    ],
-    brief: "The brief called for a private family home that remained deeply connected to its waterfront setting. Rather than treating privacy as enclosure, the design uses layered thresholds, planted courts and filtered views.",
-    designResponse: "Living spaces unfold toward the water while shaded edges, screens and deep overhangs temper light and create a calm rhythm between interior and landscape.",
     status: "Completed",
-    siteArea: "1,240 sqm",
+    year: "2026",
+    siteArea: "420 sqm",
+    slug: "/work/aerial-city",
+    alt: "Aerial City wash basin area",
+    statement: "Restroom interiors shaped through warm stone, curved joinery and calm planted light.",
+    statementLines: [
+      "Restroom interiors",
+      "shaped through warm",
+      "stone, curved",
+      "joinery and calm",
+      "planted light.",
+    ],
+    brief: "Aerial City arranges the washroom experience as a sequence of rounded stone surfaces, wash areas and sheltered sightlines, with planting drawing daylight into the interior.",
+    designResponse: "A dark basin, curved vanity joinery and timber slats bring contrast and warmth to the wash spaces, while continuous wall and floor finishes keep the rooms clear and composed.",
     concept: {
-      headline: "Privacy shaped through layers, not walls.",
-      headlineLines: ["Privacy shaped", "through layers,", "not walls."],
-      paragraph: "Planted courts, filtered views and shaded edges create a calm sense of retreat while keeping the home deeply connected to the water.",
-      mainImage: conceptExterior,
-      mainAlt: "Layered waterfront exterior with planted courts and shaded edges",
-      detailImage: conceptDetail,
-      detailAlt: "Architectural screen and planted threshold detail",
+      headline: "Restroom spaces shaped for calm, clarity and comfort.",
+      headlineLines: ["Restroom spaces", "shaped for calm,", "clarity and comfort."],
+      paragraph: "A curved ceiling line, stone-clad walls and a continuous vanity organise the wash area into a clear, comfortable sequence, while mirrors and recessed light extend the room's depth.",
+      mainImage: aerialCity06,
+      mainAlt: "Aerial City curved wash basin vanity",
+      detailImage: aerialCity07,
+      detailAlt: "Aerial City restroom privacy threshold and stone finish",
       annotations: [
-        { id: "planted", label: ["PLANTED COURTS", "CREATE DEPTH"] },
-        { id: "views", label: ["FILTERED VIEWS", "TO THE LAGOON"] },
-        { id: "shaded", label: ["SHADED EDGES", "SOFTEN THE BUILT"] },
-        { id: "screens", label: ["SCREENS BALANCE", "PRIVACY AND LIGHT"] },
+        { id: "planted", label: ["TIMBER SLAT SCREEN", "DEFINES WASH AREAS"] },
+        { id: "views", label: ["CURVED STONE WALL", "FRAMES THE BASINS"] },
+        { id: "shaded", label: ["CONTINUOUS VANITY", "HOLDS THE BASINS"] },
+        { id: "screens", label: ["STONE PARTITION", "SHAPES PRIVACY"] },
       ],
     },
     spatialExperience: {
       label: "Spatial Experience",
-      headline: ["Moving", "through light,", "shade and", "landscape."],
-      paragraph: "A sequence of framed views, shaded thresholds and open living spaces draws the waterfront deep into the home.",
+      headline: ["Moving", "through finish,", "light and", "privacy."],
+      paragraph: "From the planted threshold to the basin wall, each view focuses on material continuity, controlled light and clear movement through the washroom interior.",
       images: [
-        { image: spatialImage01, alt: "Living space framing the Lagos lagoon" },
-        { image: spatialImage02, alt: "Filtered daylight through architectural screens" },
-        { image: spatialImage03, alt: "Planted courtyard threshold" },
-        { image: spatialImage04, alt: "Waterfront exterior at the lagoon" },
+        { image: aerialCity04, alt: "Aerial City planted interior threshold" },
+        { image: aerialCity01, alt: "Aerial City exterior approach" },
+        { image: aerialCity02, alt: "Aerial City shaded entry canopy" },
+        { image: aerialCity03, alt: "Aerial City entrance frontage" },
       ],
     },
   },
   {
     id: 2,
     number: "02",
-    image: project2,
-    title: "Eko Atlantic Pavilion",
-    category: "Cultural",
-    location: "Lagos, Nigeria",
-    year: "2025",
-    slug: "/work/eko-atlantic-pavilion",
-    alt: "Eko Atlantic Pavilion exterior",
-    statement: "A civic pavilion composed as a generous threshold between the city, the water and shared cultural life.",
-    brief: "The project brings together gathering, performance and informal exchange in a structure that remains open to the changing edge of the city.",
-    designResponse: "Deep shade, clear circulation and a robust material palette give the pavilion a calm, welcoming presence through the day and into the evening.",
+    image: westCliffEatery01,
+    title: "West Cliff",
+    category: "Hospitality",
+    heroLocation: "Lagos",
+    location: "Lagos State",
     status: "Completed",
-    siteArea: "2,180 sqm",
-    ...placeholderDetail({
-      image: project2,
-      detailImage: conceptDetail,
-      statementLines: ["A civic pavilion", "shaped as a generous", "threshold between", "city, water and", "shared cultural life."],
-      conceptLines: ["A public room", "at the water's", "edge."],
-      conceptParagraph: "Open edges, deep overhangs and shaded courts create a flexible civic threshold that connects gathering spaces to the changing waterfront.",
-      spatialHeadline: ["Gathering", "through shade,", "light and", "the city."],
-      spatialParagraph: "A sequence of sheltered thresholds and framed views supports informal exchange from arrival to the water's edge.",
+    year: "2026",
+    siteArea: "620 sqm",
+    displayProjectNameInCredits: true,
+    slug: "/work/west-cliff",
+    alt: "West Cliff evening dining room",
+    statement: "A hospitality interior shaped around intimate dining settings, warm timber and a glazed roof that brings the canopy above into view.",
+    statementLines: [
+      "A hospitality interior",
+      "shaped around intimate",
+      "dining settings, warm",
+      "timber and a glazed",
+      "roof overhead.",
+    ],
+    brief: "West Cliff pairs a light-filled conservatory dining room with quieter lounge and reception spaces, giving each moment of arrival, gathering and pause its own character.",
+    designResponse: "Round tables, timber chairs, layered window shades and soft overhead light establish a calm rhythm across the guest spaces, while distinct furniture groupings keep circulation clear.",
+    concept: {
+      headline: "A dining room shaped by light, rhythm and welcome.",
+      headlineLines: ["A dining room", "shaped by light,", "rhythm and welcome."],
+      paragraph: "The conservatory places generously spaced tables beneath a glazed roof, using timber seating, fabric shades and a warm floor finish to make the room feel composed from day into evening.",
+      mainImage: westCliffConservatory02,
+      mainAlt: "West Cliff conservatory dining tables beneath a glazed roof",
+      detailImage: westCliffReception01,
+      detailAlt: "West Cliff reception counter framed by dark material surrounds",
       annotations: [
-        { id: "planted", label: ["PLANTED COURTS", "FRAME ARRIVAL"] },
-        { id: "views", label: ["OPEN EDGES", "FACE THE WATER"] },
-        { id: "shaded", label: ["DEEP OVERHANGS", "TEMPER LIGHT"] },
-        { id: "screens", label: ["SCREENS FILTER", "LIGHT AND ACTIVITY"] },
+        { id: "planted", label: ["GLAZED ROOF", "BRINGS DAYLIGHT IN"] },
+        { id: "views", label: ["TABLE SETTINGS", "CREATE GATHERING"] },
+        { id: "shaded", label: ["TIMBER CHAIRS", "SOFTEN THE ROOM"] },
+        { id: "screens", label: ["CURVED RECEPTION", "SETS THE ARRIVAL"] },
       ],
-    }),
+    },
+    spatialExperience: {
+      label: "Spatial Experience",
+      headline: ["Moving", "from arrival", "to table and", "quiet pause."],
+      paragraph: "A sequence of reception, dining and lounge views moves between focused service points and more relaxed seating, with consistent timber, soft neutrals and controlled light holding the spaces together.",
+      images: [
+        { image: westCliffConservatory01, alt: "West Cliff conservatory dining room in daylight" },
+        { image: westCliffEatery02, alt: "West Cliff table settings and timber dining chairs" },
+        { image: westCliffEatery03, alt: "West Cliff intimate dining setting" },
+        { image: westCliffLounge01, alt: "West Cliff guest lounge with feature lighting" },
+      ],
+    },
   },
   {
     id: 3,
     number: "03",
-    image: project3,
-    title: "Ibadan Courtyard House",
+    image: fiveBedroomFrontView,
+    title: "Five Bedroom Apartment",
     category: "Residential",
-    location: "Ibadan, Nigeria",
-    year: "2024",
-    slug: "/work/ibadan-courtyard-house",
-    alt: "Ibadan Courtyard House exterior",
-    statement: "A family house arranged around a planted courtyard, where daily life moves easily between shelter and sky.",
-    brief: "The home needed to offer privacy while keeping each room connected to the landscape and to the rituals of a growing family.",
-    designResponse: "Courtyards, shaded verandas and carefully framed openings organise the plan into a sequence of quiet, light-filled spaces.",
+    heroLocation: "Lagos",
+    location: "Lagos State",
+    year: "2026",
+    slug: "/work/five-bedroom-apartments",
+    alt: "Five Bedroom Apartment front elevation",
+    statement: "A five-bedroom apartment residence composed through glazed living edges, planted balconies and generous outdoor rooms.",
+    statementLines: [
+      "A five-bedroom",
+      "apartment residence",
+      "composed through glazed",
+      "living edges, planted",
+      "balconies and outdoor rooms.",
+    ],
+    brief: "The front elevation layers open living spaces behind full-height glazing, with planted balcony edges and a stepped forecourt giving the residence a measured transition from street to home.",
+    designResponse: "A clear vertical stack, recessed dark planes and continuous glass balustrades bring shade, outlook and a strong sense of order to the apartment façade.",
     status: "Completed",
-    siteArea: "980 sqm",
-    ...placeholderDetail({
-      image: project3,
-      detailImage: conceptExterior,
-      statementLines: ["A family house", "organised around", "a planted courtyard", "and a calm rhythm", "of shelter and sky."],
-      conceptLines: ["Daily life", "orbits a planted", "court."],
-      conceptParagraph: "Courtyards, shaded verandas and framed openings turn privacy into a sequence of connected, light-filled rooms.",
-      spatialHeadline: ["Moving", "between court,", "shade and", "home."],
-      spatialParagraph: "Openings and thresholds guide daily movement between planted space, shared rooms and private retreat.",
+    siteArea: "780 sqm",
+    displayProjectNameInCredits: true,
+    concept: {
+      headline: "Apartment living shaped by light, planted edges and retreat.",
+      headlineLines: ["Apartment living", "shaped by light,", "planted edges and retreat."],
+      paragraph: "Stacked balconies, generous glazing and planted ledges give the five-bedroom residence a layered relationship to daylight and its landscaped forecourt.",
+      mainImage: fiveBedroom3dView,
+      mainAlt: "Five Bedroom Apartment façade with planted balconies and glazing",
+      detailImage: fiveBedroomFireLounge,
+      detailAlt: "Five Bedroom Apartment sunken fire lounge and terrace",
       annotations: [
-        { id: "planted", label: ["COURTYARD PLANTING", "BRINGS DEPTH"] },
-        { id: "views", label: ["FRAMED VIEWS", "CONNECT ROOMS"] },
-        { id: "shaded", label: ["SHADED VERANDAS", "SOFTEN TRANSITIONS"] },
-        { id: "screens", label: ["SCREENS BALANCE", "LIGHT AND PRIVACY"] },
+        { id: "planted", label: ["FULL-HEIGHT GLAZING", "OPENS THE LIVING FLOORS"] },
+        { id: "views", label: ["PLANTED BALCONIES", "SOFTEN THE FACADE"] },
+        { id: "shaded", label: ["STEPPED FORECOURT", "ORGANISES ARRIVAL"] },
+        { id: "screens", label: ["SUNKEN FIRE LOUNGE", "EXTENDS EVENING LIVING"] },
       ],
-    }),
+    },
+    spatialExperience: {
+      label: "Spatial Experience",
+      headline: ["Moving", "between water,", "landscape and", "home."],
+      paragraph: "Pool terraces, planted edges and upper-level views form a sequence of outdoor rooms, extending the apartment experience from arrival through to quiet retreat.",
+      images: [
+        { image: fiveBedroomPool01, alt: "Five Bedroom Apartment aerial pool terrace" },
+        { image: fiveBedroomPool02, alt: "Five Bedroom Apartment poolside seating and landscape" },
+        { image: fiveBedroomTopView01, alt: "Five Bedroom Apartment upper-level aerial view" },
+        { image: fiveBedroomTopView02, alt: "Five Bedroom Apartment roof and terrace plan view" },
+      ],
+    },
   },
   {
     id: 4,
     number: "04",
-    image: project4,
-    title: "Victoria Island Offices",
-    category: "Commercial",
-    location: "Lagos, Nigeria",
+    image: renovationExt01,
+    title: "Residential Renovation",
+    category: "Residential",
+    heroLocation: "Lagos",
+    location: "Lagos State",
     year: "2026",
-    slug: "/work/victoria-island-offices",
-    alt: "Victoria Island Offices interior",
-    statement: "A workplace shaped to support focus, exchange and a more generous rhythm of everyday work.",
-    brief: "The brief asked for an adaptable office that could bring teams together while giving individuals a range of quiet places to concentrate.",
-    designResponse: "Light, material consistency and a layered plan create an interior that feels connected, legible and comfortable over time.",
+    slug: "/work/residential-renovation",
+    alt: "Residential Renovation exterior at dusk",
+    statement: "A residential renovation shaped through warm timber, framed light and rooms that open naturally into one another.",
+    statementLines: ["A residential", "renovation shaped through", "warm timber, framed", "light and rooms that", "open into one another."],
+    brief: "The renovation brings a calm, material-led character to the home, pairing a layered exterior with brighter shared rooms and quieter private spaces.",
+    designResponse: "Timber floors, textured stone, built-in joinery and carefully placed openings give the interior a clear rhythm from kitchen to living room, bedroom and bath.",
     status: "Completed",
-    siteArea: "1,860 sqm",
-    ...placeholderDetail({
-      image: project4,
-      detailImage: conceptDetail,
-      statementLines: ["A workplace", "designed for focus,", "exchange and a", "more generous", "daily rhythm."],
-      conceptLines: ["Workspaces", "shaped for", "exchange."],
-      conceptParagraph: "Layered work settings, soft daylight and clear circulation create an adaptable workplace that supports both concentration and connection.",
-      spatialHeadline: ["Working", "through focus,", "light and", "exchange."],
-      spatialParagraph: "A range of shared and quiet settings gives teams a clear, comfortable rhythm throughout the day.",
+    siteArea: "640 sqm",
+    displayProjectNameInCredits: true,
+    concept: {
+      headline: "A home renewed through light, texture and everyday flow.",
+      headlineLines: ["A home renewed", "through light,", "texture and flow."],
+      paragraph: "The renewed interior connects practical rooms with a consistent palette of warm timber, pale stone and controlled natural light.",
+      mainImage: renovationExt02,
+      mainAlt: "Residential Renovation layered exterior and balcony",
+      detailImage: renovationLiving02,
+      detailAlt: "Residential Renovation secondary living room view",
       annotations: [
-        { id: "planted", label: ["PLANTED EDGES", "SOFTEN ARRIVAL"] },
-        { id: "views", label: ["FRAMED OUTLOOKS", "EXTEND FOCUS"] },
-        { id: "shaded", label: ["SHADED THRESHOLDS", "PACE MOVEMENT"] },
-        { id: "screens", label: ["SCREENS CREATE", "QUIET FOCUS"] },
+        { id: "planted", label: ["LAYERED FACADE", "SETS THE ARRIVAL"] },
+        { id: "views", label: ["FRAMED GLAZING", "BRINGS DAYLIGHT IN"] },
+        { id: "shaded", label: ["STONE FEATURE WALL", "ANCHORS THE ROOM"] },
+        { id: "screens", label: ["BUILT-IN JOINERY", "KEEPS THE LIVING EDGE CLEAR"] },
       ],
-    }),
+    },
+    spatialExperience: {
+      label: "Spatial Experience",
+      headline: ["Rooms change", "as light moves", "from kitchen", "to retreat."],
+      paragraph: "Each scene follows a different part of the renovation, letting the kitchen, living room, bedroom and bathroom carry their own material and spatial character.",
+      images: [
+        { image: renovationKitchen01, alt: "Residential Renovation kitchen with timber floor and central island" },
+        { image: renovationLiving01, alt: "Residential Renovation living room with textured stone wall and generous glazing" },
+        { image: renovationBedroom01, alt: "Residential Renovation bedroom interior" },
+        { image: renovationBathroom01, alt: "Residential Renovation bathroom interior with integrated lighting" },
+      ],
+      storySlides: [
+        { headline: ["A kitchen", "organised around", "light and daily rhythm."], paragraph: "Warm timber flooring, a compact central island and full-height cabinetry make the kitchen feel practical without losing its calm, residential character." },
+        { headline: ["A living room", "anchored by", "texture and outlook."], paragraph: "A textured stone wall, low built-in media joinery and generous glazing give the living room a grounded centre while keeping the landscape present at the edge." },
+        { headline: ["A bedroom", "held in quieter", "layers of light."], paragraph: "The bedroom shifts the palette toward softer surfaces and filtered daylight, creating a more private room within the wider renovation." },
+        { headline: ["A bathroom", "finished for", "clarity and ease."], paragraph: "Stone, reflective surfaces and integrated lighting keep the bathroom precise and uncluttered, with each fixture given a clear place in the room." },
+      ],
+    },
   },
 ];
 
-// Placeholder Work archive data. Replace these six records with the client's
-// confirmed portfolio when its final projects and photography are supplied.
-export const workIndexProjects = [
-  ...projects,
-  {
-    id: 5,
-    number: "05",
-    image: project1,
-    title: "Coastline Retreat",
-    category: "Hospitality",
-    location: "Lagos, Nigeria",
-    year: "2026",
-    slug: "/work/coastline-retreat",
-    alt: "Coastline Retreat exterior",
-    statement: "A coastal retreat that uses shade, breeze and framed horizons to make landscape part of daily life.",
-    brief: "The project balances hospitality with a close, respectful relationship to its exposed shoreline and changing climate.",
-    designResponse: "Low profiles, deep overhangs and layered outdoor rooms make a relaxed sequence between arrival, gathering and rest.",
-    status: "Completed",
-    siteArea: "3,120 sqm",
-    temporary: true,
-    ...placeholderDetail({
-      image: project1,
-      detailImage: conceptDetail,
-      statementLines: ["A coastal retreat", "formed through", "shade, breeze and", "framed horizons", "at the shoreline."],
-      conceptLines: ["Retreat", "shaped by shade", "and breeze."],
-      conceptParagraph: "Low profiles, layered outdoor rooms and deep shade make the shoreline part of an unhurried sequence of arrival, gathering and rest.",
-      spatialHeadline: ["Resting", "between breeze,", "shade and", "horizon."],
-      spatialParagraph: "Deep edges and framed outdoor rooms bring changing light, water and landscape into daily rituals of retreat.",
-      annotations: [
-        { id: "planted", label: ["COASTAL PLANTING", "BRINGS SHELTER"] },
-        { id: "views", label: ["FRAMED HORIZONS", "MEET THE WATER"] },
-        { id: "shaded", label: ["DEEP EDGES", "TEMPER THE SUN"] },
-        { id: "screens", label: ["SCREENS FILTER", "BREEZE AND LIGHT"] },
-      ],
-    }),
-  },
-  {
-    id: 6,
-    number: "06",
-    image: project3,
-    title: "The Commons",
-    category: "Mixed-use",
-    location: "Lagos, Nigeria",
-    year: "2026",
-    slug: "/work/the-commons",
-    alt: "The Commons exterior",
-    statement: "A shared place that brings work, gathering and everyday social life into one flexible civic setting.",
-    brief: "The development required a clear identity while remaining open enough to support many forms of use throughout the day.",
-    designResponse: "A simple spatial framework, generous thresholds and durable materials support changing programmes without losing coherence.",
-    status: "Completed",
-    siteArea: "2,640 sqm",
-    temporary: true,
-    ...placeholderDetail({
-      image: project3,
-      detailImage: conceptExterior,
-      statementLines: ["A shared place", "for work, gathering", "and everyday civic", "life across a", "flexible framework."],
-      conceptLines: ["Shared life", "through generous", "thresholds."],
-      conceptParagraph: "A durable framework of planted thresholds, clear circulation and adaptable rooms gives everyday social life a calm, open setting.",
-      spatialHeadline: ["Meeting", "through light,", "thresholds and", "shared space."],
-      spatialParagraph: "Connected rooms and generous edges support a changing rhythm of work, gathering and informal exchange.",
-      annotations: [
-        { id: "planted", label: ["PLANTED COURTS", "WELCOME GATHERING"] },
-        { id: "views", label: ["OPEN VIEWS", "CONNECT ACTIVITY"] },
-        { id: "shaded", label: ["SHADED EDGES", "PACE ARRIVAL"] },
-        { id: "screens", label: ["SCREENS FRAME", "SHARED ROOMS"] },
-      ],
-    }),
-  },
-];
+export const workIndexProjects = [...projects];

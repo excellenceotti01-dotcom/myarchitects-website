@@ -2,15 +2,16 @@ import { useCallback, useLayoutEffect, useRef, useState } from "react";
 
 import PrinciplesEffects from "./PrinciplesEffects";
 import styles from "./Principles.module.css";
-import landscapeImage from "../../assets/images/about/studio-story-landscape.jpg";
-import detailImage from "../../assets/images/about/studio-story-detail.jpg.jpg";
-import featureImage from "../../assets/images/about/studio-story-feature.jpg";
+import landscapeImage from "../../assets/images/5 Bedroom Apartment/swimming pool 1.png";
+import detailImage from "../../assets/images/Aerial City/06.png";
+import featureImage from "../../assets/images/Residential Renovation/living room 01.png";
+import hospitalityImage from "../../assets/images/Westcliff/conservatory 02.png";
 
 const principles = [
   { title: "Context before form.", copy: "Every project begins by reading its setting—climate, culture, movement and the patterns already present.", image: landscapeImage, position: "68% 58%", ratio: "tall" },
   { title: "People before spectacle.", copy: "We design around the lives a space must support, allowing experience, comfort and purpose to guide every decision.", image: detailImage, position: "26% 54%", ratio: "tall" },
   { title: "Clarity through restraint.", copy: "We remove what does not serve the idea, allowing proportion, material and light to do more with less.", image: featureImage, position: "82% 52%", ratio: "wide" },
-  { title: "Collaboration from the beginning.", copy: "The strongest outcomes emerge when clients, consultants and makers contribute from the beginning.", image: landscapeImage, position: "30% 68%", ratio: "wide" },
+  { title: "Collaboration from the beginning.", copy: "The strongest outcomes emerge when clients, consultants and makers contribute from the beginning.", image: hospitalityImage, position: "30% 68%", ratio: "wide" },
   { title: "Enduring value over temporary trends.", copy: "We favour adaptable, durable spaces whose relevance extends beyond the moment they were created.", image: detailImage, position: "74% 42%", ratio: "tall" },
 ];
 

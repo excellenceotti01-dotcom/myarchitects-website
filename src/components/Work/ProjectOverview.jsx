@@ -7,10 +7,11 @@ const ProjectOverview = ({ project }) => {
   const facts = [
     ["Location", project.location],
     ["Typology", project.category],
+    ["Project type", project.projectType],
     ["Status", project.status],
     ["Year", project.year],
     ["Site area", project.siteArea],
-  ];
+  ].filter(([, value]) => value);
 
   return (
     <section className={styles.overview} data-project-overview aria-labelledby="project-overview-statement">
@@ -28,16 +29,18 @@ const ProjectOverview = ({ project }) => {
           <h2 id="project-overview-statement" className={styles.statement}>
             {lines.map((line) => <span key={line} data-overview-statement-line>{line}</span>)}
           </h2>
-          <div className={styles.details}>
+          <div className={`${styles.details} ${facts.length > 5 ? styles.detailsDense : ""}`}>
             <p data-overview-paragraph>{project.brief}</p>
             <p data-overview-paragraph>{project.designResponse}</p>
-            <dl className={styles.facts} data-overview-facts>
-              {facts.map(([label, value]) => (
-                <div key={label} data-overview-fact>
-                  <dt>{label}</dt><span aria-hidden="true">—</span><dd>{value}</dd>
-                </div>
-              ))}
-            </dl>
+            {facts.length > 0 && (
+              <dl className={styles.facts} data-overview-facts data-fact-count={facts.length}>
+                {facts.map(([label, value]) => (
+                  <div key={label} data-overview-fact>
+                    <dt>{label}</dt><span aria-hidden="true">—</span><dd>{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
           </div>
         </div>
     </section>

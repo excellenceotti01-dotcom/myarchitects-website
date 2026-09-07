@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 
 import { workIndexProjects } from "../../data/projects.data";
 import ProjectIndexEffects from "./ProjectIndexEffects";
@@ -109,7 +109,7 @@ const ProjectIndex = ({ restorationContext }) => {
                 </Link>
                 <div className={styles.metadata}>
                   <div><span>{project.number}</span><h3>{project.title}</h3></div>
-                  <p>{project.location} <i aria-hidden="true">/</i> {project.category} <i aria-hidden="true">/</i> {project.year}</p>
+                  <p>{[project.location, project.category, project.year].filter(Boolean).map((item, metadataIndex, metadata) => <Fragment key={`${item}-${metadataIndex}`}>{item}{metadataIndex < metadata.length - 1 && <i aria-hidden="true">/</i>}</Fragment>)}</p>
                 </div>
               </article>
             ))}

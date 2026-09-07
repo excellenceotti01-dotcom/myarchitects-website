@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 
 import ProjectDetailHeroEffects from "./ProjectDetailHeroEffects";
 import ProjectOverview from "./ProjectOverview";
@@ -13,6 +13,7 @@ const ProjectDetailHero = ({ project }) => {
   const sectionRef = useRef(null);
   const stageRef = useRef(null);
   const lines = titleLines(project.title);
+  const metadata = [project.heroLocation ?? project.location, project.category].filter(Boolean);
 
   return (
     <section ref={sectionRef} className={styles.hero} aria-labelledby="project-detail-title" data-project-detail data-navbar-theme="dark">
@@ -32,7 +33,7 @@ const ProjectDetailHero = ({ project }) => {
             {lines.map((line) => <span key={line} data-detail-title-line>{line}</span>)}
           </h1>
           <p className={styles.metadata} data-detail-meta>
-            <span>{project.location}</span><i aria-hidden="true">/</i><span>{project.category}</span><i aria-hidden="true">/</i><span>{project.year}</span>
+            {metadata.map((item, index) => <Fragment key={`${item}-${index}`}><span>{item}</span>{index < metadata.length - 1 && <i aria-hidden="true">/</i>}</Fragment>)}
           </p>
           <div className={styles.scrollCue} data-detail-cue aria-hidden="true">
             <span className={styles.cueLine} />

@@ -2,9 +2,9 @@ import { useRef } from "react";
 
 import StudioStoryEffects from "./StudioStoryEffects";
 import styles from "./StudioStory.module.css";
-import featureImage from "../../assets/images/about/studio-story-feature.jpg";
-import landscapeImage from "../../assets/images/about/studio-story-landscape.jpg";
-import detailImage from "../../assets/images/about/studio-story-detail.jpg.jpg";
+import featureImage from "../../assets/images/Residential Renovation/ext1.png";
+import landscapeImage from "../../assets/images/5 Bedroom Apartment/3d veiw.png";
+import detailImage from "../../assets/images/Aerial City/06.png";
 
 const StudioStory = () => {
   const sectionRef = useRef(null);

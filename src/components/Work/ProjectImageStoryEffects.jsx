@@ -18,6 +18,7 @@ const ProjectImageStoryEffects = ({ sectionRef, stageRef }) => {
       if (!desktop.matches || reduced.matches) return;
       context = gsap.context(() => {
         const images = gsap.utils.toArray("[data-story-image]");
+        const copies = gsap.utils.toArray("[data-story-copy]");
         const counters = gsap.utils.toArray("[data-story-counter]");
         const main = { left: "37.5%", top: "15.4%", width: "62.5%", height: "84.6%" };
         const preview = { left: "0%", top: "82%", width: "35.7%", height: "18%" };
@@ -27,6 +28,8 @@ const ProjectImageStoryEffects = ({ sectionRef, stageRef }) => {
         gsap.set(images[1], { autoAlpha: 1, ...preview });
         gsap.set(counters, { autoAlpha: 0 });
         gsap.set(counters[0], { autoAlpha: 1 });
+        gsap.set(copies, { autoAlpha: 0, y: 18 });
+        gsap.set(copies[0], { autoAlpha: 1, y: 0 });
 
         const timeline = gsap.timeline({
           scrollTrigger: {
@@ -48,6 +51,11 @@ const ProjectImageStoryEffects = ({ sectionRef, stageRef }) => {
             .to(images[index], { autoAlpha: 1, ...main, duration: 0.42, ease: "power2.inOut" }, at)
             .to(counters[index - 1], { autoAlpha: 0, duration: 0.1, ease: "none" }, at)
             .to(counters[index], { autoAlpha: 1, duration: 0.14, ease: "none" }, at + 0.18);
+          if (copies[index]) {
+            timeline
+              .to(copies[index - 1], { autoAlpha: 0, y: -10, duration: 0.2, ease: "none" }, at)
+              .to(copies[index], { autoAlpha: 1, y: 0, duration: 0.28, ease: "power2.out" }, at + 0.08);
+          }
           if (images[index + 1]) timeline.to(images[index + 1], { autoAlpha: 1, ...preview, duration: 0.28, ease: "power2.out" }, at + 0.18);
           timeline.to({}, { duration: 0.18 }, at + 0.43);
         });

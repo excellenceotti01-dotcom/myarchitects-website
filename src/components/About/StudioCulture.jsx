@@ -2,9 +2,9 @@ import { useRef } from "react";
 
 import StudioCultureEffects from "./StudioCultureEffects";
 import styles from "./StudioCulture.module.css";
-import teamImage from "../../assets/images/about/studio-culture-team.png";
-import drawingImage from "../../assets/images/about/studio-culture-drawing.png";
-import materialsImage from "../../assets/images/about/studio-culture-materials.png";
+import teamImage from "../../assets/images/Westcliff/conservatory 01.png";
+import drawingImage from "../../assets/images/5 Bedroom Apartment/top veiw 2.png";
+import materialsImage from "../../assets/images/Residential Renovation/kitchen 03.png";
 
 const StudioCulture = () => {
   const sectionRef = useRef(null);
@@ -34,13 +34,13 @@ const StudioCulture = () => {
           </div>
 
           <figure className={styles.teamImage} data-culture-team>
-            <img src={teamImage} alt="Architects gathered around drawings and a study model" />
+            <img src={teamImage} alt="Hospitality interior with layered seating and daylight" />
           </figure>
           <figure className={styles.drawingImage} data-culture-drawing>
-            <img src={drawingImage} alt="Hand drawing over architectural plans" />
+            <img src={drawingImage} alt="Residential apartment viewed across its planted terraces" />
           </figure>
           <figure className={styles.materialsImage} data-culture-materials>
-            <img src={materialsImage} alt="Architectural material samples and study blocks" />
+            <img src={materialsImage} alt="Residential renovation kitchen materials and joinery" />
           </figure>
         </div>
       </div>

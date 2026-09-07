@@ -8,14 +8,18 @@ const ProjectImageStory = ({ project }) => {
   const stageRef = useRef(null);
   const experience = project.spatialExperience;
   if (!experience?.images?.length) return null;
+  const storySlides = experience.storySlides?.length ? experience.storySlides : [{ headline: experience.headline, paragraph: experience.paragraph }];
 
   return (
     <section ref={sectionRef} className={styles.section} aria-labelledby="spatial-experience-heading">
       <div ref={stageRef} className={styles.stage}>
         <div className={styles.copy}>
-          <p className={styles.label}>{experience.label}</p>
-          <h2 id="spatial-experience-heading">{experience.headline.map((line) => <span key={line}>{line}</span>)}</h2>
-          <p className={styles.description}>{experience.paragraph}</p>
+          {storySlides.map((slide, index) => (
+            <div key={index} className={styles.storyCopy} data-story-copy>
+              <h2 id={index === 0 ? "spatial-experience-heading" : undefined}>{slide.headline.map((line) => <span key={line}>{line}</span>)}</h2>
+              <p className={styles.description}>{slide.paragraph}</p>
+            </div>
+          ))}
           <div className={styles.counter} aria-label="Image sequence progress">
             {experience.images.map((_, index) => <span key={index} data-story-counter>{String(index + 1).padStart(2, "0")} <i>/ 04</i></span>)}
           </div>
