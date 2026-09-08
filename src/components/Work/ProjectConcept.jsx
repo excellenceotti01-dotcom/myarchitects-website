@@ -14,9 +14,11 @@ const ProjectConcept = ({ project }) => {
     if (!item) return null;
     return (
       <div className={`${styles.annotation} ${styles[id]}`} data-concept-annotation>
-        <span className={styles.annotationLine} aria-hidden="true" />
-        <span className={`${styles.annotationPoint} ${styles.annotationStart}`} aria-hidden="true" />
-        <span className={`${styles.annotationPoint} ${styles.annotationEnd}`} aria-hidden="true" />
+        <svg className={styles.annotationLeader} viewBox="0 0 22 100" preserveAspectRatio="none" aria-hidden="true">
+          <path className={styles.annotationLeaderPath} data-annotation-path pathLength="1" d="M4 4V92H16" />
+          <circle className={styles.annotationOrigin} cx="4" cy="4" r="2.5" />
+          <path className={styles.annotationArrow} d="M15 87.5L22 92L15 96.5Z" />
+        </svg>
         <span className={styles.annotationLabel}>{item.label.map((line) => <span key={line}>{line}</span>)}</span>
       </div>
     );
@@ -46,7 +48,6 @@ const ProjectConcept = ({ project }) => {
                 <div className={styles.detailMedia} data-concept-detail>
                   <img src={concept.detailImage} alt={concept.detailAlt ?? "Architectural material detail"} loading="lazy" />
                 </div>
-                <div className={styles.annotationOverlay} aria-hidden="true">{renderAnnotation("screens")}</div>
               </div>
             )}
           </div>

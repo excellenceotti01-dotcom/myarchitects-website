@@ -18,24 +18,11 @@
 .annotationOverlay { position:absolute; z-index:4; inset:0 0 4.75rem; overflow:visible; pointer-events:none; }
 .annotation { position:absolute; z-index:1; min-width:10.5rem; color:#f4f2e8; font-size:clamp(.82rem,.95vw,1rem); font-weight:600; letter-spacing:.025em; line-height:1.3; pointer-events:none; text-shadow:0 1px 8px rgba(0,0,0,.62); }
 .annotationLabel { position:relative; z-index:1; display:block; width:max-content; max-width:12rem; padding:.12rem .3rem; background:#090a0a; box-decoration-break:clone; -webkit-box-decoration-break:clone; }.annotationLabel span { display:block; white-space:nowrap; }
-.annotationLine { position:absolute; display:block; height:2px; background:#efeee6; transform-origin:left center; }
-.annotationLine::after { content:""; position:absolute; width:2px; background:#efeee6; }
-.annotationPoint { position:absolute; width:8px; height:8px; border:0; background:#efeee6; filter:drop-shadow(0 0 1px #090a0a); }
-.annotationStart { clip-path:polygon(50% 0,100% 100%,50% 72%,0 100%); transform:translateX(-50%); }
-.annotationEnd { clip-path:polygon(0 0,100% 50%,0 100%,28% 50%); transform:translateY(50%); }
-/* Each leader has a feature-side marker and terminal marker. The first segment
-   owns the animated scale while its perpendicular pseudo-element stays locked
-   to the shared 90-degree corner. */
-.planted { top:2.5%; right:-12rem; }.planted .annotationLine { right:calc(100% + .65rem); top:.78rem; width:8.2rem; }.planted .annotationLine::after { left:0; top:0; height:9.25rem; }.planted .annotationStart { left:calc(-8.85rem); top:10.03rem; }.planted .annotationEnd { left:calc(-.65rem); top:.78rem; }
-.views { bottom:-1rem; left:7.5rem; }.views .annotationLine { left:-2.6rem; bottom:1rem; width:2px; height:7.8rem; background:#efeee6; transform-origin:bottom center; }.views .annotationLine::after { left:0; bottom:0; width:1.95rem; height:2px; }.views .annotationStart { left:-2.6rem; bottom:8.8rem; }.views .annotationEnd { left:-.65rem; bottom:1rem; }
-.shaded { right:11rem; bottom:-1rem; }.shaded .annotationLine { left:-2.6rem; bottom:1rem; width:2px; height:7.8rem; background:#efeee6; transform-origin:bottom center; }.shaded .annotationLine::after { left:0; bottom:0; width:1.95rem; height:2px; }.shaded .annotationStart { left:-2.6rem; bottom:8.8rem; }.shaded .annotationEnd { left:-.65rem; bottom:1rem; }
-.screens { left:-15rem; bottom:1.5rem; }.screens .annotationLine { left:calc(100% + .9rem); top:.72rem; width:5.4rem; }.screens .annotationLine::after { display:none; }.screens .annotationStart { left:calc(100% + .9rem); top:.72rem; }.screens .annotationEnd { left:calc(100% + 6.3rem); top:.72rem; }
-.planted,.views,.shaded,.screens { top:auto; right:auto; bottom:-4rem; }
-.views { left:4rem; }.shaded { left:41%; }.planted { right:1.5rem; }.screens { left:1rem; }
-.planted .annotationLine,.views .annotationLine,.shaded .annotationLine,.screens .annotationLine { top:auto; right:auto; left:-1rem; bottom:1rem; width:2px; height:clamp(4.5rem,10vh,7rem); background:#efeee6; transform-origin:bottom center; }
-.planted .annotationLine::after,.views .annotationLine::after,.shaded .annotationLine::after,.screens .annotationLine::after { display:block; left:0; bottom:0; width:.8rem; height:2px; }
-.planted .annotationStart,.views .annotationStart,.shaded .annotationStart,.screens .annotationStart { left:-1rem; bottom:calc(clamp(4.5rem,10vh,7rem) + 1rem); top:auto; }
-.planted .annotationEnd,.views .annotationEnd,.shaded .annotationEnd,.screens .annotationEnd { left:-.2rem; bottom:1rem; top:auto; }
+.annotationLeader { position:absolute; left:-1.15rem; bottom:.65rem; width:1.45rem; height:clamp(4.5rem,10vh,7rem); overflow:visible; filter:drop-shadow(0 0 1px #090a0a); }
+.annotationLeaderPath { fill:none; stroke:#efeee6; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; vector-effect:non-scaling-stroke; }
+.annotationOrigin,.annotationArrow { fill:#efeee6; }
+.planted,.views,.shaded { top:auto; right:auto; bottom:-4rem; }
+.views { left:4rem; }.shaded { left:41%; }.planted { right:1.5rem; }
 @media (max-width:960px) { .grid { padding-top:10rem !important; }.mainRegion,.detailRegion { padding-bottom:0; } }
 @media (max-width:640px) { .grid { padding-top:9.5rem !important; } }
 @media (max-width:960px) { .stage { height:auto; min-height:0; overflow:visible; }.grid { display:block; height:auto; padding:6rem 1.5rem 4rem; }.mainMedia { height:min(64vw,38rem); }.rightColumn { padding:0; }.copy { max-width:42rem; margin:3rem 0 0; }.detailRegion { width:min(100%,32rem); margin:3rem 0 0 auto; }.detailMedia { height:min(55vw,25rem); }.annotationOverlay { display:none; } }

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import styles from "./ProjectConcept.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,16 +25,13 @@ const ProjectConceptEffects = ({ sectionRef, stageRef }) => {
         const copy = section.querySelector("[data-concept-copy]");
         const detail = section.querySelector("[data-concept-detail]");
         const annotations = section.querySelectorAll("[data-concept-annotation]");
-        const lines = section.querySelectorAll("[data-concept-annotation] ." + styles.annotationLine);
-        const horizontalLines = Array.from(lines).filter((line) => line.offsetWidth >= line.offsetHeight);
-        const verticalLines = Array.from(lines).filter((line) => line.offsetHeight > line.offsetWidth);
+        const leaderPaths = section.querySelectorAll("[data-annotation-path]");
 
         gsap.set(main, { clipPath: "inset(0 0 100% 0)" });
         gsap.set(copy, { autoAlpha: 0, y: 22 });
         gsap.set(detail, { autoAlpha: 0, y: 20, clipPath: "inset(0 0 100% 0)" });
         gsap.set(annotations, { autoAlpha: 0 });
-        gsap.set(horizontalLines, { scaleX: 0, transformOrigin: "left center" });
-        gsap.set(verticalLines, { scaleY: 0, transformOrigin: "center bottom" });
+        gsap.set(leaderPaths, { strokeDasharray: 1, strokeDashoffset: 1 });
 
         gsap.timeline({
           scrollTrigger: {
@@ -55,9 +51,8 @@ const ProjectConceptEffects = ({ sectionRef, stageRef }) => {
           .to(main, { clipPath: "inset(0 0 0% 0)", duration: 0.34, ease: "power2.out" }, 0)
           .to(copy, { autoAlpha: 1, y: 0, duration: 0.22, ease: "power3.out" }, 0.18)
           .to(detail, { autoAlpha: 1, y: 0, clipPath: "inset(0 0 0% 0)", duration: 0.28, ease: "power2.out" }, 0.3)
-          .to(horizontalLines, { scaleX: 1, duration: 0.18, stagger: 0.04, ease: "power2.out" }, 0.46)
-          .to(verticalLines, { scaleY: 1, duration: 0.18, stagger: 0.04, ease: "power2.out" }, 0.46)
-          .to(annotations, { autoAlpha: 1, duration: 0.16, stagger: 0.04, ease: "power2.out" }, 0.5)
+          .to(annotations, { autoAlpha: 1, duration: 0.12, stagger: 0.04, ease: "power2.out" }, 0.46)
+          .to(leaderPaths, { strokeDashoffset: 0, duration: 0.2, stagger: 0.04, ease: "power2.out" }, 0.46)
           .to({}, { duration: 0.18 }, 0.68)
           .to(detail, { scale: 1.1, duration: 0.22, ease: "power2.inOut" }, 0.86)
           .to({}, { duration: 0.18 }, 1.08);

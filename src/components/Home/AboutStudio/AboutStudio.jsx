@@ -44,7 +44,7 @@ const AboutStudio = () => {
 
           <div className={styles.copy}>
             <p data-about-copy>
-              MY Architects is an architectural, design and construction studio creating thoughtful, enduring spaces shaped by purpose, context, and human experience, and bringing these concepts to life through design and construction.
+              MYArchitects is an architectural design and construction studio creating thoughtful, enduring spaces shaped by purpose, context, and human experience, and bringing these concepts to life through design and construction.
             </p>
             <p data-about-copy>
               Our work brings clarity, character, and lasting value to the way people live, work, and experience space.
