@@ -1,26 +1,28 @@
 .concept { position:relative; min-height:100svh; background:#090a0a; color:#f1f0e8; }
-.stage { position:relative; height:100svh; min-height:42rem; overflow:hidden; isolation:isolate; background:#090a0a; }
+.stage { position:relative; height:100svh; min-height:0; overflow:hidden; isolation:isolate; background:#090a0a; }
 .stage::before { content:""; position:absolute; inset:0; z-index:0; opacity:.26; pointer-events:none; background-image:radial-gradient(rgba(241,240,232,.22) .65px,transparent .8px),radial-gradient(circle at 15% 20%,rgba(255,255,255,.035),transparent 28rem); background-size:12px 12px,auto; }
-.grid { position:relative; z-index:1; display:grid; grid-template-columns:minmax(0,58fr) minmax(20rem,31fr); column-gap:7%; align-items:start; width:100%; height:100%; padding-top:clamp(10rem,18vh,13.5rem); }
-.mainRegion,.detailRegion { position:relative; min-width:0; }
+.grid { position:relative; z-index:1; display:grid; grid-template-columns:minmax(0,58fr) minmax(20rem,31fr); column-gap:7%; align-items:center; width:100%; height:100%; padding-top:clamp(8.75rem,18vh,13.5rem); }
+.mainRegion,.detailRegion { position:relative; min-width:0; padding-bottom:4.75rem; }
 .mainMedia,.detailMedia { position:relative; overflow:hidden; background:#121313; will-change:clip-path,transform; }
-.mainMedia { width:100%; height:clamp(32rem,66svh,46rem); }
+.mainMedia { width:100%; height:clamp(18rem,60svh,46rem); }
 .mainMedia img,.detailMedia img { display:block; width:100%; height:100%; object-fit:cover; }
 .mainMedia img { object-position:center; }
 .rightColumn { min-width:0; padding-right:clamp(2.5rem,4.5vw,5.5rem); }
-.copy { max-width:29rem; margin-top:clamp(1.25rem,3vh,2.5rem); will-change:transform,opacity; }
+.copy { max-width:29rem; margin-top:0; will-change:transform,opacity; }
 .copy h2 { margin:0; color:#f1f0e8; font-family:var(--font-display); font-size:clamp(2.6rem,3.35vw,4.15rem); font-weight:var(--fw-medium); line-height:1.03; letter-spacing:-.055em; }
-.copy h2 span { display:block; white-space:nowrap; }
+.copy h2 span { display:block; white-space:normal; }
 .copy p { max-width:28rem; margin:clamp(1.75rem,3.25vh,2.6rem) 0 0; color:rgba(241,240,232,.78); font-size:clamp(.95rem,1.08vw,1.1rem); line-height:1.52; }
-.detailRegion { width:100%; margin-top:clamp(3rem,7vh,5rem); }
-.detailMedia { width:100%; height:clamp(15rem,34svh,24rem); }
+.detailRegion { width:100%; margin-top:clamp(2rem,4vh,3rem); }
+.detailMedia { width:100%; height:clamp(12rem,27svh,22rem); }
 .detailMedia img { object-position:center; }
-.annotationOverlay { position:absolute; z-index:4; inset:0; overflow:visible; pointer-events:none; }
+.annotationOverlay { position:absolute; z-index:4; inset:0 0 4.75rem; overflow:visible; pointer-events:none; }
 .annotation { position:absolute; z-index:1; min-width:10.5rem; color:#f4f2e8; font-size:clamp(.82rem,.95vw,1rem); font-weight:600; letter-spacing:.025em; line-height:1.3; pointer-events:none; text-shadow:0 1px 8px rgba(0,0,0,.62); }
-.annotationLabel { position:relative; z-index:1; display:block; width:max-content; max-width:15rem; padding:.12rem .3rem; background:rgba(9,10,10,.82); box-decoration-break:clone; -webkit-box-decoration-break:clone; }.annotationLabel span { display:block; white-space:nowrap; }
+.annotationLabel { position:relative; z-index:1; display:block; width:max-content; max-width:12rem; padding:.12rem .3rem; background:#090a0a; box-decoration-break:clone; -webkit-box-decoration-break:clone; }.annotationLabel span { display:block; white-space:nowrap; }
 .annotationLine { position:absolute; display:block; height:2px; background:#efeee6; transform-origin:left center; }
 .annotationLine::after { content:""; position:absolute; width:2px; background:#efeee6; }
-.annotationPoint { position:absolute; width:7px; height:7px; background:#efeee6; transform:translate(-50%,-50%); }
+.annotationPoint { position:absolute; width:8px; height:8px; border:0; background:#efeee6; filter:drop-shadow(0 0 1px #090a0a); }
+.annotationStart { clip-path:polygon(50% 0,100% 100%,50% 72%,0 100%); transform:translateX(-50%); }
+.annotationEnd { clip-path:polygon(0 0,100% 50%,0 100%,28% 50%); transform:translateY(50%); }
 /* Each leader has a feature-side marker and terminal marker. The first segment
    owns the animated scale while its perpendicular pseudo-element stays locked
    to the shared 90-degree corner. */
@@ -28,5 +30,13 @@
 .views { bottom:-1rem; left:7.5rem; }.views .annotationLine { left:-2.6rem; bottom:1rem; width:2px; height:7.8rem; background:#efeee6; transform-origin:bottom center; }.views .annotationLine::after { left:0; bottom:0; width:1.95rem; height:2px; }.views .annotationStart { left:-2.6rem; bottom:8.8rem; }.views .annotationEnd { left:-.65rem; bottom:1rem; }
 .shaded { right:11rem; bottom:-1rem; }.shaded .annotationLine { left:-2.6rem; bottom:1rem; width:2px; height:7.8rem; background:#efeee6; transform-origin:bottom center; }.shaded .annotationLine::after { left:0; bottom:0; width:1.95rem; height:2px; }.shaded .annotationStart { left:-2.6rem; bottom:8.8rem; }.shaded .annotationEnd { left:-.65rem; bottom:1rem; }
 .screens { left:-15rem; bottom:1.5rem; }.screens .annotationLine { left:calc(100% + .9rem); top:.72rem; width:5.4rem; }.screens .annotationLine::after { display:none; }.screens .annotationStart { left:calc(100% + .9rem); top:.72rem; }.screens .annotationEnd { left:calc(100% + 6.3rem); top:.72rem; }
+.planted,.views,.shaded,.screens { top:auto; right:auto; bottom:-4rem; }
+.views { left:4rem; }.shaded { left:41%; }.planted { right:1.5rem; }.screens { left:1rem; }
+.planted .annotationLine,.views .annotationLine,.shaded .annotationLine,.screens .annotationLine { top:auto; right:auto; left:-1rem; bottom:1rem; width:2px; height:clamp(4.5rem,10vh,7rem); background:#efeee6; transform-origin:bottom center; }
+.planted .annotationLine::after,.views .annotationLine::after,.shaded .annotationLine::after,.screens .annotationLine::after { display:block; left:0; bottom:0; width:.8rem; height:2px; }
+.planted .annotationStart,.views .annotationStart,.shaded .annotationStart,.screens .annotationStart { left:-1rem; bottom:calc(clamp(4.5rem,10vh,7rem) + 1rem); top:auto; }
+.planted .annotationEnd,.views .annotationEnd,.shaded .annotationEnd,.screens .annotationEnd { left:-.2rem; bottom:1rem; top:auto; }
+@media (max-width:960px) { .grid { padding-top:10rem !important; }.mainRegion,.detailRegion { padding-bottom:0; } }
+@media (max-width:640px) { .grid { padding-top:9.5rem !important; } }
 @media (max-width:960px) { .stage { height:auto; min-height:0; overflow:visible; }.grid { display:block; height:auto; padding:6rem 1.5rem 4rem; }.mainMedia { height:min(64vw,38rem); }.rightColumn { padding:0; }.copy { max-width:42rem; margin:3rem 0 0; }.detailRegion { width:min(100%,32rem); margin:3rem 0 0 auto; }.detailMedia { height:min(55vw,25rem); }.annotationOverlay { display:none; } }
 @media (max-width:640px) { .grid { padding:5rem 1.25rem 3rem; }.mainMedia { height:62vw; min-height:15rem; }.copy h2 { font-size:clamp(2.5rem,10vw,3.65rem); }.copy h2 span { white-space:normal; }.detailRegion { width:100%; }.detailMedia { height:58vw; min-height:14rem; } }

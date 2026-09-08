@@ -6,7 +6,7 @@ import ProjectIndexEffects from "./ProjectIndexEffects";
 import styles from "./ProjectIndex.module.css";
 import { saveWorkReturnContext } from "../../utils/workReturnContext";
 
-const filters = ["All", "Residential", "Commercial", "Hospitality"];
+const filters = ["All", "Residential", "Commercial", "Hospitality", "Landscape"];
 const desktopQuery = "(min-width: 1200px)";
 
 const ProjectIndex = ({ restorationContext }) => {

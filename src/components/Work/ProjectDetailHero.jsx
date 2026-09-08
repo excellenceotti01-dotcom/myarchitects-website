@@ -4,15 +4,9 @@ import ProjectDetailHeroEffects from "./ProjectDetailHeroEffects";
 import ProjectOverview from "./ProjectOverview";
 import styles from "./ProjectDetailHero.module.css";
 
-const titleLines = (title) => {
-  const words = title.trim().split(/\s+/);
-  return words.length > 1 ? [words.slice(0, -1).join(" "), words.at(-1)] : [title];
-};
-
 const ProjectDetailHero = ({ project }) => {
   const sectionRef = useRef(null);
   const stageRef = useRef(null);
-  const lines = titleLines(project.title);
   const metadata = [project.heroLocation ?? project.location, project.category].filter(Boolean);
 
   return (
@@ -29,12 +23,14 @@ const ProjectDetailHero = ({ project }) => {
 
         <div className={styles.content} data-detail-content>
           <p className={styles.number} data-detail-number>{project.number}</p>
-          <h1 id="project-detail-title" className={styles.title}>
-            {lines.map((line) => <span key={line} data-detail-title-line>{line}</span>)}
-          </h1>
-          <p className={styles.metadata} data-detail-meta>
-            {metadata.map((item, index) => <Fragment key={`${item}-${index}`}><span>{item}</span>{index < metadata.length - 1 && <i aria-hidden="true">/</i>}</Fragment>)}
-          </p>
+          <div className={styles.titleGroup}>
+            <h1 id="project-detail-title" className={styles.title}>
+              <span data-detail-title-line>{project.title}</span>
+            </h1>
+            <p className={styles.metadata} data-detail-meta>
+              {metadata.map((item, index) => <Fragment key={`${item}-${index}`}><span>{item}</span>{index < metadata.length - 1 && <i aria-hidden="true">/</i>}</Fragment>)}
+            </p>
+          </div>
           <div className={styles.scrollCue} data-detail-cue aria-hidden="true">
             <span className={styles.cueLine} />
             <span className={styles.cueDot}>↓</span>

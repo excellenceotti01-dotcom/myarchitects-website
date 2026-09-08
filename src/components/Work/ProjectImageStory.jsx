@@ -16,7 +16,9 @@ const ProjectImageStory = ({ project }) => {
         <div className={styles.copy}>
           {storySlides.map((slide, index) => (
             <div key={index} className={styles.storyCopy} data-story-copy>
-              <h2 id={index === 0 ? "spatial-experience-heading" : undefined}>{slide.headline.map((line) => <span key={line}>{line}</span>)}</h2>
+              <h2 id={index === 0 ? "spatial-experience-heading" : undefined}>
+                {Array.isArray(slide.headline) ? slide.headline.join(" ") : slide.headline}
+              </h2>
               <p className={styles.description}>{slide.paragraph}</p>
             </div>
           ))}

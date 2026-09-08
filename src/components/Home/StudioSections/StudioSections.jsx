@@ -17,7 +17,7 @@ const StudioSections = () => {
             <span aria-hidden="true">↗</span>
           </button>
           <p id="contact-heading" className={styles.contactCopy}>Have a site, an idea, or a project in mind? Let’s begin the conversation.</p>
-          <a className={styles.email} href="mailto:studio@example.com">studio@example.com</a>
+          <a className={styles.email} href="mailto:info@myarchitectsdesign.co.uk">info@myarchitectsdesign.co.uk</a>
         </div>
 
         <div className={styles.footerMeta}>

@@ -1,3 +1,4 @@
 .back { position:fixed; z-index:100; top:clamp(7.8rem,15vh,10rem); left:clamp(1.5rem,5.7vw,6rem); display:inline-flex; align-items:center; gap:.7rem; padding:.45rem .6rem; border:0; color:#f1f0e8; background:rgba(9,10,10,.34); box-shadow:0 0 1.25rem rgba(0,0,0,.18); font:500 clamp(.8rem,1vw,1rem)/1.2 var(--font-body); cursor:pointer; backdrop-filter:blur(4px); transition:color .2s ease,transform .2s ease; }
 .back:hover { color:#fff; transform:translateX(-3px); }.back:focus-visible { outline:1px solid #f1f0e8; outline-offset:5px; }
 @media (max-width:960px) { .back { top:7rem; left:1.2rem; } }
+@media (max-width:700px) { .back { top:7.8rem; } }

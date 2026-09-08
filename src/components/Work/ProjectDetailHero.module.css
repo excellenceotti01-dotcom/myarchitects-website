@@ -5,6 +5,8 @@
 }
 
 .stage {
+  --detail-gutter: clamp(4.5rem, 5.7vw, 6rem);
+  --detail-title-size: clamp(3rem, 3.2vw, 4rem);
   position: relative;
   height: 100svh;
   min-height: 42rem;
@@ -76,7 +78,7 @@
   top: clamp(7.4rem, 12.5vh, 9rem);
   right: clamp(2rem, 4.2vw, 5rem);
   bottom: clamp(2rem, 3.75vh, 3.5rem);
-  left: clamp(37%, 37vw, 40%);
+  left: max(34rem, 47vw);
   overflow: hidden;
   background: #151515;
   will-change: clip-path, inset;
@@ -132,6 +134,7 @@
 .back:focus-visible { outline: 1px solid rgba(241, 240, 232, 0.88); outline-offset: 8px; }
 
 .number {
+  display: none;
   position: absolute;
   top: clamp(13rem, 25vh, 18rem);
   left: clamp(4.25rem, 5vw, 5.5rem);
@@ -144,30 +147,33 @@
   line-height: 0.75;
 }
 
-.title {
+.titleGroup {
   position: absolute;
-  top: clamp(25rem, 49vh, 32rem);
-  left: clamp(4.5rem, 5.7vw, 6rem);
-  width: min(46rem, 53vw);
+  top: 47vh;
+  left: var(--detail-gutter);
+  width: min(39rem, calc(max(34rem, 47vw) - var(--detail-gutter) - 2.5rem));
+}
+
+.title {
+  width: 100%;
+  min-height: 1.76em;
   margin: 0;
   color: #f1f0e8;
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 5.5vw, 6.75rem);
+  font-size: var(--detail-title-size);
   font-weight: var(--fw-medium);
   letter-spacing: -0.075em;
   line-height: 0.88;
+  text-wrap: wrap;
 }
 
 .title span { display: block; }
 
 .metadata {
-  position: absolute;
-  top: clamp(37rem, 78vh, 48rem);
-  left: clamp(4.5rem, 5.7vw, 6rem);
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
-  margin: 0;
+  margin: 1.5rem 0 0;
   color: rgba(241, 240, 232, 0.74);
   font-size: clamp(0.875rem, 1.1vw, 1.05rem);
   font-weight: var(--fw-medium);
@@ -201,25 +207,25 @@
   .stage::before { mask-image: none; }
   .mediaFrame { position: relative; top: auto; right: auto; bottom: auto; left: auto; width: min(100%, 52rem); height: min(58vw, 34rem); min-height: 19rem; margin: 0 0 2.5rem auto; }
   .content { position: relative; width: 100%; height: auto; padding: 0; }
-  .back, .number, .title, .metadata, .scrollCue { position: relative; top: auto; left: auto; bottom: auto; }
+  .back, .number, .titleGroup, .title, .metadata, .scrollCue { position: relative; top: auto; left: auto; bottom: auto; }
   .back { margin-bottom: 3rem; }
   .number { margin: 0 0 1.5rem; font-size: clamp(6rem, 18vw, 10rem); }
-  .title { width: min(100%, 42rem); margin-bottom: 1.5rem; font-size: clamp(3.25rem, 9vw, 5.25rem); }
-  .metadata { margin-bottom: 3rem; }
+  .titleGroup { width: min(100%, 42rem); margin-bottom: 3rem; }
+  .title { width: 100%; min-height: 1.76em; font-size: clamp(3.25rem, 9vw, 5.25rem); }
+  .metadata { margin: 1.5rem 0 0; }
   .scrollCue { display: none; }
 }
 
 @media (min-width: 961px) and (max-height: 850px) {
-  .title { top: 47vh; font-size: clamp(3rem, 4.8vw, 5.4rem); line-height: .9; }
-  .metadata { top: 78vh; }
+  .titleGroup { top: 45vh; }
 }
 
 @media (max-width: 640px) {
-  .stage { min-height: auto; padding: 8.75rem 1.25rem 3rem; }
+  .stage { min-height: auto; padding: 10.75rem 1.25rem 3rem; }
   .mediaFrame { height: 65vw; min-height: 15rem; margin: 0 0 2rem; }
   .drafting { opacity: 0.6; }
   .guideHorizontal, .crossBottomRight { display: none; }
   .back { margin-bottom: 2.5rem; }
-  .title { font-size: clamp(2.75rem, 13vw, 4.25rem); line-height: 0.9; }
+  .title { min-height: 2.64em; font-size: clamp(2.75rem, 13vw, 4.25rem); line-height: 0.9; }
   .metadata { gap: 0.55rem; font-size: 0.85rem; }
 }

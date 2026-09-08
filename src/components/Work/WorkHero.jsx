@@ -67,7 +67,7 @@ const WorkHero = ({ restorationContext }) => {
             <span className={styles.lineClip}><span data-work-line>unfolds.</span></span>
           </h1>
           <p className={styles.copy} data-work-copy>
-            A selection of residential, commercial and hospitality projects shaped by context, material and everyday experience.
+            A selection of residential, commercial, hospitality and landscape projects shaped by context, material and everyday experience.
           </p>
           <p className={styles.counter} data-work-counter><span key={`counter-${activeProject.id}`}>Selected work — {pad(activeIndex + 1)} / {pad(workIndexProjects.length)}</span></p>
         </div>

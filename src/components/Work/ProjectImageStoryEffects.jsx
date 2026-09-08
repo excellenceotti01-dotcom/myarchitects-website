@@ -15,11 +15,13 @@ const ProjectImageStoryEffects = ({ sectionRef, stageRef }) => {
 
     const build = () => {
       context?.revert();
+      ScrollTrigger.getById("work-project-image-story")?.kill();
       if (!desktop.matches || reduced.matches) return;
       context = gsap.context(() => {
         const images = gsap.utils.toArray("[data-story-image]");
         const copies = gsap.utils.toArray("[data-story-copy]");
         const counters = gsap.utils.toArray("[data-story-counter]");
+        const sceneCount = Math.max(0, Math.min(images.length, counters.length) - 1);
         const main = { left: "37.5%", top: "15.4%", width: "62.5%", height: "84.6%" };
         const preview = { left: "0%", top: "82%", width: "35.7%", height: "18%" };
 
@@ -36,15 +38,14 @@ const ProjectImageStoryEffects = ({ sectionRef, stageRef }) => {
             id: "work-project-image-story",
             trigger: section,
             start: "top top",
-            end: () => `+=${Math.round(window.innerHeight * 4.1)}`,
+            end: () => `+=${Math.round(window.innerHeight * (1.4 + sceneCount * 0.95))}`,
             pin: section,
             pinSpacing: true,
-            scrub: 0.85,
+            scrub: 0.65,
             invalidateOnRefresh: true,
           },
         });
 
-        const sceneCount = Math.max(0, Math.min(images.length, counters.length, copies.length) - 1);
         Array.from({ length: sceneCount }, (_, scene) => scene + 1).forEach((index, scene) => {
           const at = 0.5 + scene * 0.62;
           timeline
