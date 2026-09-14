@@ -151,7 +151,7 @@
   position: absolute;
   top: 47vh;
   left: var(--detail-gutter);
-  width: min(39rem, calc(max(34rem, 47vw) - var(--detail-gutter) - 2.5rem));
+  width: min(47rem, calc(max(34rem, 47vw) - var(--detail-gutter) - 2.5rem));
 }
 
 .title {

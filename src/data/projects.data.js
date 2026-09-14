@@ -115,7 +115,7 @@ export const projects = [
     id: 2,
     number: "02",
     image: westCliffEatery01,
-    title: "Westcliff - Daycare Center",
+    title: "Westcliff - Health Care",
     category: "Hospitality",
     heroLocation: "United Kingdom",
     location: "United Kingdom",
