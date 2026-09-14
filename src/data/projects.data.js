@@ -55,6 +55,10 @@ import proposedGarden02 from "../assets/images/Garden 1/06.png";
 import proposedGarden03 from "../assets/images/Garden 1/07.png";
 import proposedGarden04 from "../assets/images/Garden 1/08.png";
 import proposedGarden05 from "../assets/images/Garden 1/09.png";
+import residentialDevelopmentHero from "../assets/images/Proposed Residential Development/7b6b3c98-9a15-497e-a3d3-a19132ed6974.jpeg";
+import residentialDevelopmentCourt from "../assets/images/Proposed Residential Development/6a0b27b3-f914-44f1-b19f-311f3e608ace.jpeg";
+import residentialDevelopmentAerial from "../assets/images/Proposed Residential Development/5573c7f3-10e8-49ef-975d-f5731926f6c6.jpeg";
+import residentialDevelopmentEntrance from "../assets/images/Proposed Residential Development/3bd761d5-03c6-423f-8009-afa8915552e8.jpeg";
 
 export const projects = [
   {
@@ -499,6 +503,54 @@ export const projects = [
       storySlides: [
         { headline: ["A planted approach", "held in", "quiet layers."], paragraph: "The first view uses varied planting and a clear path to establish a gentle transition into the garden." },
         { headline: ["A clearing", "that opens", "the landscape."], paragraph: "The final view releases into a wider garden room where planting frames a calm, open centre." },
+      ],
+    },
+  },
+  {
+    id: 10,
+    number: "10",
+    image: residentialDevelopmentHero,
+    title: "Proposed Residential Development - 2 Bedroom",
+    category: "Residential",
+    heroLocation: "Lagos",
+    location: "Lagos State",
+    status: "Completed",
+    year: "2026",
+    displayProjectNameInCredits: true,
+    slug: "/work/proposed-residential-development-2-bedroom",
+    alt: "Proposed two-bedroom residential development viewed from the street",
+    statement: "A two-bedroom residential development composed as paired forms around a shared arrival court.",
+    statementLines: [
+      "Paired residential forms",
+      "frame a shared court,",
+      "recessed balconies and",
+      "planted street edges.",
+    ],
+    brief: "White rendered volumes are set against dark vertical panels and warm-toned window surrounds, giving each residence a clear identity within the wider composition.",
+    designResponse: "Recessed balconies, a central glazed stair zone and a paved forecourt organise the approach, while perimeter planting softens the boundary between the homes and the street.",
+    concept: {
+      headline: "Paired homes organised around a shared court and clear entrances.",
+      headlineLines: ["Paired homes", "organised around", "a shared court", "and clear entrances."],
+      paragraph: "The elevated view reveals two compact building groups facing a common paved court. Individual entrance steps, recessed openings and planted boundary strips give the arrangement a legible residential scale.",
+      mainImage: residentialDevelopmentAerial,
+      mainAlt: "Aerial view of the paired residential buildings and shared paved court",
+      annotations: [
+        { id: "planted", label: ["RECESSED BALCONIES", "MARK PRIVATE EDGES"] },
+        { id: "views", label: ["SHARED COURT", "ORGANISES ARRIVAL"] },
+        { id: "shaded", label: ["PLANTED BOUNDARY", "SOFTENS THE STREET"] },
+      ],
+    },
+    spatialExperience: {
+      label: "Spatial Experience",
+      headline: ["Arrival moves", "from shared court", "to sheltered", "residential thresholds."],
+      paragraph: "Two street-level views show how the paved forecourt, central glazed openings and gated landscape edge establish a clear progression from the public street to each entrance.",
+      images: [
+        { image: residentialDevelopmentCourt, alt: "Front view across the shared paved residential court" },
+        { image: residentialDevelopmentEntrance, alt: "Gated street approach with planted boundary and recessed balconies" },
+      ],
+      storySlides: [
+        { headline: ["A shared court", "keeps each entrance", "clear and visible."], paragraph: "The frontal view places the entrances around a generous paved surface, with a central glazed slot and matching recessed balconies bringing order to the elevation." },
+        { headline: ["A planted gate", "mediates street", "and home."], paragraph: "Low planting, solid boundary walls and timber-toned gates form a layered threshold while preserving views toward the paired white volumes beyond." },
       ],
     },
   },
