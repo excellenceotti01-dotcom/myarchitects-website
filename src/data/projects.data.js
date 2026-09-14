@@ -55,10 +55,10 @@ import proposedGarden02 from "../assets/images/Garden 1/06.png";
 import proposedGarden03 from "../assets/images/Garden 1/07.png";
 import proposedGarden04 from "../assets/images/Garden 1/08.png";
 import proposedGarden05 from "../assets/images/Garden 1/09.png";
-import residentialDevelopmentHero from "../assets/images/Proposed Residential Development/7b6b3c98-9a15-497e-a3d3-a19132ed6974.jpeg";
-import residentialDevelopmentCourt from "../assets/images/Proposed Residential Development/6a0b27b3-f914-44f1-b19f-311f3e608ace.jpeg";
-import residentialDevelopmentAerial from "../assets/images/Proposed Residential Development/5573c7f3-10e8-49ef-975d-f5731926f6c6.jpeg";
-import residentialDevelopmentEntrance from "../assets/images/Proposed Residential Development/3bd761d5-03c6-423f-8009-afa8915552e8.jpeg";
+import residentialDevelopmentHero from "../assets/images/Proposed Residential Development/1-hd.png";
+import residentialDevelopmentCourt from "../assets/images/Proposed Residential Development/3-hd.png";
+import residentialDevelopmentAerial from "../assets/images/Proposed Residential Development/4-hd.png";
+import residentialDevelopmentEntrance from "../assets/images/Proposed Residential Development/2-hd.png";
 
 export const projects = [
   {
