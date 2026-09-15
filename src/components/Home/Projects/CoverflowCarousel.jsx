@@ -2,6 +2,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react
 import { CaretLeft } from "@phosphor-icons/react/dist/csr/CaretLeft";
 import { CaretRight } from "@phosphor-icons/react/dist/csr/CaretRight";
 
+import { homepageHeroImages } from "../../../data/homepageHeroImages.data";
 import styles from "./CoverflowCarousel.module.css";
 
 const DRAG_THRESHOLD = 8;
@@ -12,6 +13,12 @@ const nearestOffset = (index, position, length) => {
   let offset = index - position;
   offset -= Math.round(offset / length) * length;
   return offset;
+};
+
+const getHeroImages = (project) => homepageHeroImages[project.id] ?? {
+  mobile: project.image,
+  standard: project.image,
+  large: project.image,
 };
 
 const CoverflowCarousel = ({ projects, interactive, shouldLoadMedia }) => {
@@ -100,8 +107,11 @@ const CoverflowCarousel = ({ projects, interactive, shouldLoadMedia }) => {
     if (!shouldLoadMedia) return undefined;
     const adjacent = [activeIndex, wrap(activeIndex - 1, projects.length), wrap(activeIndex + 1, projects.length)];
     adjacent.forEach((index) => {
+      const heroImages = getHeroImages(projects[index]);
       const image = new Image();
-      image.src = projects[index].image;
+      image.srcset = `${heroImages.mobile} 960w, ${heroImages.standard} 1600w, ${heroImages.large} 2560w`;
+      image.sizes = "(max-width: 767px) 960px, (max-width: 1279px) 1600px, 2560px";
+      image.src = heroImages.large;
     });
   }, [activeIndex, projects, shouldLoadMedia]);
 
@@ -203,7 +213,10 @@ const CoverflowCarousel = ({ projects, interactive, shouldLoadMedia }) => {
         onPointerCancel={finishGesture}
         onLostPointerCapture={finishGesture}
       >
-        {projects.map((project, index) => (
+        {projects.map((project, index) => {
+          const heroImages = getHeroImages(project);
+
+          return (
           <button
             key={project.id}
             ref={(element) => { cardRefs.current[index] = element; }}
@@ -215,17 +228,22 @@ const CoverflowCarousel = ({ projects, interactive, shouldLoadMedia }) => {
             aria-current={index === activeIndex ? "true" : undefined}
           >
             {shouldLoadMedia && Math.abs(nearestOffset(index, activeIndex, projects.length)) <= 1 && (
-              <img
-                src={project.image}
-                alt={project.title}
-                className={styles.image}
-                loading="eager"
-                decoding="async"
-              />
+              <picture className={styles.media}>
+                <source media="(max-width: 767px)" srcSet={heroImages.mobile} />
+                <source media="(max-width: 1279px)" srcSet={heroImages.standard} />
+                <img
+                  src={heroImages.large}
+                  alt={project.title}
+                  className={styles.image}
+                  loading="eager"
+                  decoding="async"
+                />
+              </picture>
             )}
             <span className={styles.cardShade} aria-hidden="true" />
           </button>
-        ))}
+          );
+        })}
       </div>
 
       <div className={styles.metadata} aria-live="polite">

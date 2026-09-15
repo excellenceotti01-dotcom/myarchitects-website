@@ -26,13 +26,6 @@ import renovationLiving01 from "../assets/images/Residential Renovation/living r
 import renovationLiving02 from "../assets/images/Residential Renovation/living room 02.png";
 import renovationBedroom01 from "../assets/images/Residential Renovation/bedroom 01.png";
 import renovationBathroom01 from "../assets/images/Residential Renovation/bathroom01.png";
-import eventCenter01 from "../assets/images/Event Center/001.png";
-import eventCenter02 from "../assets/images/Event Center/002.png";
-import eventCenter03 from "../assets/images/Event Center/003.png";
-import eventCenter04 from "../assets/images/Event Center/004.png";
-import eventCenter05 from "../assets/images/Event Center/005.png";
-import eventCenter06 from "../assets/images/Event Center/006.png";
-import eventCenter07 from "../assets/images/Event Center/007.png";
 import apartment3Living01 from "../assets/images/3 Bedroom Apartment/living room 01.png";
 import apartment3Living02 from "../assets/images/3 Bedroom Apartment/living room 02.png";
 import apartment3Dining01 from "../assets/images/3 Bedroom Apartment/dining room 01.png";
@@ -265,54 +258,8 @@ export const projects = [
     },
   },
   {
-    id: 5,
-    number: "05",
-    image: eventCenter01,
-    title: "Proposed Event Center",
-    category: "Commercial",
-    heroLocation: "United Kingdom",
-    location: "United Kingdom",
-    projectType: "Event Center",
-    status: "Completed",
-    year: "2025",
-    siteArea: "1,200 sqm",
-    displayProjectNameInCredits: true,
-    slug: "/work/event-center",
-    alt: "Event Center event hall with arched windows and banquet tables",
-    statement: "A civic event interior shaped around daylight, gathering and a clear ceremonial rhythm.",
-    statementLines: ["A civic event", "interior shaped around", "daylight, gathering", "and a clear", "ceremonial rhythm."],
-    brief: "The event center brings tall arched windows, layered curtains and long banquet tables into one bright room designed for shared occasions.",
-    designResponse: "Columns, chandeliers and carefully arranged tables give the hall a strong central order while keeping circulation legible around each gathering zone.",
-    concept: {
-      headline: "A generous hall for gathering, ceremony and shared light.",
-      headlineLines: ["A generous hall", "for gathering,", "ceremony and light."],
-      paragraph: "Tall openings and soft window treatments give the event room an open, welcoming character, while repeated lighting and furniture alignments keep the large volume composed.",
-      mainImage: eventCenter02,
-      mainAlt: "Event Center hall framed by arched windows and curtains",
-      detailImage: eventCenter03,
-      detailAlt: "Event Center banquet tables beneath chandeliers",
-      annotations: [
-        { id: "planted", label: ["ARCHED WINDOWS", "FRAME DAYLIGHT"] },
-        { id: "views", label: ["LAYERED CURTAINS", "SOFTEN THE HALL"] },
-        { id: "shaded", label: ["CHANDELIER LIGHTING", "SETS THE RHYTHM"] },
-        { id: "screens", label: ["BANQUET TABLES", "ORGANISE GATHERING"] },
-      ],
-    },
-    spatialExperience: {
-      label: "Spatial Experience",
-      headline: ["Moving", "through light,", "gathering and", "occasion."],
-      paragraph: "The sequence moves from the bright arrival edge into the central hall, where curtains, chandeliers and table settings shape a welcoming event atmosphere.",
-      images: [
-        { image: eventCenter04, alt: "Event Center interior with framed openings and event seating" },
-        { image: eventCenter05, alt: "Event Center gathering hall with chandeliers" },
-        { image: eventCenter06 ?? eventCenter03, alt: "Event Center banquet setting" },
-        { image: eventCenter07 ?? eventCenter02, alt: "Event Center architectural interior" },
-      ],
-    },
-  },
-  {
     id: 6,
-    number: "06",
+    number: "05",
     image: apartment3Living01,
     title: "Proposed Three-Bedroom Apartments",
     category: "Residential",
@@ -364,7 +311,7 @@ export const projects = [
   },
   {
     id: 7,
-    number: "07",
+    number: "06",
     image: cityRender01,
     title: "City Project",
     category: "Commercial",
@@ -412,7 +359,7 @@ export const projects = [
   },
   {
     id: 8,
-    number: "08",
+    number: "07",
     image: landscapeGarden01,
     title: "Proposed Landscape Garden",
     category: "Landscape",
@@ -460,7 +407,7 @@ export const projects = [
   },
   {
     id: 9,
-    number: "09",
+    number: "08",
     image: proposedGarden01,
     title: "Proposed Garden 1",
     category: "Landscape",
@@ -508,7 +455,7 @@ export const projects = [
   },
   {
     id: 10,
-    number: "10",
+    number: "09",
     image: residentialDevelopmentHero,
     title: "Proposed Residential Development - 2 Bedroom",
     category: "Residential",
